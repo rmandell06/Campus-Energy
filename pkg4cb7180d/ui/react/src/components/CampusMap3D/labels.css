@@ -1,0 +1,56 @@
+/* Collision-aware building labels for CampusMap3D. Kept out of the frozen
+   campus-theme.css. Each label is a small semi-transparent pill with a thin
+   leader line down to the building; the holder's bottom-centre is pinned to the
+   projected building point. Visibility/placement is managed imperatively in
+   CampusMap3D (priority sort + greedy box packing), so this file only styles. */
+
+.cm-label-holder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translate(-9999px, -9999px);
+  will-change: transform;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.cm-label-pill {
+  font-size: 11px;
+  line-height: 1;
+  white-space: nowrap;
+  padding: 3px 7px;
+  border-radius: 999px;
+  color: var(--mono-ink);
+  background: rgba(10, 10, 11, 0.68);
+  border: 1px solid var(--mono-hairline-strong);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease,
+    background 0.15s ease;
+}
+
+.cm-label-leader {
+  width: 1px;
+  height: 10px;
+  background: var(--mono-hairline-strong);
+}
+
+/* Hovered / selected building: brighter pill + ice-blue outline + leader. */
+.cm-label-holder[data-focus='true'] {
+  z-index: 6;
+}
+
+.cm-label-holder[data-focus='true'] .cm-label-pill {
+  color: var(--c3-style-basic-fg-primary);
+  background: rgba(10, 10, 11, 0.92);
+  border-color: var(--powered-down);
+}
+
+.cm-label-holder[data-focus='true'] .cm-label-leader {
+  background: var(--powered-down);
+}

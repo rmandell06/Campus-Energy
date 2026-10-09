@@ -1,0 +1,33 @@
+/**
+ * The occupancy of one {@link Building} during one weekday hour block (e.g. Monday 09:00–10:00),
+ * holding both the baseline count under the real schedule ({@link #sectionsCurrent}) and the
+ * count after consolidation ({@link #sectionsOptimized}). The grid spans Mon–Fri and the hour
+ * blocks 7..21 (7am through the block starting 9pm).
+ *
+ * A building-hour is "empty" when its section count is zero. Maximizing empty building-hours is
+ * the optimizer's objective. The {@link #id} is {@code "<building>|<day>|<hour>"}.
+ */
+entity type BuildingHour schema name 'BUILDING_HOUR' {
+
+  /** The building this occupancy record describes. Inverse of {@link Building#buildingHours}. */
+  building: Building
+
+  /** Weekday letter: one of {@code M T W R F} ({@code R} = Thursday). */
+  day: string
+
+  /** The hour block, an integer 7..21 denoting the interval {@code [hour:00, hour+1:00)}. */
+  hour: int
+
+  /**
+   * Number of sections meeting in this building during this hour block under the real,
+   * un-optimized schedule. This is the fixed baseline loaded from the schedule data.
+   */
+  sectionsCurrent: int
+
+  /**
+   * Number of sections meeting in this building during this hour block after the application's
+   * optimizer relocates movable sections. Recomputed on each optimization run; the loaded value
+   * reflects the most recent run (or the reference consolidation before any run).
+   */
+  sectionsOptimized: int
+}

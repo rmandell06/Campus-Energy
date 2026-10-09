@@ -1,0 +1,62 @@
+/**
+ * A single classroom within a {@link Building}. A room's {@link #typesHosted} list is the
+ * capability/capacity proxy used by the optimizer: a {@link Section} may only be relocated into
+ * a room that already hosts that section's {@link Section#sectionType}. The {@link #id} is the
+ * {@code "Building Room"} composite string (e.g. {@code "Bevier Hall 103"}).
+ */
+entity type Room schema name 'ROOM' {
+
+  /**
+   * The room number/designator within the building (e.g. {@code "103"}). The owning building is
+   * carried separately by {@link #building}; together they form {@link #id}.
+   */
+  roomName: string
+
+  /**
+   * The distinct UIUC section-type codes this room already hosts this term (e.g.
+   * {@code ["LCD", "LEC"]}). Used as the room's capability signature — the optimizer treats a
+   * room as a valid target for a section only when this list contains the section's type code.
+   */
+  typesHosted: [string]
+
+  /**
+   * The number of section meeting patterns scheduled in this room this term.
+   */
+  sectionCount: int
+
+  /**
+   * The building this room belongs to. Inverse of {@link Building#rooms}.
+   */
+  building: Building
+
+  /**
+   * All section meeting patterns currently scheduled in this room. Inverse of
+   * {@link Section#room}.
+   */
+  sections: [Section](room)
+
+  /**
+   * Recommends <b>energy-neutral study spots</b>: empty classrooms that students can use without
+   * adding to campus energy consumption. A room qualifies only when, during the given weekday +
+   * hour block, (1) no class {@link Section} meets in it (it is empty) <i>and</i> (2) its
+   * {@link Building} is already hosting at least one section that block (so the building is
+   * already lit and climate-conditioned). Point (2) is what keeps the recommendation energy-free —
+   * it never wakes a building the optimizer deliberately left dark (see {@link BuildingHour} and
+   * {@link OptimizationRun#runOptimization}).
+   *
+   * Results are ranked by {@link StudySpot#buildingSections} ascending (quietest-but-occupied
+   * buildings first — the most comfortable places to study), then by {@link StudySpot#freeHours}
+   * descending (longer uninterrupted availability first).
+   *
+   * @param day weekday letter, one of {@code M T W R F} ({@code R} = Thursday).
+   * @param hour the hour block to search, an integer {@code 7..21} denoting {@code [hour:00,
+   *        hour+1:00)}.
+   * @param scenario which occupancy defines "the building is already on": {@code "optimized"}
+   *        (default) uses {@link BuildingHour#sectionsOptimized} — the post-consolidation plan the
+   *        app recommends — while {@code "current"} uses {@link BuildingHour#sectionsCurrent}, the
+   *        real un-optimized schedule. Null/empty defaults to {@code "optimized"}.
+   * @return the matching {@link StudySpot}s in recommended order; empty when no energy-neutral spot
+   *         exists for that block.
+   */
+  findStudySpots: function(day: string, hour: int, scenario: string): [StudySpot] py
+}

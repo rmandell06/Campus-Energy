@@ -1,0 +1,50 @@
+/**
+ * An academic building on the UIUC campus that hosts scheduled class sections during the
+ * Fall 2026 term. A {@link Building} is the unit the optimizer tries to <i>evacuate</i>: when
+ * every class in a building during a given hour block can be relocated elsewhere, that
+ * building-hour becomes empty and its classroom-zone HVAC and lighting can go into setback.
+ *
+ * The {@link #id} is the building's display name (e.g. {@code "Bevier Hall"}), which is also the
+ * foreign key used by {@link Room#building} and {@link BuildingHour#building}.
+ */
+entity type Building schema name 'BUILDING' {
+
+  /**
+   * Total number of class-section meeting patterns scheduled in this building across the week
+   * (sum over all of its {@link #rooms}). Used to rank buildings by activity in the heatmap and
+   * to choose consolidation targets (busier buildings absorb moved sections).
+   */
+  sectionsPerWeek: int
+
+  /**
+   * True when this is a specialty venue whose sections never move — e.g. Armory, Krannert,
+   * Music Building, Art and Design, Huff, Freer, Smith Memorial. Specialty buildings are
+   * excluded from the optimizer both as a move source and (implicitly, via room type matching)
+   * as a target for incompatible section types.
+   */
+  isSpecialtyVenue: boolean
+
+  /**
+   * Gross floor area in square feet, when known. Optional/nullable; present only as supplemental
+   * context and not required by the optimizer or savings model.
+   */
+  grossSqFt: double
+
+  /**
+   * Optional per-building override for the HVAC + lighting energy (kWh) saved per freed
+   * building-hour. When null, the savings model falls back to the global default from
+   * {@link SavingsAssumptions}.
+   */
+  hvacKwhPerHour: double
+
+  /**
+   * All classrooms located in this building. Inverse of {@link Room#building}.
+   */
+  rooms: [Room](building)
+
+  /**
+   * The per-day, per-hour occupancy records (baseline and optimized) for this building.
+   * Inverse of {@link BuildingHour#building}.
+   */
+  buildingHours: [BuildingHour](building)
+}

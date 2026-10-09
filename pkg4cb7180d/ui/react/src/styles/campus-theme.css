@@ -1,0 +1,434 @@
+/*
+ * Block I/O — minimal monochrome theme (Linear / Vercel / Stripe register).
+ *
+ * Neutral grayscale UI. Colour is reserved for DATA ONLY: one warm amber for a
+ * building that is running, one green for savings / powered-down. The single
+ * orange (#FF5F05) lives exclusively in the header logomark, nowhere else.
+ *
+ * Implementation: the C3 design system is driven by the `--c3-style-basic-*`
+ * role tokens (styles/tokens.css). Rather than scatter raw hex across the app we
+ * RE-SKIN those role tokens here, so every vendored `@/components/ui/*` primitive
+ * (Card, MetricCard, Button, Badge, Dialog, Table…) picks up the new look at
+ * once and the app still reads as a native C3 application. Imported LAST in
+ * globals.css so these overrides win on equal specificity.
+ *
+ * The app is locked to dark mode (hooks/useTheme.ts); the light palette under
+ * `:root` is kept coherent so the same system holds up if dark is ever removed.
+ */
+
+:root,
+.dark {
+  /* ---- Data colours (identical in light + dark; the ONLY non-grayscale ink) ----
+   * Two meanings only: ENERGY ON = Illini orange; POWERED DOWN / SAVED = ice blue.
+   * The legacy --data-amber/--data-green names are kept as aliases so older
+   * references keep resolving, but both now point at the new two-colour system. */
+  --energy-on: #ff5f05; /* a building running / occupied — Illini orange */
+  --energy-on-soft: rgb(255 95 5 / 0.14);
+  --powered-down: #6ec1ff; /* savings / powered down / freed — ice blue */
+  --powered-down-soft: rgb(110 193 255 / 0.14);
+  --data-amber: var(--energy-on);
+  --data-amber-soft: var(--energy-on-soft);
+  --data-green: var(--powered-down);
+  --data-green-soft: var(--powered-down-soft);
+  --brand-orange: #ff5f05; /* logomark (same hue as energy-on) */
+
+  /* Display stack: Inter, tight tracking for big tabular numbers. */
+  --font-display: 'Inter Variable', Inter, system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono',
+    monospace;
+
+  /* Soft, modern radii (10–12px) without touching tiny controls. */
+  --c3-style-border-radius-4: 6px;
+  --c3-style-border-radius-6: 10px;
+  --c3-style-border-radius-8: 12px;
+
+  /* Inter everywhere. */
+  --c3-style-font-family-font-family: 'Inter Variable', Inter, system-ui, -apple-system, sans-serif;
+}
+
+/* ================= LIGHT (fallback — app runs dark) ================= */
+:root {
+  --mono-page: #ffffff;
+  --mono-surface: #ffffff;
+  --mono-surface-2: #fafafa;
+  --mono-ink: #0a0a0b;
+  --mono-ink-2: #6b7280;
+  --mono-ink-faint: #9ca3af;
+  --mono-hairline: rgb(0 0 0 / 0.09);
+  --mono-hairline-strong: rgb(0 0 0 / 0.16);
+
+  --c3-style-basic-bg-page: var(--mono-page);
+  --c3-style-basic-bg-primary: var(--mono-surface);
+  --c3-style-basic-bg-secondary: var(--mono-surface-2);
+  --c3-style-basic-bg-overlay: var(--mono-surface);
+  --c3-style-basic-bg-tooltip: var(--mono-ink);
+  --c3-style-basic-bg-input: var(--mono-surface);
+
+  --c3-style-basic-fg-primary: var(--mono-ink);
+  --c3-style-basic-fg-secondary: var(--mono-ink-2);
+  --c3-style-basic-fg-neutral: var(--mono-ink-faint);
+  --c3-style-basic-fg-inverse: #ffffff;
+
+  --c3-style-basic-border-border: var(--mono-hairline);
+  --c3-style-basic-border-input: var(--mono-hairline-strong);
+
+  /* Accent = near-black (grayscale), e.g. a solid Vercel-style primary button. */
+  --c3-style-basic-fg-accent: var(--mono-ink);
+  --c3-style-basic-border-accent: var(--mono-ink);
+  --c3-style-basic-bg-accent: rgb(0 0 0 / 0.05);
+  --c3-style-basic-bg-accent-inverse: var(--mono-ink);
+  --c3-style-basic-fg-accent-inverse: #ffffff;
+  --ring: var(--mono-ink);
+
+  /* Success = ice-blue "saved" data colour. */
+  --c3-style-basic-fg-success: #1b84d8;
+  --c3-style-basic-border-success: #1b84d8;
+  --c3-style-basic-bg-success: var(--powered-down-soft);
+  --c3-style-basic-bg-success-inverse: var(--powered-down);
+  --c3-style-basic-fg-success-inverse: #04243b;
+
+  /* Info neutralised to grayscale to keep the palette monochrome. */
+  --c3-style-basic-fg-info: var(--mono-ink-2);
+  --c3-style-basic-bg-info: rgb(0 0 0 / 0.05);
+  --c3-style-basic-border-info: var(--mono-hairline-strong);
+
+  --c3-style-basic-bg-selected: rgb(0 0 0 / 0.05);
+  --c3-style-basic-bg-hover: rgb(0 0 0 / 0.04);
+}
+
+/* ================= DARK (default) ================= */
+.dark {
+  --mono-page: #0a0a0b;
+  --mono-surface: #111113;
+  --mono-surface-2: #17171a;
+  --mono-ink: #ededed;
+  --mono-ink-2: #8a8a93;
+  --mono-ink-faint: #6b6b73;
+  --mono-hairline: rgb(255 255 255 / 0.08);
+  --mono-hairline-strong: rgb(255 255 255 / 0.14);
+
+  --c3-style-basic-bg-page: var(--mono-page);
+  --c3-style-basic-bg-primary: var(--mono-surface);
+  --c3-style-basic-bg-secondary: var(--mono-surface-2);
+  --c3-style-basic-bg-overlay: var(--mono-surface);
+  --c3-style-basic-bg-tooltip: #000000;
+  --c3-style-basic-bg-input: #0d0d0f;
+
+  --c3-style-basic-fg-primary: var(--mono-ink);
+  --c3-style-basic-fg-secondary: var(--mono-ink-2);
+  --c3-style-basic-fg-neutral: var(--mono-ink-faint);
+  --c3-style-basic-fg-inverse: #0a0a0b;
+
+  --c3-style-basic-border-border: var(--mono-hairline);
+  --c3-style-basic-border-input: var(--mono-hairline-strong);
+
+  /* Accent = near-white (grayscale) → Vercel-style light primary button. */
+  --c3-style-basic-fg-accent: var(--mono-ink);
+  --c3-style-basic-border-accent: var(--mono-hairline-strong);
+  --c3-style-basic-bg-accent: rgb(255 255 255 / 0.08);
+  --c3-style-basic-bg-accent-inverse: #ededed;
+  --c3-style-basic-fg-accent-inverse: #0a0a0b;
+  --ring: rgb(255 255 255 / 0.22);
+
+  /* Success = ice-blue "saved" data colour. */
+  --c3-style-basic-fg-success: var(--powered-down);
+  --c3-style-basic-border-success: var(--powered-down);
+  --c3-style-basic-bg-success: var(--powered-down-soft);
+  --c3-style-basic-bg-success-inverse: var(--powered-down);
+  --c3-style-basic-fg-success-inverse: #04243b;
+
+  /* Info neutralised to grayscale. */
+  --c3-style-basic-fg-info: var(--mono-ink-2);
+  --c3-style-basic-bg-info: rgb(255 255 255 / 0.06);
+  --c3-style-basic-border-info: var(--mono-hairline-strong);
+
+  --c3-style-basic-bg-selected: rgb(255 255 255 / 0.08);
+  --c3-style-basic-bg-hover: rgb(255 255 255 / 0.05);
+
+  /* Keep elevation shadows subtle — the hairline does the separating. */
+  --c3-style-shadow-default-lg:
+    0 10px 30px -12px rgb(0 0 0 / 0.7), 0 2px 6px -2px rgb(0 0 0 / 0.5);
+}
+
+/* Flat page canvas (no gradients). */
+body {
+  background: var(--c3-style-basic-bg-page);
+}
+
+/* =========================================================================
+   Utility classes used across the Block I/O pages
+   ========================================================================= */
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  font-feature-settings: 'tnum' 1, 'cv01' 1;
+}
+.tabnums {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1;
+}
+.mono {
+  font-family: var(--font-mono);
+}
+/* Small uppercase letter-spaced label (Linear/Stripe eyebrow). */
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--c3-style-basic-fg-neutral);
+}
+
+.text-amber {
+  color: var(--data-amber);
+}
+.text-green {
+  color: var(--data-green);
+}
+
+/* Hairline-framed panel used by the map container / HUD cards. */
+.panel {
+  background: var(--c3-style-basic-bg-primary);
+  border: 1px solid var(--c3-style-basic-border-border);
+  border-radius: 12px;
+}
+
+/* Thin corner brackets for the mission-control HUD. */
+.hud-corner {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 0 solid var(--mono-hairline-strong);
+  pointer-events: none;
+}
+.hud-corner--tl {
+  top: 10px;
+  left: 10px;
+  border-top-width: 1px;
+  border-left-width: 1px;
+}
+.hud-corner--tr {
+  top: 10px;
+  right: 10px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+}
+.hud-corner--bl {
+  bottom: 10px;
+  left: 10px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+}
+.hud-corner--br {
+  bottom: 10px;
+  right: 10px;
+  border-bottom-width: 1px;
+  border-right-width: 1px;
+}
+
+/* Typing indicator dots (AI assistant). */
+@keyframes io-typing {
+  0%,
+  60%,
+  100% {
+    opacity: 0.25;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+.io-typing-dot {
+  animation: io-typing 1.2s infinite ease-in-out;
+}
+
+/* Soft "live" pulse (data-source / map status dot). */
+@keyframes io-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgb(110 193 255 / 0.5);
+  }
+  50% {
+    opacity: 0.7;
+    box-shadow: 0 0 0 5px rgb(110 193 255 / 0);
+  }
+}
+.io-pulse {
+  animation: io-pulse 2.4s infinite ease-in-out;
+}
+
+/* Animated before/after bar fill. */
+@keyframes io-bar-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.io-bar-grow {
+  transform-origin: left center;
+  animation: io-bar-grow 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Range slider — thin monochrome track with a crisp thumb. */
+.io-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 3px;
+  border-radius: 9999px;
+  background: var(--mono-hairline-strong);
+  cursor: pointer;
+}
+.io-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: var(--c3-style-basic-fg-primary);
+  border: 2px solid var(--c3-style-basic-bg-page);
+  box-shadow: 0 0 0 1px var(--mono-hairline-strong);
+}
+.io-range::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--c3-style-basic-bg-page);
+  border-radius: 9999px;
+  background: var(--c3-style-basic-fg-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .io-typing-dot,
+  .io-pulse,
+  .io-bar-grow {
+    animation: none;
+  }
+  .io-bar-grow {
+    transform: none;
+  }
+}
+
+/* MapLibre attribution / controls tuned to the dark minimal theme. */
+.maplibregl-ctrl-attrib {
+  background: rgb(10 10 11 / 0.7) !important;
+  color: var(--mono-ink-2) !important;
+  font-size: 10px !important;
+  border-radius: 8px 0 0 0 !important;
+}
+.maplibregl-ctrl-attrib a {
+  color: var(--mono-ink-2) !important;
+}
+.maplibregl-ctrl-group {
+  background: rgb(17 17 19 / 0.9) !important;
+  border: 1px solid var(--mono-hairline) !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+.maplibregl-ctrl-group button + button {
+  border-top: 1px solid var(--mono-hairline) !important;
+}
+.maplibregl-ctrl-group button span {
+  filter: invert(1);
+}
+
+/* Semantic data-colour text helpers (preferred over the legacy amber/green). */
+.text-energy {
+  color: var(--energy-on);
+}
+.text-saved {
+  color: var(--powered-down);
+}
+
+/* Clean HTML building labels floated over the 3D map. */
+.map-label {
+  position: absolute;
+  transform: translate(-50%, -120%);
+  padding: 2px 7px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: var(--mono-ink);
+  background: rgb(10 10 11 / 0.72);
+  border: 1px solid var(--mono-hairline-strong);
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+}
+.map-label::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: 1px;
+  height: 7px;
+  background: var(--mono-hairline-strong);
+  transform: translateX(-50%);
+}
+
+/* Floating pin label (maplibre Marker element — no positioning of its own). */
+.map-marker-label {
+  padding: 1px 6px;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+  color: var(--mono-ink);
+  background: rgb(10 10 11 / 0.7);
+  border: 1px solid var(--mono-hairline-strong);
+  border-radius: 5px;
+  white-space: nowrap;
+  pointer-events: none;
+  backdrop-filter: blur(3px);
+  transform: translateY(-6px);
+}
+
+/* Map toolbar search + fly-to menu. */
+.map-search-input {
+  height: 30px;
+  width: 100%;
+  border-radius: var(--c3-style-border-radius-4);
+  border: 1px solid var(--mono-hairline-strong);
+  background: var(--c3-style-basic-bg-input);
+  padding: 0 0.5rem 0 1.75rem;
+  font-size: 12px;
+  color: var(--mono-ink);
+}
+.map-search-input:focus {
+  outline: none;
+  border-color: var(--c3-style-basic-border-accent);
+}
+
+/* Filter / toggle chip (weekday + building filters, Flows toggle). */
+.io-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  border-radius: 9999px;
+  border: 1px solid var(--mono-hairline-strong);
+  padding: 0.125rem 0.625rem;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--mono-ink-2);
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  cursor: pointer;
+}
+.io-chip:hover {
+  color: var(--mono-ink);
+}
+.io-chip[data-active='true'] {
+  color: var(--mono-ink);
+  border-color: var(--c3-style-basic-border-accent);
+  background: var(--c3-style-basic-bg-accent);
+}
+
+/* Pulsing ring dot used for "live"/powered-down accents in HTML (not deck.gl). */
+.io-ring {
+  border-radius: 9999px;
+  background: var(--powered-down);
+}

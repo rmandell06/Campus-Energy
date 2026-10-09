@@ -1,0 +1,63 @@
+/**
+ * A single execution of the consolidation optimizer with a specific set of parameters, together
+ * with its headline results. Each run produces a set of {@link MoveRecommendation}s (its
+ * {@link #moves}) and updates every {@link BuildingHour#sectionsOptimized}.
+ */
+entity type OptimizationRun schema name 'OPTIMIZATION_RUN' {
+
+  /** When this run was executed. */
+  timestamp: datetime
+
+  /**
+   * JSON-encoded parameters used for this run: the included weekdays, the hour window
+   * ({@code hourStart}/{@code hourEnd}), {@code maxOccupancyToEvacuate}, and the list of
+   * excluded buildings. Stored as a string so the exact inputs are auditable and replayable.
+   */
+  paramsJson: string
+
+  /** Count of empty building-hours per week before this run's moves were applied (baseline). */
+  emptyHoursBefore: int
+
+  /** Count of empty building-hours per week after this run's moves were applied. */
+  emptyHoursAfter: int
+
+  /** Number of {@link MoveRecommendation}s produced by this run. */
+  movesCount: int
+
+  /**
+   * The relocation recommendations produced by this run. Inverse of
+   * {@link MoveRecommendation#optimizationRun}.
+   */
+  moves: [MoveRecommendation](optimizationRun)
+
+  /**
+   * Runs the consolidation optimizer and persists its results. The engine relocates movable
+   * sections out of lightly-used building-hours into free rooms in already-busy buildings,
+   * subject to the hard constraints (times unchanged, room type match, no double-booking,
+   * only movable sections, never wake an empty building).
+   *
+   * Side effects: clears any prior {@link MoveRecommendation}s, creates a new run with its
+   * {@link #moves} (all in {@code proposed} status), and overwrites every
+   * {@link BuildingHour#sectionsOptimized} with the post-move occupancy.
+   *
+   * @param hourStart first hour block considered (inclusive), default 7.
+   * @param hourEnd end of the hour window (exclusive), default 22 — i.e. blocks 7..21.
+   * @param maxOccupancyToEvacuate a section is only a move candidate when, in every hour block
+   *        it touches, its building has at most this many sections (default 2, range 1–4).
+   * @param days weekday letters to include; empty/null means all of M,T,W,R,F.
+   * @param excludeBuildings building ids to leave untouched as move sources.
+   */
+  runOptimization: function(hourStart: int, hourEnd: int, maxOccupancyToEvacuate: int, days: [string], excludeBuildings: [string]): OptimizationRun py
+
+  /** Returns the most recent {@link OptimizationRun} by {@link #timestamp}, or null if none. */
+  latest: function(): OptimizationRun py
+
+  /**
+   * Builds the Overview page's headline statistics from the latest run and its accepted moves:
+   * empty building-hours before/after, moves/accepted counts, the per-weekday comparison, and
+   * annualized savings (via {@link SavingsAssumptions#compute}). Freed building-hours for the
+   * accepted subset is the sum of {@link MoveRecommendation#buildingHoursFreed} over accepted
+   * moves (equal to the full run's freed total when every move is accepted).
+   */
+  overviewStats: function(): OverviewStats py
+}

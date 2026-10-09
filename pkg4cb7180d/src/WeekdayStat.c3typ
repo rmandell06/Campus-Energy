@@ -1,0 +1,18 @@
+/**
+ * Empty-building-hour counts for a single weekday, used by the Overview page's
+ * "current schedule vs optimized schedule" comparison chart.
+ */
+type WeekdayStat {
+
+  /** Weekday letter ({@code M T W R F}). */
+  day: string
+
+  /** Human-readable weekday label, e.g. {@code "Mon"}. */
+  label: string
+
+  /** Empty building-hours on this weekday under the baseline (current) schedule. */
+  current: int
+
+  /** Empty building-hours on this weekday after the optimizer's accepted moves. */
+  optimized: int
+}

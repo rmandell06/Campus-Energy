@@ -1,0 +1,26 @@
+/**
+ * Annualized energy, cost, and emissions savings implied by a given number of freed
+ * building-hours per week, evaluated across the low / mid / high assumption scenarios from
+ * {@link SavingsAssumptions}. Returned by {@link SavingsAssumptions#compute} and embedded in
+ * {@link OverviewStats#savings}.
+ */
+type SavingsResult {
+
+  /** The freed building-hours per week this result was computed from. */
+  freedHoursPerWeek: int
+
+  /** Energy saved per year in MWh — low / mid / high scenarios. */
+  mwhLow: double
+  mwhMid: double
+  mwhHigh: double
+
+  /** Dollars saved per year — low / mid / high scenarios. */
+  dollarsLow: double
+  dollarsMid: double
+  dollarsHigh: double
+
+  /** Metric tons of CO2 avoided per year — low / mid / high scenarios. */
+  co2TonsLow: double
+  co2TonsMid: double
+  co2TonsHigh: double
+}
