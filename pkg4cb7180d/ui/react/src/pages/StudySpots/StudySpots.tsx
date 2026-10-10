@@ -6,7 +6,7 @@ import { PageHeader } from '@/components/ui/page-header';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Spinner } from '@/components/ui/spinner';
+import { PageLoader } from '@/components/ui/page-loader';
 import {
   Modal,
   ModalContent,
@@ -27,6 +27,7 @@ import {
 } from '@/components/ui/metric-card';
 import { useErrorBoundary } from '@/components/ErrorBoundary/ErrorBoundary';
 import CampusMap3D from '@/components/CampusMap3D/CampusMap3D';
+import RoomPhoto from '@/components/RoomPhoto/RoomPhoto';
 import { useCampusGeojson } from '@/hooks/useCampusGeojson';
 import { centroidBounds } from '@/shared/campusModel';
 import { fetchStudySpots } from '@/shared/energyApi';
@@ -232,9 +233,7 @@ export default function StudySpots() {
             <CardContent className="relative p-0">
               <div className="relative h-[clamp(380px,52vh,620px)] w-full overflow-hidden rounded-[var(--c3-style-border-radius-8)]">
                 {geo.loading || !geo.data ? (
-                  <div className="flex h-full items-center justify-center">
-                    <Spinner />
-                  </div>
+                  <PageLoader className="h-full" message="Loading campus map…" />
                 ) : (
                   <>
                     <CampusMap3D
@@ -358,9 +357,11 @@ export default function StudySpots() {
         ) : null}
 
         {loading ? (
-          <div className="flex h-64 items-center justify-center">
-            <Spinner />
-          </div>
+          <PageLoader
+            className="h-64"
+            message="Loading open study spots…"
+            hint="Finding class-free rooms in buildings that are already running."
+          />
         ) : spots.length === 0 ? (
           <Card variant="elevated">
             <CardContent className="flex flex-col items-center gap-2 py-12 text-center">
@@ -411,6 +412,11 @@ export default function StudySpots() {
                       onMouseLeave={() => setHoverBuilding(null)}
                     >
                       <CardContent className="flex flex-col gap-3 p-4">
+                        <RoomPhoto
+                          building={s.building}
+                          roomId={s.roomId}
+                          heightClass="h-28"
+                        />
                         <div className="flex items-start justify-between gap-2">
                           <div className="flex items-center gap-2">
                             <DoorOpen
@@ -514,6 +520,11 @@ export default function StudySpots() {
             </ModalSubtitle>
           </ModalHeader>
           <ModalBody className="max-h-[52vh] overflow-auto px-6 py-2">
+            {popupBuilding ? (
+              <div className="pb-3">
+                <RoomPhoto building={popupBuilding} heightClass="h-36" />
+              </div>
+            ) : null}
             {popupSpots.length === 0 ? (
               <div className="flex flex-col items-center gap-2 py-8 text-center">
                 <Lightbulb className="size-6 text-muted-foreground" aria-hidden />

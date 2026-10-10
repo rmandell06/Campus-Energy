@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Database, FileSpreadsheet, Boxes, Activity, CheckCircle2 } from 'lucide-react';
 import { PageHeader } from '@/components/ui/page-header';
-import { Spinner } from '@/components/ui/spinner';
+import { PageLoader } from '@/components/ui/page-loader';
 import { fetchDataCounts, type DataCounts } from '@/shared/energyApi';
 import { fmtInt } from '@/shared/format';
 import './pipeline.css';
@@ -107,9 +107,7 @@ export default function DataSource() {
 
         {/* Live record counts */}
         {loading ? (
-          <div className="flex h-32 items-center justify-center">
-            <Spinner />
-          </div>
+          <PageLoader className="h-32" message="Loading data source…" />
         ) : counts ? (
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
             {COUNT_TILES.map((t) => (

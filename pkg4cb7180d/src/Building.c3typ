@@ -38,6 +38,23 @@ entity type Building schema name 'BUILDING' {
   hvacKwhPerHour: double
 
   /**
+   * Latitude of the building's footprint centroid, in decimal degrees (WGS 84). Derived at build
+   * time from the same OpenStreetMap footprints the 3D campus map renders (area-weighted centroid of
+   * the largest matching polygon), so a pin placed here always lands on the building the user sees.
+   *
+   * Null for the handful of schedule buildings that have no footprint in the map data (off-campus
+   * and farm sites). Consumers must therefore treat it as optional: {@link AgentTools#freeRooms}
+   * reports {@link FreeRoom#walkMinutes} as {@code -1} rather than guessing a distance.
+   */
+  lat: double
+
+  /**
+   * Longitude of the building's footprint centroid, in decimal degrees (WGS 84). See {@link #lat}
+   * for provenance and for how a missing value is handled.
+   */
+  lon: double
+
+  /**
    * All classrooms located in this building. Inverse of {@link Room#building}.
    */
   rooms: [Room](building)

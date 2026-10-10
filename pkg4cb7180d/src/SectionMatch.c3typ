@@ -1,0 +1,86 @@
+/**
+ * A class section located by a text search, returned by {@link AgentTools#findSections}.
+ *
+ * When a facilities user types "CS 225's Friday lecture is cancelled", the agent has to turn that
+ * phrase into concrete {@link Section} records before it can simulate anything. This value type is
+ * that bridge: a flattened, display-ready projection of a {@link Section} together with the room and
+ * building it occupies, so the agent can show the user <i>exactly which meetings it matched</i>
+ * before acting on them.
+ *
+ * Matching is honest by design. Queries resolve against course subject and number, section
+ * designator, CRN, building, room and section type — the fields that actually exist in the loaded
+ * schedule. If nothing matches, {@link AgentTools#findSections} returns empty and the agent says so
+ * rather than inventing a plausible-looking section.
+ *
+ * Weekday letters are {@code M T W R F} ({@code R} = Thursday); minute fields are minutes after
+ * local midnight. Plain, non-persisted value type.
+ */
+type SectionMatch {
+
+  /**
+   * The {@link Section#id} — the key passed to {@link AgentTools#cancelSections} and carried on
+   * {@link AgentReply#applySectionIds}.
+   */
+  id: !string
+
+  /**
+   * The course, as {@link Section#subject} plus {@link Section#number} (e.g. {@code "CS 225"}).
+   */
+  courseLabel: !string
+
+  /**
+   * The section designator within the course (e.g. {@code "AL1"}), from {@link Section#section}.
+   */
+  sectionLabel: string
+
+  /**
+   * Section-type code from {@link Section#sectionType} — {@code "LEC"}, {@code "LAB"},
+   * {@code "DIS"} and so on. Lets the agent honour a request that names one specific meeting type
+   * ("the Friday <i>lecture</i>").
+   */
+  typeCode: string
+
+  /**
+   * The weekdays this section meets, as a compact {@code MTWRF} string (e.g. {@code "MWF"}), from
+   * {@link Section#days}.
+   */
+  days: string
+
+  /**
+   * The meeting window formatted for display (e.g. {@code "3:30 PM - 5:20 PM"}).
+   */
+  timeLabel: string
+
+  /**
+   * Meeting start in minutes after midnight, from {@link Section#startMin}.
+   */
+  startMin: int
+
+  /**
+   * Meeting end in minutes after midnight, from {@link Section#endMin}.
+   */
+  endMin: int
+
+  /**
+   * Name of the {@link Building} this section currently meets in — the building whose lights its
+   * cancellation might turn off.
+   */
+  building: string
+
+  /**
+   * The {@link Room#id} ({@code "Building Room"} composite) this section currently meets in.
+   */
+  roomId: string
+
+  /**
+   * The room designator within its building, from {@link Room#roomName}.
+   */
+  roomName: string
+
+  /**
+   * True when this section is eligible to be relocated by the optimizer, from
+   * {@link Section#movable}. Immovable sections (specialty venues, labs tied to fixed equipment)
+   * can still be <i>cancelled</i> in a simulation, but they are never the subject of a room swap.
+   */
+  movable: boolean
+}

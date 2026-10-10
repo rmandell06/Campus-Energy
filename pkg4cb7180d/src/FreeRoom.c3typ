@@ -1,0 +1,92 @@
+/**
+ * An open, class-free classroom a student can go study in right now, returned by
+ * {@link AgentTools#freeRooms}.
+ *
+ * This is the richer sibling of {@link StudySpot} (which {@link Room#findStudySpots} still produces
+ * for the simpler scenario view). Both enforce the same energy rule: the room is empty, but its
+ * {@link Building} is <b>already running</b> that hour — already heated, already lit — so studying
+ * there adds zero extra energy and never undoes the consolidation savings that come from leaving
+ * other buildings dark.
+ *
+ * What this type adds over {@link StudySpot} is precision the student actually needs: the exact
+ * clock time the next class starts ({@link #freeUntilLabel}, not an hour boundary), how many minutes
+ * that gives them ({@link #minutesFree}, used to satisfy a "2 hours" request), how far they have to
+ * walk ({@link #walkMinutes}), and coordinates for the map pin.
+ *
+ * Weekday letters are {@code M T W R F} ({@code R} = Thursday); hour blocks are integers
+ * {@code 7..21}, each denoting {@code [hour:00, hour+1:00)}. Plain, non-persisted value type.
+ */
+type FreeRoom {
+
+  /**
+   * The {@link Room#id} — the {@code "Building Room"} composite (e.g. {@code "Gregory Hall 329"}).
+   * The key the UI passes to {@link AgentTools#roomDetail} when the card is clicked.
+   */
+  roomId: !string
+
+  /**
+   * The room designator within its building (e.g. {@code "329"}), from {@link Room#roomName}.
+   * Shown large on the card, because it is what the student is looking for on a door.
+   */
+  roomName: !string
+
+  /**
+   * Name of the containing {@link Building} (a {@link Building#id}, e.g. {@code "Gregory Hall"}).
+   * Guaranteed to be occupied — hence already energy-on — during the selected hour block.
+   */
+  building: !string
+
+  /**
+   * Plain-English room type inferred from the section types the room actually hosts
+   * ({@link Room#typesHosted}) — {@code "lecture hall"}, {@code "classroom"}, {@code "seminar room"},
+   * {@code "lab"} or {@code "studio"}. Deliberately not a raw type code: a student should not have to
+   * decode {@code "LCD"} to guess how big a room is.
+   */
+  roomType: string
+
+  /**
+   * How many class sections are meeting elsewhere in {@link #building} during the selected hour.
+   * This is the occupancy that proves the building is already conditioned, so it is always
+   * {@code >= 1}; a lower number also means a quieter building to study in.
+   */
+  buildingSections: int
+
+  /**
+   * Minutes after midnight at which the next class starts in this room, or {@code -1} when no
+   * further class meets there that day. The precise source for {@link #freeUntilLabel}.
+   */
+  freeUntilMin: int
+
+  /**
+   * How long the room stays free, in words — e.g. {@code "free until 2:50 PM"} using the next
+   * class's exact start time, or {@code "free rest of day"} when nothing follows. Formatted on the
+   * backend so every surface shows the identical string.
+   */
+  freeUntilLabel: !string
+
+  /**
+   * Minutes from the start of the selected hour block until the next class begins (or until the end
+   * of the {@code 7..21} window when the room is free for the rest of the day). This is the value
+   * the "How long?" duration chips filter on, so a 2-hour request only returns rooms with
+   * {@code minutesFree >= 120}. It is also the sort key: rooms that stay free longest rank first.
+   */
+  minutesFree: int
+
+  /**
+   * Walking time in whole minutes from the student's resolved location, per
+   * {@link AgentTools#walkMinutes}, or {@code -1} when no location has been given. Straight-line
+   * distance scaled by 1.3 for the street grid at 1.3 m/s.
+   */
+  walkMinutes: int
+
+  /**
+   * Latitude of {@link #building}, from {@link Building#lat} — used for the map pin and the walking
+   * line.
+   */
+  lat: double
+
+  /**
+   * Longitude of {@link #building}, from {@link Building#lon}.
+   */
+  lon: double
+}

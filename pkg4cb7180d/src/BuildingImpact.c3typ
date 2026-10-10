@@ -1,0 +1,64 @@
+/**
+ * How one building's occupancy changes inside a what-if simulation — the per-building line item of
+ * {@link CancelImpact#buildings} and the building-level detail behind {@link CloseImpact}.
+ *
+ * When a class is cancelled or a building is closed, the interesting consequence is rarely campus
+ * wide; it is local and specific. This type carries that local answer: how many hours this
+ * particular building newly loses its last class, whether that lets it power down earlier than the
+ * saved plan already says, and which windows open up.
+ *
+ * Nothing here is committed. Simulations run against a scenario copy of the occupancy grid, so the
+ * saved {@link MoveRecommendation} set and {@link BuildingHour} rows are untouched until the user
+ * clicks "Apply to plan". Plain, non-persisted value type.
+ */
+type BuildingImpact {
+
+  /**
+   * Name of the affected {@link Building} (a {@link Building#id}).
+   */
+  building: !string
+
+  /**
+   * Building-hours that go from occupied to empty in this building because of the simulated change.
+   * Zero means the building still has other classes in every hour it was already running.
+   */
+  hoursFreed: int
+
+  /**
+   * How many of the simulated sections were meeting in this building — the cause of
+   * {@link #hoursFreed}.
+   */
+  sectionsRemoved: int
+
+  /**
+   * True when the change extends an existing setback window or creates a new one, i.e. the building
+   * can genuinely go into setback earlier than the currently saved plan allows. False when hours
+   * were freed but they sit inside a stretch that was already empty, so there is no new saving.
+   */
+  canPowerDownEarlier: boolean
+
+  /**
+   * The merged class-free windows this building gains under the simulation, each phrased as a
+   * sentence. Windows with {@link SetbackWindow#newlyFreed} true are the ones the agent highlights
+   * on the map.
+   */
+  windows: [SetbackWindow]
+
+  /**
+   * The impact as one plain-English sentence, e.g.
+   * {@code "Siebel Center drops from 3 classes to 0 on Friday 2-3pm, so it can set back 1 hour earlier."}
+   * Composed on the backend from the fields above so the agent's prose can never disagree with its
+   * own numbers.
+   */
+  sentence: !string
+
+  /**
+   * Latitude of the building, from {@link Building#lat}, so the agent can fly the map to it.
+   */
+  lat: double
+
+  /**
+   * Longitude of the building, from {@link Building#lon}.
+   */
+  lon: double
+}

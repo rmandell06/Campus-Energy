@@ -53,22 +53,37 @@ export default function TopNav({ title, subtitle, logo = DefaultLogo, tabs, acti
   const location = useLocation();
   const hasTabs = Boolean(tabs && tabs.length > 0);
 
-  const brand = title ? (
-    <span className="flex min-w-0 flex-col justify-center leading-none">
-      <span className="text-c3-bold-heading-h6 truncate text-[var(--c3-style-basic-fg-primary)]">
-        {title}
-      </span>
-      {subtitle ? (
-        <span className="mt-0.5 truncate text-[11px] font-normal tracking-tight text-[var(--c3-style-basic-fg-neutral)]">
-          {subtitle}
+  // The logo + name are the app's "home" affordance: clicking either returns to the landing page
+  // from anywhere in the app. Rendered as a single Link so the whole brand lockup is one target.
+  const brand = (
+    <Link
+      to="/"
+      aria-label="Go to the Illini I/O landing page"
+      className="flex min-w-0 items-center gap-3 rounded-[var(--c3-style-border-radius-4)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--c3-style-basic-border-accent)]"
+    >
+      {logo ? (
+        <span className="inline-flex shrink-0 items-center text-[var(--c3-style-basic-fg-primary)] [&_svg]:size-5">
+          {logo}
         </span>
       ) : null}
-    </span>
-  ) : undefined;
+      {title ? (
+        <span className="flex min-w-0 flex-col justify-center leading-none">
+          <span className="text-c3-bold-heading-h6 truncate text-[var(--c3-style-basic-fg-primary)]">
+            {title}
+          </span>
+          {subtitle ? (
+            <span className="mt-0.5 truncate text-[11px] font-normal tracking-tight text-[var(--c3-style-basic-fg-neutral)]">
+              {subtitle}
+            </span>
+          ) : null}
+        </span>
+      ) : null}
+    </Link>
+  );
 
   return (
     <TopNavBar
-      logo={logo}
+      logo={null}
       appName={brand}
       actions={actions}
       center={

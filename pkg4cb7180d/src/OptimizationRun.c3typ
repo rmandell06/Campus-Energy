@@ -60,4 +60,48 @@ entity type OptimizationRun schema name 'OPTIMIZATION_RUN' {
    * moves (equal to the full run's freed total when every move is accepted).
    */
   overviewStats: function(): OverviewStats py
+
+  /**
+   * Re-run the optimizer under one of the named scenario presets the Facilities campus map offers as
+   * chips, and return the headline figures so the KPI row and the map can animate to the new result.
+   *
+   * Each preset is simply a different set of bounds handed to {@link #runOptimization}, so a scenario
+   * is never a separate code path or a canned number — it is the same greedy consolidation run with
+   * different constraints:
+   * <ul>
+   *   <li>{@code "allDay"} — the full {@code 7..21} window, all weekdays, evacuate buildings running
+   *       at most 2 classes. The default plan.</li>
+   *   <li>{@code "evenings"} — only hour blocks from 16 onwards, where buildings most often stay lit
+   *       for a single late class.</li>
+   *   <li>{@code "fridays"} — Friday only, the lightest teaching day and so the easiest day to empty
+   *       buildings entirely.</li>
+   *   <li>{@code "conservative"} — evacuate only buildings down to a single class, the least
+   *       disruptive possible set of swaps.</li>
+   *   <li>{@code "aggressive"} — evacuate buildings running up to 4 classes, the largest saving and
+   *       the most rooms changed.</li>
+   * </ul>
+   *
+   * Side effects are exactly those of {@link #runOptimization}: the previous
+   * {@link MoveRecommendation}s are replaced and every {@link BuildingHour#sectionsOptimized} is
+   * rewritten, so the whole app — map, KPIs, Room Swaps and the setback schedule — reflects the
+   * chosen scenario afterwards. Dollar, CO2 and MWh figures come from
+   * {@link SavingsAssumptions#compute}, never from constants.
+   *
+   * @param name the preset key; an unrecognised value falls back to {@code "allDay"}
+   * @return the scenario's headline figures plus the one-line result sentence the chip bar displays.
+   *         See {@link ScenarioResult}.
+   */
+  runScenario: function(name: string): ScenarioResult py
+
+  /**
+   * Re-run the optimizer with the <i>same parameters as the most recent run</i> and return the new
+   * headline figures.
+   *
+   * Used when the underlying schedule has changed rather than the scenario — specifically by
+   * {@link AgentTools#applyCancellation}, which flags sections as {@link Section#cancelled} and then
+   * needs the plan recomputed without silently switching the user out of the scenario they were
+   * looking at. {@link ScenarioResult#name} comes back as whichever preset the stored
+   * {@link #paramsJson} corresponds to, or {@code "allDay"} when there is no previous run.
+   */
+  rerunCurrent: function(): ScenarioResult py
 }

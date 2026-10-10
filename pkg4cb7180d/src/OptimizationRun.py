@@ -4,6 +4,19 @@ ALL_DAYS = ["M", "T", "W", "R", "F"]
 DAY_LABELS = {"M": "Mon", "T": "Tue", "W": "Wed", "R": "Thu", "F": "Fri"}
 
 
+def _is_cancelled(s):
+    """Whether a section is cancelled, tolerant of the field not being provisioned yet.
+
+    Section#cancelled is a newer field; until the live schema carries it, reading the attribute
+    raises. Treating that as "not cancelled" is the correct default (nothing has been cancelled)
+    and keeps the optimizer running either way.
+    """
+    try:
+        return bool(s.cancelled)
+    except Exception:
+        return False
+
+
 def _blocks(start_min, end_min, hour_start, hour_end):
     return [h for h in range(hour_start, hour_end)
             if start_min < (h + 1) * 60 and end_min > h * 60]
@@ -19,10 +32,13 @@ def runOptimization(cls, hourStart, hourEnd, maxOccupancyToEvacuate, days, exclu
     # ---- Load data ----
     sections = c3.Section.fetch(spec={
         "include": "id,subject,number,section,crn,sectionType,days,startMin,endMin,"
-                   "startTime,endTime,movable,room.id,room.building.id,"
+                   "startTime,endTime,movable,cancelled,room.id,room.building.id,"
                    "room.building.isSpecialtyVenue",
         "limit": -1,
     }).objs
+    # Cancelled sections are out of the plan entirely: they neither occupy a
+    # building-hour nor need a room, so the optimizer must not see them.
+    sections = [s for s in sections if not _is_cancelled(s)]
     rooms = c3.Room.fetch(spec={
         "include": "id,typesHosted,building.id", "limit": -1}).objs
     buildings = [b.id for b in c3.Building.fetch(spec={"include": "id", "limit": -1}).objs]
@@ -63,6 +79,22 @@ def runOptimization(cls, hourStart, hourEnd, maxOccupancyToEvacuate, days, exclu
                 bld_occ[k] = bld_occ.get(k, 0) + 1
             rk = (room.id, d)
             room_sched.setdefault(rk, []).append((s.startMin, s.endMin))
+
+    # Full-week baseline occupancy, captured before any relocation. The greedy loop below
+    # rewrites each record's building in place, so this cannot be derived afterwards; and it
+    # deliberately spans all days and hours 7..22 rather than this run's window, so a run
+    # scoped to one day still leaves a consistent baseline for the rest of the week.
+    base_occ = {}
+    for s in sections:
+        if s.room is None:
+            continue
+        sb = s.room.building.id
+        for d in (s.days or ""):
+            if d not in ALL_DAYS:
+                continue
+            for h in _blocks(s.startMin, s.endMin, 7, 22):
+                bk = (sb, d, h)
+                base_occ[bk] = base_occ.get(bk, 0) + 1
 
     def cells(rec):
         return [(d, h) for d in rec["days"] for h in rec["blks"]]
@@ -196,20 +228,29 @@ def runOptimization(cls, hourStart, hourEnd, maxOccupancyToEvacuate, days, exclu
         }))
     _batch_create(c3.MoveRecommendation, move_objs)
 
-    # Update BuildingHour.sectionsOptimized with final occupancy (only touched days/hours
-    # change; others are reset to their current baseline to stay consistent).
+    # Rewrite both occupancy columns.
+    #
+    # sectionsCurrent is recomputed over the whole week from the sections that are still in the
+    # plan, which is what makes a cancellation show up on the "Today" map rather than only in the
+    # optimized view. It is derived independently of this run's day/hour window, since a run
+    # scoped to (say) Fridays must not leave the rest of the week stale.
+    #
+    # sectionsOptimized is the post-move occupancy inside the window, and the same recomputed
+    # baseline outside it.
     bh_updates = []
     bhs = c3.BuildingHour.fetch(spec={
-        "include": "id,building.id,day,hour,sectionsCurrent", "limit": -1}).objs
+        "include": "id,building.id,day,hour", "limit": -1}).objs
     for bh in bhs:
         b = bh.building.id
         d = bh.day
         h = bh.hour
+        cur = base_occ.get((b, d, h), 0)
         if d in day_set and hour_start <= h < hour_end:
             opt = bld_occ.get((b, d, h), 0)
         else:
-            opt = bh.sectionsCurrent
-        bh_updates.append(c3.BuildingHour.make({"id": bh.id, "sectionsOptimized": opt}))
+            opt = cur
+        bh_updates.append(c3.BuildingHour.make({
+            "id": bh.id, "sectionsCurrent": cur, "sectionsOptimized": opt}))
     _batch_merge(c3.BuildingHour, bh_updates)
 
     return run
@@ -275,3 +316,114 @@ def _weekday_stats():
         stats.append(c3.WeekdayStat.make({
             "day": d, "label": DAY_LABELS[d], "current": cur, "optimized": opt}))
     return stats
+
+
+# --------------------------------------------------------------------------
+# scenario presets
+# --------------------------------------------------------------------------
+
+# Each preset is nothing more than a different set of bounds for runOptimization, so a scenario is
+# never a separate code path or a canned figure. Tuple: (label, hourStart, hourEnd, maxOcc, days).
+PRESETS = {
+    "allDay": ("All day", 7, 22, 2, None),
+    "evenings": ("Evenings only (after 4pm)", 16, 22, 2, None),
+    "fridays": ("Fridays only", 7, 22, 2, ["F"]),
+    "conservative": ("Conservative", 7, 22, 1, None),
+    "aggressive": ("Aggressive", 7, 22, 4, None),
+}
+
+
+def runScenario(cls, name):
+    key = name if name in PRESETS else "allDay"
+    label, h0, h1, max_occ, days = PRESETS[key]
+    run = c3.OptimizationRun.runOptimization(h0, h1, max_occ, days, None)
+    return _scenario_result(key, label, run)
+
+
+def rerunCurrent(cls):
+    prev = c3.OptimizationRun.latest()
+    h0, h1, max_occ, days = 7, 22, 2, None
+    key = "allDay"
+    if prev is not None and prev.paramsJson:
+        try:
+            p = json.loads(prev.paramsJson)
+            h0 = p.get("hourStart") or 7
+            h1 = p.get("hourEnd") or 22
+            max_occ = p.get("maxOccupancyToEvacuate") or 2
+            days = p.get("days") or None
+            if days and len(days) == len(ALL_DAYS):
+                days = None
+            key = _preset_key(h0, h1, max_occ, days)
+        except Exception:
+            pass
+    run = c3.OptimizationRun.runOptimization(h0, h1, max_occ, days, None)
+    return _scenario_result(key, PRESETS[key][0], run)
+
+
+def _preset_key(h0, h1, max_occ, days):
+    """Which preset a set of bounds corresponds to, so a re-run keeps the user's chip selected."""
+    for k, (_label, p0, p1, pm, pd) in PRESETS.items():
+        if p0 == h0 and p1 == h1 and pm == max_occ and (pd or None) == (days or None):
+            return k
+    return "allDay"
+
+
+def _scenario_result(key, label, run):
+    """Headline figures for a completed run, read back from the occupancy table.
+
+    Everything here is derived from BuildingHour, which the run has just rewritten, so the KPI row,
+    the map colouring and this sentence are all reading the same numbers by construction. Money and
+    emissions always come through SavingsAssumptions.
+    """
+    bhs = c3.BuildingHour.fetch(spec={
+        "include": "building.id, sectionsCurrent, sectionsOptimized", "limit": -1}).objs
+
+    freed = 0
+    wasteful_cur = 0
+    wasteful_opt = 0
+    powered_down = set()
+    for bh in bhs:
+        cur = bh.sectionsCurrent or 0
+        opt = bh.sectionsOptimized or 0
+        if cur > 0 and opt == 0:
+            freed += 1
+            powered_down.add(bh.building.id)
+        if cur == 1 or cur == 2:
+            wasteful_cur += 1
+        if opt == 1 or opt == 2:
+            wasteful_opt += 1
+
+    total_buildings = c3.Building.fetchCount()
+    savings = c3.SavingsAssumptions.getOrCreate().compute(freed)
+    n = len(powered_down)
+
+    sentence = (label + ": " + str(n)
+                + (" building powers" if n == 1 else " buildings power")
+                + " down earlier, " + _money(savings.dollarsMid) + "/yr.")
+
+    return c3.ScenarioResult.make({
+        "name": key,
+        "label": label,
+        "buildingsPoweredDown": n,
+        "totalBuildings": total_buildings,
+        "freedHoursPerWeek": freed,
+        "movesCount": run.movesCount if run is not None else 0,
+        "wastefulCurrent": wasteful_cur,
+        "wastefulOptimized": wasteful_opt,
+        "dollarsLow": savings.dollarsLow,
+        "dollarsMid": savings.dollarsMid,
+        "dollarsHigh": savings.dollarsHigh,
+        "co2TonsMid": savings.co2TonsMid,
+        "mwhMid": savings.mwhMid,
+        "sentence": sentence,
+        "runId": run.id if run is not None else None,
+    })
+
+
+def _money(amount):
+    a = float(amount or 0)
+    if a >= 1000000:
+        return "$" + str(round(a / 1000000.0, 1)) + "M"
+    if a >= 1000:
+        return "$" + str(int(round(a / 1000.0))) + "K"
+    return "$" + str(int(round(a)))

@@ -1,10 +1,13 @@
 import React, { useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Send, Bot, User, Sparkles, MapPin } from 'lucide-react';
+import type { FeatureCollection } from 'geojson';
+import { Send, Bot, User, Sparkles, MapPin, ExternalLink } from 'lucide-react';
 import { PageHeader } from '@/components/ui/page-header';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import CampusMap3D from '@/components/CampusMap3D/CampusMap3D';
 import { useCampusGeojson } from '@/hooks/useCampusGeojson';
+import { centroidBounds } from '@/shared/campusModel';
 import { askAssistant } from '@/shared/energyApi';
 
 interface Turn {
@@ -88,6 +91,32 @@ export default function Assistant() {
   const names = useMemo(
     () => Object.keys(geo.centroids).sort((a, b) => b.length - a.length),
     [geo.centroids],
+  );
+
+  // Shared map inset: locate the building the most-recent answer refers to.
+  const latestBuilding = useMemo(() => {
+    for (let i = turns.length - 1; i >= 0; i--) {
+      if (turns[i].role !== 'assistant') continue;
+      const b = detectBuilding(turns[i].text, names);
+      if (b) return b;
+    }
+    return null;
+  }, [turns, names]);
+
+  const bounds = useMemo(() => centroidBounds(geo.centroids), [geo.centroids]);
+  const insetCentroid = latestBuilding ? geo.centroids[latestBuilding] ?? null : null;
+  const insetFlyTo = useMemo<[number, number] | null>(
+    () => (insetCentroid ? [insetCentroid[0], insetCentroid[1]] : null),
+    [insetCentroid],
+  );
+  const insetStudy = useMemo(
+    () => (latestBuilding ? { [latestBuilding]: 1 } : {}),
+    [latestBuilding],
+  );
+  const insetLabels = useMemo(
+    () =>
+      latestBuilding && insetCentroid ? [{ name: latestBuilding, position: insetCentroid }] : [],
+    [latestBuilding, insetCentroid],
   );
 
   const send = async (question: string) => {
@@ -235,6 +264,42 @@ export default function Assistant() {
             </form>
           </CardContent>
         </Card>
+
+        {/* Map inset — locates the building the latest answer refers to. */}
+        {latestBuilding && insetCentroid && geo.data ? (
+          <Card variant="elevated" className="shrink-0">
+            <CardContent className="p-0">
+              <div className="flex items-center justify-between px-4 pt-3">
+                <span className="text-xs text-muted-foreground">
+                  On campus ·{' '}
+                  <strong className="text-foreground">{latestBuilding}</strong>
+                </span>
+                <Link
+                  to={`/campus-map?building=${encodeURIComponent(latestBuilding)}`}
+                  className="io-chip inline-flex items-center gap-1.5"
+                >
+                  <ExternalLink className="size-3.5" />
+                  Open full map
+                </Link>
+              </div>
+              <div className="relative mt-2 h-56 overflow-hidden rounded-b-[var(--c3-style-border-radius-8)]">
+                <CampusMap3D
+                  geojson={geo.data as FeatureCollection}
+                  stateByBuilding={{}}
+                  maxSections={1}
+                  mode="study"
+                  studyByBuilding={insetStudy}
+                  maxFree={1}
+                  labels={insetLabels}
+                  focusLabel={latestBuilding}
+                  bounds={bounds}
+                  flyTo={insetFlyTo}
+                  autoOrbit={false}
+                />
+              </div>
+            </CardContent>
+          </Card>
+        ) : null}
       </div>
     </div>
   );

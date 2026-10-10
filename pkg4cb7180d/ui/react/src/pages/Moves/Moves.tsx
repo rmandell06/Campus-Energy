@@ -8,7 +8,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
-import { Spinner } from '@/components/ui/spinner';
+import { PageLoader } from '@/components/ui/page-loader';
 import CampusMap3D, { ArcHoverInfo, MapBuildingState } from '@/components/CampusMap3D/CampusMap3D';
 import {
   MetricCard,
@@ -25,16 +25,11 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import {
-  fetchMoves,
-  fetchAssumptions,
-  setMoveStatus,
-  setMovesStatus,
-} from '@/shared/energyApi';
-import { computeSavings } from '@/shared/savings';
+import { fetchMoves, setMoveStatus, setMovesStatus } from '@/shared/energyApi';
+import { useAssumptions } from '@/contexts/AssumptionsProvider';
 import { arcsForMoves, centroidBounds, parseDays } from '@/shared/campusModel';
 import { fmtInt, fmtMoney, fmtNum, WEEKDAYS } from '@/shared/format';
-import type { MoveRecommendation, SavingsAssumptionsRec } from '@/Interfaces';
+import type { MoveRecommendation } from '@/Interfaces';
 
 type StatusFilter = 'all' | 'accepted' | 'rejected';
 
@@ -43,8 +38,10 @@ const EMPTY_STATE: Record<string, MapBuildingState> = {};
 export default function Moves() {
   const isMobile = useIsMobile();
   const geo = useCampusGeojson();
+  // Cost / CO₂ come from the shared assumptions store, so the summary moves live with the Setback
+  // sliders; the freed-hours it annualizes still reflect only the moves accepted on this page.
+  const { computeFor } = useAssumptions();
   const [moves, setMoves] = useState<MoveRecommendation[]>([]);
-  const [assumptions, setAssumptions] = useState<SavingsAssumptionsRec | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [search, setSearch] = useState('');
@@ -62,9 +59,8 @@ export default function Moves() {
     setLoading(true);
     setError(null);
     try {
-      const [mv, a] = await Promise.all([fetchMoves(), fetchAssumptions()]);
+      const mv = await fetchMoves();
       setMoves(mv);
-      setAssumptions(a);
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Failed to load moves.');
     } finally {
@@ -154,10 +150,7 @@ export default function Moves() {
     () => accepted.reduce((sum, m) => sum + (m.buildingHoursFreed ?? 0), 0),
     [accepted],
   );
-  const savings = useMemo(
-    () => (assumptions ? computeSavings(assumptions, freedHours) : null),
-    [assumptions, freedHours],
-  );
+  const savings = useMemo(() => computeFor(freedHours), [computeFor, freedHours]);
 
   const flyToMove = (m: MoveRecommendation) => {
     const b = m.fromRoom?.building?.id;
@@ -369,9 +362,7 @@ export default function Moves() {
       </div>
       <div className="relative flex-1">
         {geo.loading || !geo.data ? (
-          <div className="flex h-full items-center justify-center">
-            <Spinner />
-          </div>
+          <PageLoader className="h-full" message="Loading campus map…" />
         ) : (
           <>
             <CampusMap3D
@@ -444,18 +435,16 @@ export default function Moves() {
             <MetricCardHeader>
               <MetricCardLabel>Cost saved / year</MetricCardLabel>
             </MetricCardHeader>
-            <MetricCardValue>{savings ? fmtMoney(savings.dollarsMid) : '—'}</MetricCardValue>
+            <MetricCardValue>{fmtMoney(savings.dollarsMid)}</MetricCardValue>
             <MetricCardCaption>
-              {savings
-                ? `${fmtMoney(savings.dollarsLow)} – ${fmtMoney(savings.dollarsHigh)}`
-                : 'mid estimate'}
+              {fmtMoney(savings.dollarsLow)} – {fmtMoney(savings.dollarsHigh)}
             </MetricCardCaption>
           </MetricCard>
           <MetricCard variant="elevated">
             <MetricCardHeader>
               <MetricCardLabel>CO₂ avoided / year</MetricCardLabel>
             </MetricCardHeader>
-            <MetricCardValue>{savings ? `${fmtNum(savings.co2TonsMid, 0)} t` : '—'}</MetricCardValue>
+            <MetricCardValue>{fmtNum(savings.co2TonsMid, 0)} t</MetricCardValue>
             <MetricCardCaption>metric tons, mid estimate</MetricCardCaption>
           </MetricCard>
         </div>
@@ -569,9 +558,11 @@ export default function Moves() {
         </Card>
 
         {loading ? (
-          <div className="flex h-64 items-center justify-center">
-            <Spinner />
-          </div>
+          <PageLoader
+            className="h-64"
+            message="Loading recommended moves…"
+            hint="Fetching the optimizer's class relocations."
+          />
         ) : isMobile ? (
           <MovesCardList moves={filtered} busyId={busyId} onUpdate={updateStatus} />
         ) : (

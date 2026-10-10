@@ -1,0 +1,348 @@
+[
+ {
+  "id": "HERE Champaign",
+  "lon": -88.23408,
+  "lat": 40.11057,
+  "category": "apartment",
+  "usuallyPacked": false,
+  "note": "308 E Green St, Champaign — high-rise apartments in Campustown.",
+  "aliases": [
+   "here",
+   "here apartments",
+   "here champaign"
+  ],
+  "osmName": "HERE Champaign"
+ },
+ {
+  "id": "Green Street Towers",
+  "lon": -88.229602,
+  "lat": 40.110629,
+  "category": "apartment",
+  "usuallyPacked": false,
+  "note": "Apartments on E Green St.",
+  "aliases": [
+   "green st towers",
+   "green street towers"
+  ],
+  "osmName": "Green Street Towers"
+ },
+ {
+  "id": "309 Green",
+  "lon": -88.234405,
+  "lat": 40.110009,
+  "category": "apartment",
+  "usuallyPacked": false,
+  "note": "Apartments at 309 E Green St.",
+  "aliases": [
+   "309 e green",
+   "309 green"
+  ],
+  "osmName": "309 Green"
+ },
+ {
+  "id": "Illini Tower",
+  "lon": -88.232324,
+  "lat": 40.106418,
+  "category": "apartment",
+  "usuallyPacked": false,
+  "note": "Residence hall-style apartments on E John St.",
+  "aliases": [
+   "illini tower"
+  ],
+  "osmName": "Illini Tower"
+ },
+ {
+  "id": "Skyline Tower",
+  "lon": -88.23074,
+  "lat": 40.110036,
+  "category": "apartment",
+  "usuallyPacked": false,
+  "note": "Apartments on E Green St.",
+  "aliases": [
+   "skyline",
+   "skyline tower"
+  ],
+  "osmName": "Skyline Tower"
+ },
+ {
+  "id": "The Tower at Third",
+  "lon": -88.234892,
+  "lat": 40.109331,
+  "category": "apartment",
+  "usuallyPacked": false,
+  "note": "Apartments at Third and Green.",
+  "aliases": [
+   "the tower at third",
+   "tower at third"
+  ],
+  "osmName": "The Tower at Third"
+ },
+ {
+  "id": "Hub Champaign Daniel",
+  "lon": -88.22979,
+  "lat": 40.108319,
+  "category": "apartment",
+  "usuallyPacked": false,
+  "note": "Apartments on E Daniel St.",
+  "aliases": [
+   "hub",
+   "hub champaign",
+   "hub on campus"
+  ],
+  "osmName": "Hub Champaign Daniel"
+ },
+ {
+  "id": "Latitude Apartments",
+  "lon": -88.229757,
+  "lat": 40.116648,
+  "category": "apartment",
+  "usuallyPacked": false,
+  "note": "Apartments on E Green St.",
+  "aliases": [
+   "latitude"
+  ],
+  "osmName": "Latitude Apartments"
+ },
+ {
+  "id": "Octave",
+  "lon": -88.233026,
+  "lat": 40.114708,
+  "category": "apartment",
+  "usuallyPacked": false,
+  "note": "Apartments on E Green St.",
+  "aliases": [
+   "octave"
+  ],
+  "osmName": "Octave"
+ },
+ {
+  "id": "Burnham 310",
+  "lon": -88.23511,
+  "lat": 40.113063,
+  "category": "apartment",
+  "usuallyPacked": false,
+  "note": "Apartments at 310 E Springfield Ave.",
+  "aliases": [
+   "burnham",
+   "burnham 310"
+  ],
+  "osmName": "Burnham 310"
+ },
+ {
+  "id": "Lofts 54",
+  "lon": -88.23992,
+  "lat": 40.106902,
+  "category": "apartment",
+  "usuallyPacked": false,
+  "note": "Apartments on E Green St.",
+  "aliases": [
+   "lofts 54",
+   "lofts54"
+  ],
+  "osmName": "Lofts 54"
+ },
+ {
+  "id": "Bankier Apartments",
+  "lon": -88.233035,
+  "lat": 40.110495,
+  "category": "apartment",
+  "usuallyPacked": false,
+  "note": "Campustown apartments.",
+  "aliases": [
+   "bankier"
+  ],
+  "osmName": "Bankier Apartments"
+ },
+ {
+  "id": "The Suites at Third",
+  "lon": -88.23605,
+  "lat": 40.109384,
+  "category": "apartment",
+  "usuallyPacked": false,
+  "note": "Apartments at Third and Green.",
+  "aliases": [
+   "suites at third"
+  ],
+  "osmName": "The Suites at Third"
+ },
+ {
+  "id": "Park Place Tower",
+  "lon": -88.236695,
+  "lat": 40.110513,
+  "category": "apartment",
+  "usuallyPacked": false,
+  "note": "Apartments on E Green St.",
+  "aliases": [
+   "park place"
+  ],
+  "osmName": "Park Place Tower"
+ },
+ {
+  "id": "Grainger Engineering Library",
+  "lon": -88.226786,
+  "lat": 40.112417,
+  "category": "library",
+  "usuallyPacked": true,
+  "note": "The engineering quad study hub — seats fill through the afternoon and evening.",
+  "aliases": [
+   "engineering library",
+   "grainger",
+   "grainger engineering library",
+   "grainger library"
+  ],
+  "osmName": "Grainger Engineering Library"
+ },
+ {
+  "id": "Main Library",
+  "lon": -88.228881,
+  "lat": 40.104713,
+  "category": "library",
+  "usuallyPacked": true,
+  "note": "Central library on the south quad — reading rooms are busy most of the day.",
+  "aliases": [
+   "library",
+   "main library",
+   "the main library"
+  ],
+  "osmName": "Main Library"
+ },
+ {
+  "id": "Undergraduate Library",
+  "lon": -88.228881,
+  "lat": 40.104713,
+  "category": "library",
+  "usuallyPacked": true,
+  "note": "The undergraduate collection now sits inside the Main Library complex, so it shares the same busy floors.",
+  "aliases": [
+   "ugl",
+   "undergrad library",
+   "undergraduate library"
+  ],
+  "osmName": "Main Library"
+ },
+ {
+  "id": "Illini Union",
+  "lon": -88.227253,
+  "lat": 40.109428,
+  "category": "union",
+  "usuallyPacked": true,
+  "note": "Student union on the north quad — lounges and the south lounge are crowded between classes.",
+  "aliases": [
+   "illini union",
+   "the union",
+   "union"
+  ],
+  "osmName": "Illini Union"
+ },
+ {
+  "id": "Electrical and Computer Engineering Building",
+  "lon": -88.228217,
+  "lat": 40.114955,
+  "category": "engineering",
+  "usuallyPacked": true,
+  "note": "ECEB atrium and commons tables are a default engineering study spot and fill up fast.",
+  "aliases": [
+   "ece building",
+   "eceb",
+   "electrical and computer engineering"
+  ],
+  "osmName": "Electrical and Computer Engineering Building"
+ },
+ {
+  "id": "Siebel Center for Computer Science",
+  "lon": -88.22499,
+  "lat": 40.113993,
+  "category": "engineering",
+  "usuallyPacked": true,
+  "note": "Siebel commons and the basement tables are packed during CS office hours.",
+  "aliases": [
+   "scs",
+   "siebel",
+   "siebel center",
+   "siebel center for computer science"
+  ],
+  "osmName": "Siebel Center for Computer Science"
+ },
+ {
+  "id": "Siebel Center for Design",
+  "lon": -88.232503,
+  "lat": 40.102723,
+  "category": "engineering",
+  "usuallyPacked": false,
+  "note": "Design studios and open work tables on S Sixth St.",
+  "aliases": [
+   "siebel center for design",
+   "siebel design"
+  ],
+  "osmName": "Siebel Center for Design"
+ },
+ {
+  "id": "Campus Instructional Facility",
+  "lon": -88.22832,
+  "lat": 40.112485,
+  "category": "classroom",
+  "usuallyPacked": false,
+  "note": "CIF — the newest classroom building on the engineering quad.",
+  "aliases": [
+   "campus instructional facility",
+   "cif"
+  ],
+  "osmName": "Campus Instructional Facility"
+ },
+ {
+  "id": "Activities and Recreation Center",
+  "lon": -88.235934,
+  "lat": 40.100752,
+  "category": "rec",
+  "usuallyPacked": false,
+  "note": "The ARC — recreation centre on S Fourth St.",
+  "aliases": [
+   "activities and recreation center",
+   "arc",
+   "the arc"
+  ],
+  "osmName": "Activities and Recreation Center"
+ },
+ {
+  "id": "Funk Library",
+  "lon": -88.225098,
+  "lat": 40.10282,
+  "category": "library",
+  "usuallyPacked": false,
+  "note": "ACES library on the south quad.",
+  "aliases": [
+   "aces library",
+   "funk",
+   "funk library"
+  ],
+  "osmName": "Funk Library"
+ },
+ {
+  "id": "Main Quad",
+  "lon": -88.227186,
+  "lat": 40.10596,
+  "category": "quad",
+  "usuallyPacked": false,
+  "note": "The Main Quad, between the Union and Foellinger Auditorium.",
+  "aliases": [
+   "main quad",
+   "quad",
+   "the quad"
+  ],
+  "osmName": "Foellinger Auditorium"
+ },
+ {
+  "id": "Engineering Quad",
+  "lon": -88.226786,
+  "lat": 40.112417,
+  "category": "quad",
+  "usuallyPacked": false,
+  "note": "The Engineering Quad, around Grainger and the Bardeen quad.",
+  "aliases": [
+   "bardeen quad",
+   "eng quad",
+   "engineering quad"
+  ],
+  "osmName": "Grainger Engineering Library"
+ }
+]

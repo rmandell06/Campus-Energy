@@ -1,0 +1,68 @@
+/**
+ * One building's complete setback plan for the week — its merged {@link SetbackWindow}s plus the
+ * energy, money and emissions they are worth. One of these per building makes up the Facilities
+ * Setback Schedule page, sorted by {@link #dollarsPerYear} so the biggest win is at the top.
+ *
+ * Everything here derives from the live {@link Section} schedule with <b>approved</b>
+ * {@link MoveRecommendation}s applied, then priced through {@link SavingsAssumptions#compute}. Edit
+ * the assumptions in the "Adjust estimates" drawer and every figure on this type moves with them —
+ * nothing is hard-coded.
+ *
+ * Plain, non-persisted value type.
+ */
+type BuildingSetback {
+
+  /**
+   * Name of the {@link Building} (a {@link Building#id}).
+   */
+  building: !string
+
+  /**
+   * Every merged class-free window for this building across the week, ordered by weekday then start
+   * hour. Each reads as a sentence — see {@link SetbackWindow#label}.
+   */
+  windows: [SetbackWindow]
+
+  /**
+   * Total setback hours per week, the sum of {@link SetbackWindow#hours} over {@link #windows}. The
+   * single physical input to the savings figures below.
+   */
+  hoursPerWeek: int
+
+  /**
+   * Avoided HVAC and lighting energy in kWh per week, from {@link #hoursPerWeek} times the
+   * per-freed-hour rate — {@link Building#hvacKwhPerHour} when this building overrides it, otherwise
+   * the mid value from {@link SavingsAssumptions}.
+   */
+  kwhPerWeek: double
+
+  /**
+   * Mid-estimate annual dollar savings, annualised from {@link #kwhPerWeek} over
+   * {@link SavingsAssumptions#weeksPerSemester} times {@link SavingsAssumptions#semestersPerYear} at
+   * the modelled electricity price. The page's sort key.
+   */
+  dollarsPerYear: double
+
+  /**
+   * Mid-estimate annual avoided emissions in metric tons of CO2, from the same energy figure times
+   * the modelled grid emission factor.
+   */
+  co2TonsPerYear: double
+
+  /**
+   * How many of {@link #hoursPerWeek} exist only because of approved swaps — the hours Block I/O
+   * actually created, as opposed to gaps already present in the timetable. Equal to the sum of
+   * {@link SetbackWindow#hours} over windows whose {@link SetbackWindow#newlyFreed} is true.
+   */
+  newlyFreedHoursPerWeek: int
+
+  /**
+   * Latitude of the building, from {@link Building#lat}, so a row can fly the map to it.
+   */
+  lat: double
+
+  /**
+   * Longitude of the building, from {@link Building#lon}.
+   */
+  lon: double
+}

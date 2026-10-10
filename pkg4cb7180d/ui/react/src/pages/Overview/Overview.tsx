@@ -11,12 +11,13 @@ import {
   YAxis,
 } from 'recharts';
 import { PageHeader } from '@/components/ui/page-header';
-import { Spinner } from '@/components/ui/spinner';
+import { PageLoader } from '@/components/ui/page-loader';
 import RunOptimizerDialog from '@/components/RunOptimizerDialog/RunOptimizerDialog';
 import CampusMapPanel from '@/components/CampusMap3D/CampusMapPanel';
 import { useCampusGeojson } from '@/hooks/useCampusGeojson';
 import { useCountUp } from '@/hooks/useCountUp';
 import { fetchOverviewStats, fetchAllBuildingHours } from '@/shared/energyApi';
+import { useAssumptions } from '@/contexts/AssumptionsProvider';
 import { buildWeek, weekMetrics, CampusWeek } from '@/shared/campusModel';
 import { COLOR_RUNNING, COLOR_SAVED, fmtInt, fmtMoney, fmtNum, fmtRange } from '@/shared/format';
 import type { OverviewStats } from '@/Interfaces';
@@ -176,6 +177,9 @@ export default function Overview() {
   const [countKey, setCountKey] = useState(0);
   const [info, setInfo] = useState<KpiInfo | null>(null);
   const geo = useCampusGeojson();
+  // Dollars / CO₂ / ranges read from the shared assumptions store so they move live with the sliders
+  // on the Setback page, rather than the snapshot the backend baked into overviewStats.
+  const { savings } = useAssumptions();
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -196,7 +200,7 @@ export default function Overview() {
   }, [load]);
 
   const metrics = useMemo(() => (week ? weekMetrics(week) : null), [week]);
-  const sav = stats?.savings;
+  const sav = savings;
 
   // Count-up the headline figures. `countKey` lets "Play the day" replay them.
   const dollars = useCountUp(sav?.dollarsMid ?? 0, 1200, countKey);
@@ -235,9 +239,11 @@ export default function Overview() {
 
         {/* Hero: 3D campus map + Play-the-day */}
         {geo.loading || !week || !geo.data ? (
-          <div className="flex h-[60vh] min-h-[420px] items-center justify-center rounded-[var(--c3-style-border-radius-8)] border border-[var(--mono-hairline)]">
-            <Spinner />
-          </div>
+          <PageLoader
+            className="h-[60vh] min-h-[420px] rounded-[var(--c3-style-border-radius-8)] border border-[var(--mono-hairline)]"
+            message="Loading campus map…"
+            hint="Fetching building footprints and the week's schedule."
+          />
         ) : (
           <div className="flex flex-col gap-3">
             <div className="flex flex-wrap items-center justify-between gap-3">
@@ -269,9 +275,11 @@ export default function Overview() {
         )}
 
         {loading || !stats || !sav || !metrics ? (
-          <div className="flex h-40 items-center justify-center">
-            <Spinner />
-          </div>
+          <PageLoader
+            className="h-40"
+            message="Loading key metrics…"
+            hint="Computing freed building-hours and annual savings."
+          />
         ) : (
           <>
             {/* (a) Hero: dollars saved per year */}

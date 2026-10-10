@@ -18,7 +18,6 @@ import BuildingDetail from '@/pages/Heatmap/BuildingDetail';
 import StudySpots from '@/pages/StudySpots/StudySpots';
 import Moves from '@/pages/Moves/Moves';
 import Assumptions from '@/pages/Assumptions/Assumptions';
-import Assistant from '@/pages/Assistant/Assistant';
 import DataSource from '@/pages/DataSource/DataSource';
 
 /** Wrap a page element in its own render-error boundary (see PageErrorBoundary). */
@@ -29,35 +28,44 @@ function guard(element: React.ReactNode): React.ReactNode {
 /**
  * The single source of truth for the application's route table.
  *
- * Extracted so both the desktop shell ({@link App}) and the mobile shell
- * ({@link MobileShell}) render the exact same routes without duplicating the
- * list. The route definitions here are identical to those previously inlined in
- * `App.tsx`, so desktop rendering is unchanged.
+ * The landing page (`/`) is rendered chrome-free by {@link App} and is deliberately NOT listed here,
+ * so it never inherits the shell. Everything below renders inside the shell (top bar + side nav).
+ *
+ * The two audience homes are `/student` (find a room) and `/facilities` (the campus plan). The
+ * remaining facilities pages hang off `/facilities/*`. The legacy paths are kept as working aliases
+ * so in-page links and deep links from the previous structure still resolve while the audience-first
+ * pages are being finished.
  */
 export default function AppRoutes() {
   return (
     <Routes>
-      <Route path="/" element={guard(<Overview />)} />
+      {/* Student */}
+      <Route path="/student" element={guard(<StudySpots />)} />
+
+      {/* Facilities */}
+      <Route path="/facilities" element={guard(<CampusMap />)} />
+      <Route path="/facilities/swaps" element={guard(<Moves />)} />
+      <Route path="/facilities/setback" element={guard(<Assumptions />)} />
+
+      {/* Shared */}
+      <Route path="/about-data" element={guard(<DataSource />)} />
+
+      {/* Legacy aliases — kept resolving while the new pages are finished */}
+      <Route path="/overview" element={guard(<Overview />)} />
       <Route path="/campus-map" element={guard(<CampusMap />)} />
       <Route path="/heatmap" element={guard(<Heatmap />)} />
       <Route path="/heatmap/:buildingId" element={guard(<BuildingDetail />)} />
       <Route path="/study-spots" element={guard(<StudySpots />)} />
       <Route path="/moves" element={guard(<Moves />)} />
       <Route path="/assumptions" element={guard(<Assumptions />)} />
-      <Route path="/assistant" element={guard(<Assistant />)} />
       <Route path="/data-source" element={guard(<DataSource />)} />
+
       <Route
         path="*"
         element={
-          import.meta.env.MODE === 'development' ? (
-            <div className="flex h-full items-center justify-center p-8 text-center text-[var(--c3-style-basic-fg-neutral)]">
-              <p>No route matched. Add routes in AppRoutes.tsx.</p>
-            </div>
-          ) : (
-            <div className="flex h-full items-center justify-center p-8 text-center text-[var(--c3-style-basic-fg-neutral)]">
-              <p>Page not found.</p>
-            </div>
-          )
+          <div className="flex h-full items-center justify-center p-8 text-center text-[var(--c3-style-basic-fg-neutral)]">
+            <p>Page not found.</p>
+          </div>
         }
       />
     </Routes>

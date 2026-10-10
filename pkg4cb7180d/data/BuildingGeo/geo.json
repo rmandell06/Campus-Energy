@@ -1,0 +1,542 @@
+[
+ {
+  "id": "geo_1203_1_2_W_Nevada",
+  "building": "1203 1/2 W Nevada",
+  "lat": 40.105534,
+  "lon": -88.224465
+ },
+ {
+  "id": "geo_1205_W_Nevada",
+  "building": "1205 W Nevada",
+  "lat": 40.105708,
+  "lon": -88.224701
+ },
+ {
+  "id": "geo_1205_W_Oregon",
+  "building": "1205 W Oregon",
+  "lat": 40.106719,
+  "lon": -88.22462
+ },
+ {
+  "id": "geo_1207_W_Oregon",
+  "building": "1207 W Oregon",
+  "lat": 40.106705,
+  "lon": -88.224849
+ },
+ {
+  "id": "geo_805_W_Pennsylvania",
+  "building": "805 W Pennsylvania",
+  "lat": 40.100359,
+  "lon": -88.218103
+ },
+ {
+  "id": "geo_ACES_Lib_Info_Alum_Ctr",
+  "building": "ACES Lib, Info & Alum Ctr",
+  "lat": 40.102808,
+  "lon": -88.225109
+ },
+ {
+  "id": "geo_Activities_Recreation_Center",
+  "building": "Activities & Recreation Center",
+  "lat": 40.100865,
+  "lon": -88.235929
+ },
+ {
+  "id": "geo_Agricultural_Bioprocess_Lab",
+  "building": "Agricultural Bioprocess Lab",
+  "lat": 40.101192,
+  "lon": -88.225552
+ },
+ {
+  "id": "geo_Agricultural_Engr_Sciences_Bld",
+  "building": "Agricultural Engr Sciences Bld",
+  "lat": 40.101695,
+  "lon": -88.226361
+ },
+ {
+  "id": "geo_Allen_Residence_Hall",
+  "building": "Allen Residence Hall",
+  "lat": 40.104138,
+  "lon": -88.220838
+ },
+ {
+  "id": "geo_Animal_Sciences_Laboratory",
+  "building": "Animal Sciences Laboratory",
+  "lat": 40.103774,
+  "lon": -88.225064
+ },
+ {
+  "id": "geo_Architecture_Building",
+  "building": "Architecture Building",
+  "lat": 40.103369,
+  "lon": -88.229121
+ },
+ {
+  "id": "geo_Armory",
+  "building": "Armory",
+  "lat": 40.104741,
+  "lon": -88.232004
+ },
+ {
+  "id": "geo_Art_and_Design_Building",
+  "building": "Art and Design Building",
+  "lat": 40.102064,
+  "lon": -88.231595
+ },
+ {
+  "id": "geo_Art_East_Annex_Studio_2",
+  "building": "Art-East Annex, Studio 2",
+  "lat": 40.102092,
+  "lon": -88.224834
+ },
+ {
+  "id": "geo_Astronomy_Building",
+  "building": "Astronomy Building",
+  "lat": 40.110886,
+  "lon": -88.220865
+ },
+ {
+  "id": "geo_Beckman_Institute",
+  "building": "Beckman Institute",
+  "lat": 40.115623,
+  "lon": -88.227477
+ },
+ {
+  "id": "geo_Bevier_Hall",
+  "building": "Bevier Hall",
+  "lat": 40.104892,
+  "lon": -88.224383
+ },
+ {
+  "id": "geo_Burrill_Hall",
+  "building": "Burrill Hall",
+  "lat": 40.109234,
+  "lon": -88.224818
+ },
+ {
+  "id": "geo_Business_Instructional_Fac",
+  "building": "Business Instructional Fac",
+  "lat": 40.103529,
+  "lon": -88.231061
+ },
+ {
+  "id": "geo_Campus_Instructional_Facility",
+  "building": "Campus Instructional Facility",
+  "lat": 40.112439,
+  "lon": -88.228279
+ },
+ {
+  "id": "geo_Campus_Recreation_Center_East",
+  "building": "Campus Recreation Center East",
+  "lat": 40.104685,
+  "lon": -88.221993
+ },
+ {
+  "id": "geo_Ceramics_Building",
+  "building": "Ceramics Building",
+  "lat": 40.111669,
+  "lon": -88.224249
+ },
+ {
+  "id": "geo_Ceramics_Kiln_House",
+  "building": "Ceramics Kiln House",
+  "lat": 40.11159,
+  "lon": -88.224647
+ },
+ {
+  "id": "geo_Chemical_and_Life_Sci_Lab",
+  "building": "Chemical and Life Sci Lab",
+  "lat": 40.107558,
+  "lon": -88.2242
+ },
+ {
+  "id": "geo_Chemistry_Annex",
+  "building": "Chemistry Annex",
+  "lat": 40.107788,
+  "lon": -88.226172
+ },
+ {
+  "id": "geo_Child_Development_Laboratory",
+  "building": "Child Development Laboratory",
+  "lat": 40.105651,
+  "lon": -88.221874
+ },
+ {
+  "id": "geo_Christopher_Hall",
+  "building": "Christopher Hall",
+  "lat": 40.106247,
+  "lon": -88.219684
+ },
+ {
+  "id": "geo_Civil_Envir_Eng_Bldg",
+  "building": "Civil & Envir Eng Bldg",
+  "lat": 40.114745,
+  "lon": -88.226183
+ },
+ {
+  "id": "geo_Coordinated_Science_Lab",
+  "building": "Coordinated Science Lab",
+  "lat": 40.115037,
+  "lon": -88.226787
+ },
+ {
+  "id": "geo_Dance_Studio",
+  "building": "Dance Studio",
+  "lat": 40.105683,
+  "lon": -88.219964
+ },
+ {
+  "id": "geo_Davenport_Hall",
+  "building": "Davenport Hall",
+  "lat": 40.107215,
+  "lon": -88.226274
+ },
+ {
+  "id": "geo_David_Kinley_Hall",
+  "building": "David Kinley Hall",
+  "lat": 40.10364,
+  "lon": -88.228345
+ },
+ {
+  "id": "geo_Digital_Computer_Laboratory",
+  "building": "Digital Computer Laboratory",
+  "lat": 40.113037,
+  "lon": -88.226442
+ },
+ {
+  "id": "geo_Education_Building",
+  "building": "Education Building",
+  "lat": 40.102158,
+  "lon": -88.229604
+ },
+ {
+  "id": "geo_Electrical_Computer_Eng_Bldg",
+  "building": "Electrical & Computer Eng Bldg",
+  "lat": 40.114924,
+  "lon": -88.227798
+ },
+ {
+  "id": "geo_Engineering_Hall",
+  "building": "Engineering Hall",
+  "lat": 40.110893,
+  "lon": -88.227021
+ },
+ {
+  "id": "geo_Engineering_Sciences_Building",
+  "building": "Engineering Sciences Building",
+  "lat": 40.112445,
+  "lon": -88.223166
+ },
+ {
+  "id": "geo_English_Building",
+  "building": "English Building",
+  "lat": 40.107522,
+  "lon": -88.228242
+ },
+ {
+  "id": "geo_Everitt_Laboratory",
+  "building": "Everitt Laboratory",
+  "lat": 40.110943,
+  "lon": -88.228233
+ },
+ {
+  "id": "geo_Flagg_Hall",
+  "building": "Flagg Hall",
+  "lat": 40.102774,
+  "lon": -88.233869
+ },
+ {
+  "id": "geo_Foellinger_Auditorium",
+  "building": "Foellinger Auditorium",
+  "lat": 40.10603,
+  "lon": -88.227206
+ },
+ {
+  "id": "geo_Freer_Hall",
+  "building": "Freer Hall",
+  "lat": 40.104966,
+  "lon": -88.222818
+ },
+ {
+  "id": "geo_Grainger_Engineering_Library",
+  "building": "Grainger Engineering Library",
+  "lat": 40.112403,
+  "lon": -88.226867
+ },
+ {
+  "id": "geo_Gregory_Hall",
+  "building": "Gregory Hall",
+  "lat": 40.105695,
+  "lon": -88.228138
+ },
+ {
+  "id": "geo_Harding_Band_Building",
+  "building": "Harding Band Building",
+  "lat": 40.104782,
+  "lon": -88.230737
+ },
+ {
+  "id": "geo_Henry_Administration_Bldg",
+  "building": "Henry Administration Bldg",
+  "lat": 40.108435,
+  "lon": -88.228246
+ },
+ {
+  "id": "geo_Huff_Hall",
+  "building": "Huff Hall",
+  "lat": 40.103512,
+  "lon": -88.232794
+ },
+ {
+  "id": "geo_Illini_Union",
+  "building": "Illini Union",
+  "lat": 40.109545,
+  "lon": -88.22734
+ },
+ {
+  "id": "geo_Inst_Gov_Public_Affairs_Bldg",
+  "building": "Inst Gov & Public Affairs Bldg",
+  "lat": 40.105681,
+  "lon": -88.22132
+ },
+ {
+  "id": "geo_Inst_Labor_Industrial_Rel",
+  "building": "Inst Labor &  Industrial Rel",
+  "lat": 40.10561,
+  "lon": -88.231489
+ },
+ {
+  "id": "geo_Japan_House",
+  "building": "Japan House",
+  "lat": 40.092814,
+  "lon": -88.217947
+ },
+ {
+  "id": "geo_Krannert_Center_for_Perf_Arts",
+  "building": "Krannert Center for Perf Arts",
+  "lat": 40.108026,
+  "lon": -88.222938
+ },
+ {
+  "id": "geo_Library",
+  "building": "Library",
+  "lat": 40.104754,
+  "lon": -88.228793
+ },
+ {
+  "id": "geo_Lincoln_Hall",
+  "building": "Lincoln Hall",
+  "lat": 40.106632,
+  "lon": -88.228323
+ },
+ {
+  "id": "geo_Literatures_Cultures_Ling",
+  "building": "Literatures, Cultures, & Ling",
+  "lat": 40.106268,
+  "lon": -88.226199
+ },
+ {
+  "id": "geo_Loomis_Laboratory",
+  "building": "Loomis Laboratory",
+  "lat": 40.111005,
+  "lon": -88.223346
+ },
+ {
+  "id": "geo_Materials_Science_Eng_Bld",
+  "building": "Materials Science & Eng Bld",
+  "lat": 40.110933,
+  "lon": -88.226127
+ },
+ {
+  "id": "geo_Meat_Science_Laboratory",
+  "building": "Meat Science Laboratory",
+  "lat": 40.099543,
+  "lon": -88.223123
+ },
+ {
+  "id": "geo_Mechanical_Engineering_Lab",
+  "building": "Mechanical Engineering Lab",
+  "lat": 40.111749,
+  "lon": -88.226304
+ },
+ {
+  "id": "geo_Micro_Nanotechnology_Lab",
+  "building": "Micro & Nanotechnology Lab",
+  "lat": 40.114278,
+  "lon": -88.227695
+ },
+ {
+  "id": "geo_Morrill_Hall",
+  "building": "Morrill Hall",
+  "lat": 40.108766,
+  "lon": -88.224666
+ },
+ {
+  "id": "geo_Mumford_Hall",
+  "building": "Mumford Hall",
+  "lat": 40.103605,
+  "lon": -88.225959
+ },
+ {
+  "id": "geo_Music_Building",
+  "building": "Music Building",
+  "lat": 40.106456,
+  "lon": -88.223227
+ },
+ {
+  "id": "geo_National_Soybean_Res_Ctr",
+  "building": "National Soybean Res Ctr",
+  "lat": 40.101161,
+  "lon": -88.222532
+ },
+ {
+  "id": "geo_Natural_History_Building",
+  "building": "Natural History Building",
+  "lat": 40.109582,
+  "lon": -88.226145
+ },
+ {
+  "id": "geo_Newmark_Civil_Engineering_Bldg",
+  "building": "Newmark Civil Engineering Bldg",
+  "lat": 40.11408,
+  "lon": -88.226429
+ },
+ {
+  "id": "geo_Noble_Hall",
+  "building": "Noble Hall",
+  "lat": 40.102337,
+  "lon": -88.23419
+ },
+ {
+  "id": "geo_Noyes_Laboratory",
+  "building": "Noyes Laboratory",
+  "lat": 40.10842,
+  "lon": -88.226121
+ },
+ {
+  "id": "geo_Nuclear_Radiations_Laboratory",
+  "building": "Nuclear Radiations Laboratory",
+  "lat": 40.111224,
+  "lon": -88.224454
+ },
+ {
+  "id": "geo_Plant_Sciences_Laboratory",
+  "building": "Plant Sciences Laboratory",
+  "lat": 40.102138,
+  "lon": -88.222759
+ },
+ {
+  "id": "geo_Psychology_Building",
+  "building": "Psychology Building",
+  "lat": 40.107504,
+  "lon": -88.230035
+ },
+ {
+  "id": "geo_Roger_Adams_Laboratory",
+  "building": "Roger Adams Laboratory",
+  "lat": 40.10753,
+  "lon": -88.224703
+ },
+ {
+  "id": "geo_Sch_of_Info_Sciences_Bldg",
+  "building": "Sch of Info Sciences Bldg",
+  "lat": 40.107696,
+  "lon": -88.231491
+ },
+ {
+  "id": "geo_Sidney_Lu_Mech_Engr_Bldg",
+  "building": "Sidney Lu Mech Engr Bldg",
+  "lat": 40.110984,
+  "lon": -88.224928
+ },
+ {
+  "id": "geo_Siebel_Center_for_Comp_Sci",
+  "building": "Siebel Center for Comp Sci",
+  "lat": 40.11398,
+  "lon": -88.224764
+ },
+ {
+  "id": "geo_Siebel_Center_for_Design",
+  "building": "Siebel Center for Design",
+  "lat": 40.102688,
+  "lon": -88.232595
+ },
+ {
+  "id": "geo_Smith_Memorial_Hall",
+  "building": "Smith Memorial Hall",
+  "lat": 40.105705,
+  "lon": -88.226157
+ },
+ {
+  "id": "geo_Speech_Hearing_Science_Bldg",
+  "building": "Speech & Hearing Science Bldg",
+  "lat": 40.107649,
+  "lon": -88.230802
+ },
+ {
+  "id": "geo_Spurlock_Museum",
+  "building": "Spurlock Museum",
+  "lat": 40.1076,
+  "lon": -88.220807
+ },
+ {
+  "id": "geo_Stock_Pavilion",
+  "building": "Stock Pavilion",
+  "lat": 40.101045,
+  "lon": -88.227184
+ },
+ {
+  "id": "geo_Student_Dining_Res_Program",
+  "building": "Student Dining & Res Program",
+  "lat": 40.103526,
+  "lon": -88.235257
+ },
+ {
+  "id": "geo_Talbot_Laboratory",
+  "building": "Talbot Laboratory",
+  "lat": 40.111821,
+  "lon": -88.228256
+ },
+ {
+  "id": "geo_Temple_Hoyne_Buell_Hall",
+  "building": "Temple Hoyne Buell Hall",
+  "lat": 40.102128,
+  "lon": -88.228056
+ },
+ {
+  "id": "geo_Transportation_Building",
+  "building": "Transportation Building",
+  "lat": 40.111714,
+  "lon": -88.225216
+ },
+ {
+  "id": "geo_Turner_Hall",
+  "building": "Turner Hall",
+  "lat": 40.102926,
+  "lon": -88.224203
+ },
+ {
+  "id": "geo_Vet_Med_Basic_Sciences_Bldg",
+  "building": "Vet Med Basic Sciences Bldg",
+  "lat": 40.092876,
+  "lon": -88.220955
+ },
+ {
+  "id": "geo_Weston_Hall",
+  "building": "Weston Hall",
+  "lat": 40.103003,
+  "lon": -88.235348
+ },
+ {
+  "id": "geo_Wohlers_Hall",
+  "building": "Wohlers Hall",
+  "lat": 40.103614,
+  "lon": -88.229823
+ },
+ {
+  "id": "geo_Wymer_Hall",
+  "building": "Wymer Hall",
+  "lat": 40.103425,
+  "lon": -88.231775
+ }
+]

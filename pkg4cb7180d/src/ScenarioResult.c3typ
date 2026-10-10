@@ -1,0 +1,104 @@
+/**
+ * The outcome of running the consolidation optimizer under one named preset, returned by
+ * {@link OptimizationRun#runScenario}.
+ *
+ * The Facilities campus map replaces a bare "Run optimizer" button with a row of scenario chips —
+ * {@code "All day"}, {@code "Evenings only (after 4pm)"}, {@code "Fridays only"},
+ * {@code "Conservative"}, {@code "Aggressive"}. Each chip re-runs {@link OptimizationRun#runOptimization}
+ * with different bounds and returns this value, which the UI uses to animate the KPI row and recolour
+ * the map. {@link #sentence} is the one-line result shown next to the chips.
+ *
+ * Dollar, CO2 and MWh figures all come from {@link SavingsAssumptions#compute} applied to
+ * {@link #freedHoursPerWeek} — they are never hard-coded, so editing the assumptions in the
+ * "Adjust estimates" drawer changes every number here.
+ *
+ * This is a plain, non-persisted value type.
+ */
+type ScenarioResult {
+
+  /**
+   * Stable preset key the UI sends and the agent echoes — one of {@code "allDay"},
+   * {@code "evenings"}, {@code "fridays"}, {@code "conservative"}, {@code "aggressive"}. Also the
+   * value carried by {@link MapAction#scenario} and {@link AgentReply#applyScenario}.
+   */
+  name: !string
+
+  /**
+   * Human-readable chip label for this preset (e.g. {@code "Evenings only (after 4pm)"}).
+   */
+  label: !string
+
+  /**
+   * How many buildings gain at least one freed building-hour per week under this scenario — i.e. how
+   * many can power down earlier than they do today. Compare against {@link #totalBuildings}.
+   */
+  buildingsPoweredDown: int
+
+  /**
+   * Total number of {@link Building} records with scheduled classes, the denominator the KPI row
+   * shows as "of N".
+   */
+  totalBuildings: int
+
+  /**
+   * Building-hours per week that end up with zero classes because their sections moved elsewhere.
+   * This is the single input to the savings model.
+   */
+  freedHoursPerWeek: int
+
+  /**
+   * How many class sections change rooms under this scenario — the count of accepted
+   * {@link MoveRecommendation}s. Class <i>times</i> never change, only rooms.
+   */
+  movesCount: int
+
+  /**
+   * Building-hours per week where a whole building runs for only one or two classes, under today's
+   * schedule. The "wasteful hours" KPI shows this as the before figure.
+   */
+  wastefulCurrent: int
+
+  /**
+   * The same near-empty building-hour count after this scenario's moves — the after figure.
+   */
+  wastefulOptimized: int
+
+  /**
+   * Conservative annual dollar savings, from the low end of {@link SavingsAssumptions}.
+   */
+  dollarsLow: double
+
+  /**
+   * Mid-estimate annual dollar savings — the headline figure on the landing page and KPI row.
+   */
+  dollarsMid: double
+
+  /**
+   * Optimistic annual dollar savings, from the high end of {@link SavingsAssumptions}.
+   */
+  dollarsHigh: double
+
+  /**
+   * Mid-estimate annual avoided emissions in metric tons of CO2.
+   */
+  co2TonsMid: double
+
+  /**
+   * Mid-estimate annual avoided electricity in MWh — the physical quantity the dollar and CO2
+   * figures are both derived from.
+   */
+  mwhMid: double
+
+  /**
+   * The single plain-English result line the scenario bar displays, e.g.
+   * {@code "Evenings only: 37 buildings power down earlier, $96K/yr."} Assembled from the fields
+   * above so it can never drift from them.
+   */
+  sentence: !string
+
+  /**
+   * The {@link OptimizationRun#id} this result was computed from, so the UI can correlate the KPI
+   * row, the map colouring and the Room Swaps table with one specific run.
+   */
+  runId: string
+}

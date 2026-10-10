@@ -8,10 +8,11 @@
  */
 
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, MoreHorizontal } from 'lucide-react';
 
-import { navigationConfig } from '@/config/navigation';
+import { navForRole } from '@/config/navigation';
+import { useRole, roleForPath } from '@/contexts/RoleProvider';
 import { NavigationItem } from '@/types/navigation';
 import { cn } from '@/lib/utils';
 
@@ -41,17 +42,21 @@ const isActiveRoute = (item: NavigationItem, pathname: string): boolean => {
 export default function MobileShell({ title, routes }: { title: string; routes: React.ReactNode }) {
   const navigate = useNavigate();
   const location = useLocation();
+  const { activeRole } = useRole();
   const [drawerOpen, setDrawerOpen] = useState(false);
+
+  // The route wins over the remembered role (see SideNav for the rationale).
+  const navItems = navForRole(roleForPath(location.pathname) ?? activeRole);
 
   // Split the nav into bottom-bar primaries + the overflow shown in the drawer.
   const { primaryItems, hasOverflow } = useMemo(() => {
-    const fitsInBar = navigationConfig.length <= MAX_BOTTOM_SLOTS;
-    const primaryCount = fitsInBar ? navigationConfig.length : MAX_BOTTOM_SLOTS - 1;
+    const fitsInBar = navItems.length <= MAX_BOTTOM_SLOTS;
+    const primaryCount = fitsInBar ? navItems.length : MAX_BOTTOM_SLOTS - 1;
     return {
-      primaryItems: navigationConfig.slice(0, primaryCount),
+      primaryItems: navItems.slice(0, primaryCount),
       hasOverflow: !fitsInBar,
     };
-  }, []);
+  }, [navItems]);
 
   // Close the drawer whenever the route changes (e.g. after a drawer tap).
   useEffect(() => {
@@ -76,7 +81,7 @@ export default function MobileShell({ title, routes }: { title: string; routes: 
     [navigate],
   );
 
-  const activeInDrawer = navigationConfig.some(
+  const activeInDrawer = navItems.some(
     (item) => !primaryItems.includes(item) && isActiveRoute(item, location.pathname),
   );
 
@@ -92,7 +97,13 @@ export default function MobileShell({ title, routes }: { title: string; routes: 
         >
           <Menu className="size-5" />
         </button>
-        <span className="truncate text-c3-bold-label-l1 text-[var(--c3-style-basic-fg-primary)]">{title}</span>
+        <Link
+          to="/"
+          aria-label="Go to the Illini I/O landing page"
+          className="truncate text-c3-bold-label-l1 text-[var(--c3-style-basic-fg-primary)]"
+        >
+          {title}
+        </Link>
       </header>
 
       {/* Routed page content */}
@@ -170,7 +181,7 @@ export default function MobileShell({ title, routes }: { title: string; routes: 
               </button>
             </div>
             <ul className="flex-1 overflow-y-auto p-2">
-              {navigationConfig.map((item) => {
+              {navItems.map((item) => {
                 const active = isActiveRoute(item, location.pathname);
                 const Icon = item.icon;
                 return (

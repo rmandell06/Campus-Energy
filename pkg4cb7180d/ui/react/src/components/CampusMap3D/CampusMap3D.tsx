@@ -85,6 +85,11 @@ const MIN_ZOOM = 14.6;
 const MAX_ZOOM = 16.2;
 const FIT_PITCH = 60;
 const FIT_BEARING = -18;
+// If fitting the core bounds would land wider than this (wide, short panes),
+// the campus reads as a small cluster amid empty streets — snap to a fixed
+// core-campus camera instead.
+const CORE_FIT_MIN_ZOOM = 14.8;
+const CORE_CAMERA = { center: UIUC_CENTER, zoom: 15, pitch: FIT_PITCH, bearing: FIT_BEARING };
 
 async function pickStyle(): Promise<string | StyleSpecification> {
   try {
@@ -151,6 +156,11 @@ export default function CampusMap3D({
   const [ready, setReady] = useState(false);
   const mapRef = useRef<MlMap | null>(null);
   const fitCoreRef = useRef<() => void>(() => {});
+  // Instant re-fit used on resize; no-op until the style has loaded.
+  const refitRef = useRef<() => void>(() => {});
+  // True once the user has touched the camera (or it was flown somewhere) — a
+  // resize must not yank it back to the overview after that.
+  const interactedRef = useRef(false);
   const repositionLabelsRef = useRef<() => void>(() => {});
   const focusLabelRef = useRef<string | null>(focusLabel ?? null);
   focusLabelRef.current = focusLabel ?? null;
@@ -334,7 +344,10 @@ export default function CampusMap3D({
       // height). Resize once after construction and whenever the stage resizes,
       // otherwise the GL canvas can stick at 0px and render a blank black box.
       if (typeof ResizeObserver !== 'undefined' && el.current) {
-        resizeObs = new ResizeObserver(() => mapRef.current?.resize());
+        resizeObs = new ResizeObserver(() => {
+          mapRef.current?.resize();
+          if (!interactedRef.current) refitRef.current();
+        });
         resizeObs.observe(el.current);
       }
 
@@ -419,6 +432,20 @@ export default function CampusMap3D({
         // the high end via maxZoom; we clamp the low end afterwards.
         const fitCore = (duration = 0) => {
           if (!bounds) return;
+          // Compute the fit without animating so the check is exact even when
+          // the move itself is eased (the old post-fitBounds getZoom() read the
+          // pre-animation zoom).
+          const cam = map.cameraForBounds(bounds, {
+            padding: 40,
+            bearing: FIT_BEARING,
+            maxZoom: MAX_ZOOM,
+          });
+          const fitZoom = cam?.zoom ?? MIN_ZOOM;
+          if (fitZoom < CORE_FIT_MIN_ZOOM) {
+            if (duration > 0) map.easeTo({ ...CORE_CAMERA, duration });
+            else map.jumpTo(CORE_CAMERA);
+            return;
+          }
           map.fitBounds(bounds, {
             padding: 40,
             pitch: FIT_PITCH,
@@ -426,12 +453,12 @@ export default function CampusMap3D({
             maxZoom: MAX_ZOOM,
             duration,
           });
-          if (map.getZoom() < MIN_ZOOM) map.setZoom(MIN_ZOOM);
         };
         fitCoreRef.current = () => {
           orbitRef.current = autoOrbit;
           fitCore(900);
         };
+        refitRef.current = () => fitCore(0);
         fitCore(0);
 
         map.on('mousemove', 'campus-3d', (e) => {
@@ -449,6 +476,7 @@ export default function CampusMap3D({
         orbitRef.current = autoOrbit;
         const stop = () => {
           orbitRef.current = false;
+          interactedRef.current = true;
         };
         map.on('mousedown', stop);
         map.on('touchstart', stop);
@@ -482,6 +510,7 @@ export default function CampusMap3D({
   // External fly-to (search box / "show on map").
   useEffect(() => {
     if (flyTo && mapRef.current) {
+      interactedRef.current = true; // a later resize must not undo the fly-to
       mapRef.current.flyTo({ center: flyTo, zoom: 16.5, pitch: 55, duration: 1600 });
     }
   }, [flyTo]);

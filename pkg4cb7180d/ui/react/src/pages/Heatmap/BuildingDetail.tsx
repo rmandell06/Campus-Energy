@@ -6,7 +6,7 @@ import { PageHeader } from '@/components/ui/page-header';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Spinner } from '@/components/ui/spinner';
+import { PageLoader } from '@/components/ui/page-loader';
 import {
   Table,
   TableBody,
@@ -113,9 +113,11 @@ export default function BuildingDetail() {
         ) : null}
 
         {loading ? (
-          <div className="flex h-64 items-center justify-center">
-            <Spinner />
-          </div>
+          <PageLoader
+            className="h-64"
+            message="Loading building detail…"
+            hint="Fetching the weekly occupancy and relocated classes."
+          />
         ) : (
           <>
             <div className="flex flex-wrap items-center gap-3">

@@ -1,0 +1,84 @@
+/**
+ * The complete result of one Block I/O agent turn, returned by {@link BlockIoAgent#ask}.
+ *
+ * The agent resolves the user's question into an intent, calls the relevant tools on
+ * {@link AgentTools} (and, for scenarios, {@link OptimizationRun#runScenario}), and packages
+ * everything the panel needs into this one value: a short prose answer, the tool steps that ran,
+ * clickable {@link AgentCard}s carrying the numbers, {@link MapAction}s that drive the shared 3D
+ * map, and follow-up chip suggestions.
+ *
+ * Two invariants hold for every reply. First, <b>every number comes from a tool result</b> — no
+ * building, room, section, time or dollar figure is ever invented. Second, <b>nothing in the saved
+ * plan changes</b> as a side effect of asking: what-if tools such as
+ * {@link AgentTools#cancelSections} simulate against a scenario copy, and the user must click the
+ * {@link #applyLabel} button before any {@link MoveRecommendation} is touched.
+ *
+ * This is a plain, non-persisted value type.
+ */
+type AgentReply {
+
+  /**
+   * The prose answer, deliberately capped at two or three sentences — the cards carry the detail.
+   * When {@link #notFound} is true this says plainly what could not be found instead of guessing.
+   */
+  answer: !string
+
+  /**
+   * Short, past-tense-safe descriptions of the tool calls that produced this answer, in the order
+   * they ran (e.g. {@code "Finding rooms near HERE Champaign..."},
+   * {@code "Recomputing Foellinger Hall for Friday..."}). The panel streams these while working so
+   * the user can see the agent is querying real data rather than improvising.
+   */
+  steps: [string]
+
+  /**
+   * The result cards rendered under {@link #answer}, most relevant first. See {@link AgentCard}.
+   */
+  cards: [AgentCard]
+
+  /**
+   * Ordered map instructions for the frontend to replay — fly, highlight, set the day/hour, drop the
+   * student's pin, draw the walking line. See {@link MapAction}.
+   */
+  actions: [MapAction]
+
+  /**
+   * Suggested next-question chip labels, tailored to what was just answered (e.g. offering
+   * {@code "If this were cancelled for the rest of term"} after a one-day cancellation). Keeps the
+   * live demo on rails without hard-coding a script.
+   */
+  followUps: [string]
+
+  /**
+   * Caption for the "Apply to plan" button, or null when this answer has nothing to apply. Present
+   * only on replies whose simulation could be committed — approving the extra swaps a cancellation
+   * unlocks, or adopting a scenario preset.
+   */
+  applyLabel: string
+
+  /**
+   * The {@link ScenarioResult#name} preset to commit when the user clicks {@link #applyLabel}, when
+   * applying means re-running the optimizer under a named scenario.
+   */
+  applyScenario: string
+
+  /**
+   * The {@link Section#id} values the pending apply refers to, when applying means committing a
+   * simulated cancellation's consequences.
+   */
+  applySectionIds: [string]
+
+  /**
+   * True when the agent could not find what was asked for — an unknown building, a course with no
+   * matching section, or no free room meeting the constraints. The panel then shows the honest
+   * {@link #answer} and (usually) a {@code "note"} {@link AgentCard} explaining what to try instead,
+   * rather than a fabricated result.
+   */
+  notFound: boolean
+
+  /**
+   * The resolved intent key (e.g. {@code "freeRoomsNear"}, {@code "cancelSection"},
+   * {@code "setbackPriority"}). Surfaced for debugging and demo telemetry, not shown to users.
+   */
+  intent: string
+}

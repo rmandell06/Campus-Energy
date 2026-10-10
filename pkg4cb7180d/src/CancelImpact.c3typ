@@ -1,0 +1,97 @@
+/**
+ * The result of simulating one or more cancelled class sections, returned by
+ * {@link AgentTools#cancelSections}.
+ *
+ * This is the app's answer to the most common real-world facilities question: <i>a class just got
+ * cancelled — does that change anything we can act on?</i> The tool removes the named
+ * {@link Section}s from a <b>scenario copy</b> of the occupancy grid, recomputes the affected
+ * buildings, re-runs the optimizer only for the building-hours that actually changed, and reports
+ * what opens up.
+ *
+ * <b>Nothing in the saved plan changes.</b> The live {@link BuildingHour} rows and the accepted
+ * {@link MoveRecommendation} set are untouched; the user must click "Apply to plan" (see
+ * {@link AgentReply#applyLabel}) for any of this to become real. That separation is what makes the
+ * tool safe to use live, mid-conversation.
+ *
+ * Plain, non-persisted value type.
+ */
+type CancelImpact {
+
+  /**
+   * How far the cancellation extends — {@code "one day"} (this single meeting) or
+   * {@code "rest of term"} (every remaining occurrence of the pattern). This choice is what decides
+   * whether the energy figures below are a one-off amount or an annualised one; see
+   * {@link #annualized}.
+   */
+  scope: !string
+
+  /**
+   * {@link #scope} phrased for display (e.g. {@code "just this Friday"},
+   * {@code "every Friday for the rest of term"}).
+   */
+  scopeLabel: string
+
+  /**
+   * The {@link Section#id} values that were simulated as cancelled. Echoed so the UI can offer the
+   * same set to "Apply to plan" via {@link AgentReply#applySectionIds}.
+   */
+  sectionIds: [string]
+
+  /**
+   * The matched sections in full, so the agent can show the user exactly which meetings it acted on
+   * — course, section, type, days, time and room. See {@link SectionMatch}.
+   */
+  sections: [SectionMatch]
+
+  /**
+   * Total building-hours across campus that go from occupied to empty under this simulation. The
+   * input to the energy figures below.
+   */
+  hoursFreed: int
+
+  /**
+   * Per-building consequences, most affected first — which buildings lose classes, whether each can
+   * power down earlier, and the specific windows that open. See {@link BuildingImpact}.
+   */
+  buildings: [BuildingImpact]
+
+  /**
+   * How many <i>additional</i> room swaps become possible because the cancellation emptied space
+   * that other movable sections can now occupy. These are the extra {@link MoveRecommendation}s a
+   * user would gain by applying the change.
+   */
+  extraSwaps: int
+
+  /**
+   * Avoided HVAC and lighting energy in kWh — a single day's worth when {@link #scope} is
+   * {@code "one day"}, annualised when it is {@code "rest of term"}.
+   */
+  kwh: double
+
+  /**
+   * Avoided electricity cost in dollars, priced through {@link SavingsAssumptions#compute}, on the
+   * same one-day or annualised basis as {@link #kwh}.
+   */
+  dollars: double
+
+  /**
+   * Avoided emissions in metric tons of CO2, on the same basis as {@link #kwh}.
+   */
+  co2Tons: double
+
+  /**
+   * The whole result as one plain-English summary the agent can read aloud, e.g.
+   * {@code "Cancelling CS 225's Friday lecture empties Siebel Center from 1pm, freeing 2 hours and about $41 for the day."}
+   * Assembled on the backend from the fields above.
+   */
+  summary: !string
+
+  /**
+   * False when the energy figures are a single day's amount ({@link #scope} is {@code "one day"}),
+   * true when they have been annualised over
+   * {@link SavingsAssumptions#weeksPerSemester} times {@link SavingsAssumptions#semestersPerYear}.
+   * The UI must label the numbers accordingly — a one-day figure shown as annual would be badly
+   * misleading.
+   */
+  annualized: boolean
+}

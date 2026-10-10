@@ -1,9 +1,10 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
+import type { FeatureCollection } from 'geojson';
 import { Save, RotateCcw } from 'lucide-react';
 import { PageHeader } from '@/components/ui/page-header';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Spinner } from '@/components/ui/spinner';
+import { PageLoader } from '@/components/ui/page-loader';
 import {
   MetricCard,
   MetricCardHeader,
@@ -11,74 +12,19 @@ import {
   MetricCardValue,
   MetricCardCaption,
 } from '@/components/ui/metric-card';
-import { fetchAssumptions, saveAssumptions, fetchOverviewStats } from '@/shared/energyApi';
-import { computeSavings } from '@/shared/savings';
+import CampusMap3D from '@/components/CampusMap3D/CampusMap3D';
+import { useCampusGeojson } from '@/hooks/useCampusGeojson';
+import { centroidBounds } from '@/shared/campusModel';
+import { fetchAllBuildingHours } from '@/shared/energyApi';
 import { fmtInt, fmtMoney, fmtNum } from '@/shared/format';
-import type { SavingsAssumptionsRec } from '@/Interfaces';
-
-type NumKey =
-  | 'kwhPerFreedHourLow'
-  | 'kwhPerFreedHourMid'
-  | 'kwhPerFreedHourHigh'
-  | 'electricityPriceLow'
-  | 'electricityPriceMid'
-  | 'electricityPriceHigh'
-  | 'emissionFactorLow'
-  | 'emissionFactorMid'
-  | 'emissionFactorHigh'
-  | 'weeksPerSemester'
-  | 'semestersPerYear';
-
-const DEFAULTS: SavingsAssumptionsRec = {
-  id: 'default',
-  kwhPerFreedHourLow: 50,
-  kwhPerFreedHourMid: 100,
-  kwhPerFreedHourHigh: 150,
-  electricityPriceLow: 0.08,
-  electricityPriceMid: 0.1,
-  electricityPriceHigh: 0.12,
-  emissionFactorLow: 0.35,
-  emissionFactorMid: 0.4,
-  emissionFactorHigh: 0.45,
-  weeksPerSemester: 15,
-  semestersPerYear: 2,
-};
-
-interface ScenarioRow {
-  label: string;
-  unit: string;
-  keys: [NumKey, NumKey, NumKey];
-  step: number;
-  min: number;
-  max: number;
-}
-
-const SCENARIO_ROWS: ScenarioRow[] = [
-  {
-    label: 'Energy per freed building-hour',
-    unit: 'kWh',
-    keys: ['kwhPerFreedHourLow', 'kwhPerFreedHourMid', 'kwhPerFreedHourHigh'],
-    step: 1,
-    min: 0,
-    max: 300,
-  },
-  {
-    label: 'Electricity price',
-    unit: '$/kWh',
-    keys: ['electricityPriceLow', 'electricityPriceMid', 'electricityPriceHigh'],
-    step: 0.005,
-    min: 0,
-    max: 0.3,
-  },
-  {
-    label: 'Emission factor',
-    unit: 'kg CO₂/kWh',
-    keys: ['emissionFactorLow', 'emissionFactorMid', 'emissionFactorHigh'],
-    step: 0.01,
-    min: 0,
-    max: 0.8,
-  },
-];
+import {
+  useAssumptions,
+  ASSUMPTION_ROWS,
+  WEEKS_PER_SEMESTER,
+  SEMESTERS_PER_YEAR,
+  type AssumptionKey,
+  type AssumptionRow,
+} from '@/contexts/AssumptionsProvider';
 
 /**
  * Ease the displayed number from its previous value to `target` whenever the
@@ -168,80 +114,88 @@ function RangeBand({
 }
 
 export default function Assumptions() {
-  const [draft, setDraft] = useState<SavingsAssumptionsRec>(DEFAULTS);
-  const [freedHours, setFreedHours] = useState(0);
-  const [loading, setLoading] = useState(true);
-  const [saving, setSaving] = useState(false);
-  const [saved, setSaved] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  // All figures flow from the one app-wide store, so every edit here updates the Overview KPIs, the
+  // Landing stats and the Room-swaps summary at the same instant — no Save required to preview.
+  const {
+    assumptions,
+    savings,
+    freedHoursPerWeek,
+    loading,
+    error,
+    saving,
+    saved,
+    setValue,
+    reset,
+    save,
+  } = useAssumptions();
+
+  // Map inset: freed building-hours per week per building (where savings come from).
+  const geo = useCampusGeojson();
+  const [freedByBuilding, setFreedByBuilding] = useState<Record<string, number>>({});
+  const [maxFreed, setMaxFreed] = useState(1);
 
   useEffect(() => {
     let cancelled = false;
-    Promise.all([fetchAssumptions(), fetchOverviewStats()])
-      .then(([a, stats]) => {
+    fetchAllBuildingHours()
+      .then((recs) => {
         if (cancelled) return;
-        setDraft({ ...DEFAULTS, ...a, id: 'default' });
-        setFreedHours(stats.freedHoursPerWeek);
+        const counts: Record<string, number> = {};
+        let mx = 1;
+        for (const r of recs) {
+          const cur = r.sectionsCurrent ?? 0;
+          const opt = r.sectionsOptimized ?? 0;
+          if (cur > 0 && opt === 0) {
+            const b = r.building?.id;
+            if (!b) continue;
+            counts[b] = (counts[b] ?? 0) + 1;
+            if (counts[b] > mx) mx = counts[b];
+          }
+        }
+        setFreedByBuilding(counts);
+        setMaxFreed(mx);
       })
-      .catch((e) => {
-        if (!cancelled) setError(e instanceof Error ? e.message : 'Failed to load assumptions.');
-      })
-      .finally(() => {
-        if (!cancelled) setLoading(false);
+      .catch(() => {
+        // The map inset is supplementary — a load failure just hides it; the
+        // headline savings above still render from their own fetch.
       });
     return () => {
       cancelled = true;
     };
   }, []);
 
-  const set = (key: NumKey, value: string) => {
-    const n = Number(value);
-    setSaved(false);
-    setDraft((d) => ({ ...d, [key]: Number.isFinite(n) ? n : 0 }));
-  };
-
-  const savings = useMemo(() => computeSavings(draft, freedHours), [draft, freedHours]);
+  const bounds = useMemo(() => centroidBounds(geo.centroids), [geo.centroids]);
+  const freedLabels = useMemo(
+    () =>
+      Object.keys(freedByBuilding)
+        .filter((n) => geo.centroids[n])
+        .sort((a, b) => freedByBuilding[b] - freedByBuilding[a])
+        .slice(0, 12)
+        .map((n) => ({ name: n, position: geo.centroids[n] })),
+    [freedByBuilding, geo.centroids],
+  );
 
   // Glide the headline numbers as sliders move.
   const mwhMid = useTween(savings.mwhMid);
   const dollarsMid = useTween(savings.dollarsMid);
   const co2Mid = useTween(savings.co2TonsMid);
 
-  const save = async () => {
-    setSaving(true);
-    setError(null);
-    try {
-      await saveAssumptions(draft);
-      setSaved(true);
-    } catch (e) {
-      setError(e instanceof Error ? e.message : 'Failed to save assumptions.');
-    } finally {
-      setSaving(false);
-    }
-  };
+  const fmtCell = (key: AssumptionKey, digits: number) =>
+    digits > 0 ? assumptions[key].toFixed(digits) : String(Math.round(assumptions[key]));
 
-  const reset = () => {
-    setDraft(DEFAULTS);
-    setSaved(false);
-  };
-
-  const fmtCell = (key: NumKey, step: number) =>
-    step < 1 ? draft[key].toFixed(step < 0.01 ? 3 : 2) : String(draft[key]);
-
-  const cell = (key: NumKey, step: number, min: number, max: number) => (
+  const cell = (key: AssumptionKey, row: AssumptionRow) => (
     <div className="flex items-center justify-end gap-3">
       <input
         type="range"
-        step={step}
-        min={min}
-        max={max}
-        value={draft[key]}
-        onChange={(e) => set(key, e.target.value)}
+        step={row.step}
+        min={row.min}
+        max={row.max}
+        value={assumptions[key]}
+        onChange={(e) => setValue(key, Number(e.target.value))}
         className="io-range w-24 sm:w-28"
         aria-label={key}
       />
       <span className="mono tabnums w-14 shrink-0 text-right text-sm text-[var(--mono-ink)]">
-        {fmtCell(key, step)}
+        {fmtCell(key, row.digits)}
       </span>
     </div>
   );
@@ -250,14 +204,14 @@ export default function Assumptions() {
     <div className="flex flex-col">
       <PageHeader
         title="Savings assumptions"
-        description="Every number on the dashboard traces back to these assumptions. Edit a cell and the estimates update live; Save to persist for the whole app."
+        description="Every number across the app traces back to these assumptions. Drag a slider and the estimates update live everywhere; Save to persist for the whole app."
         actions={
           <div className="flex items-center gap-2">
             <Button variant="outline" appearance="secondary" onClick={reset}>
               <RotateCcw className="size-4" />
               Reset to defaults
             </Button>
-            <Button variant="solid" appearance="accent" onClick={save} disabled={saving}>
+            <Button variant="solid" appearance="accent" onClick={() => save()} disabled={saving}>
               <Save className="size-4" />
               {saving ? 'Saving…' : saved ? 'Saved' : 'Save'}
             </Button>
@@ -273,9 +227,11 @@ export default function Assumptions() {
         ) : null}
 
         {loading ? (
-          <div className="flex h-64 items-center justify-center">
-            <Spinner />
-          </div>
+          <PageLoader
+            className="h-64"
+            message="Loading savings assumptions…"
+            hint="Fetching the saved parameters and freed building-hours."
+          />
         ) : (
           <>
             {/* Live KPIs */}
@@ -309,8 +265,46 @@ export default function Assumptions() {
               </MetricCard>
             </div>
             <p className="-mt-2 text-xs text-muted-foreground">
-              Based on {fmtInt(freedHours)} building-hours freed per week (from accepted moves).
+              Based on {fmtInt(freedHoursPerWeek)} building-hours freed per week (from accepted
+              moves). Annualized over {SEMESTERS_PER_YEAR} semesters of {WEEKS_PER_SEMESTER}{' '}
+              instructional weeks.
             </p>
+
+            {/* Where the savings come from — buildings the optimizer powers down,
+                on the shared 3D campus map. Brighter ice = more freed hours/week. */}
+            {geo.data && freedLabels.length ? (
+              <Card variant="elevated">
+                <CardContent className="p-0">
+                  <div className="flex flex-wrap items-center justify-between gap-2 px-4 pt-4">
+                    <h3 className="text-base font-semibold text-foreground">
+                      Where the savings come from
+                    </h3>
+                    <div className="flex items-center gap-2 text-[11px] text-muted-foreground">
+                      <span
+                        className="h-2.5 w-16 rounded-sm"
+                        style={{
+                          background:
+                            'linear-gradient(90deg, #1b394d 0%, #3f93d6 55%, #6ec1ff 100%)',
+                        }}
+                      />
+                      <span>more freed hours / week →</span>
+                    </div>
+                  </div>
+                  <div className="relative mt-3 h-[clamp(300px,40vh,460px)] overflow-hidden rounded-b-[var(--c3-style-border-radius-8)]">
+                    <CampusMap3D
+                      geojson={geo.data as FeatureCollection}
+                      stateByBuilding={{}}
+                      maxSections={1}
+                      mode="study"
+                      studyByBuilding={freedByBuilding}
+                      maxFree={maxFreed}
+                      labels={freedLabels}
+                      bounds={bounds}
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+            ) : null}
 
             {/* Live range band — low→high uncertainty, updates as you drag */}
             <Card variant="elevated">
@@ -348,12 +342,18 @@ export default function Assumptions() {
               </CardContent>
             </Card>
 
-            {/* Scenario table */}
+            {/* Scenario table — three editable energy-intensity bands */}
             <Card variant="elevated">
               <CardContent className="pt-5">
-                <h3 className="mb-4 text-base font-semibold text-foreground">
-                  Low / mid / high scenarios
-                </h3>
+                <div className="mb-1 flex flex-wrap items-baseline justify-between gap-2">
+                  <h3 className="text-base font-semibold text-foreground">
+                    Low / mid / high scenarios
+                  </h3>
+                </div>
+                <p className="mb-4 text-xs text-muted-foreground">
+                  Annualized over {SEMESTERS_PER_YEAR} semesters of {WEEKS_PER_SEMESTER} instructional
+                  weeks. Each band is kept ordered — low ≤ mid ≤ high — as you drag.
+                </p>
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-[var(--c3-style-basic-border-border)]">
@@ -365,29 +365,18 @@ export default function Assumptions() {
                     </tr>
                   </thead>
                   <tbody>
-                    {SCENARIO_ROWS.map((row) => (
-                      <tr key={row.label} className="border-b border-[var(--c3-style-basic-border-border)]">
+                    {ASSUMPTION_ROWS.map((row) => (
+                      <tr
+                        key={row.id}
+                        className="border-b border-[var(--c3-style-basic-border-border)]"
+                      >
                         <td className="py-3 text-foreground">{row.label}</td>
-                        <td className="py-3 text-right">{cell(row.keys[0], row.step, row.min, row.max)}</td>
-                        <td className="py-3 text-right">{cell(row.keys[1], row.step, row.min, row.max)}</td>
-                        <td className="py-3 text-right">{cell(row.keys[2], row.step, row.min, row.max)}</td>
+                        <td className="py-3 text-right">{cell(row.keys[0], row)}</td>
+                        <td className="py-3 text-right">{cell(row.keys[1], row)}</td>
+                        <td className="py-3 text-right">{cell(row.keys[2], row)}</td>
                         <td className="py-3 pl-3 text-muted-foreground">{row.unit}</td>
                       </tr>
                     ))}
-                    <tr className="border-b border-[var(--c3-style-basic-border-border)]">
-                      <td className="py-3 text-foreground">Weeks per semester</td>
-                      <td className="py-3 text-right" colSpan={3}>
-                        <div className="flex justify-end pr-0">{cell('weeksPerSemester', 1, 1, 20)}</div>
-                      </td>
-                      <td className="py-3 pl-3 text-muted-foreground">weeks</td>
-                    </tr>
-                    <tr>
-                      <td className="py-3 text-foreground">Semesters per year</td>
-                      <td className="py-3 text-right" colSpan={3}>
-                        <div className="flex justify-end pr-0">{cell('semestersPerYear', 1, 1, 4)}</div>
-                      </td>
-                      <td className="py-3 pl-3 text-muted-foreground">semesters</td>
-                    </tr>
                   </tbody>
                 </table>
               </CardContent>
@@ -398,8 +387,8 @@ export default function Assumptions() {
               classroom-zone HVAC setback over each freed building-hour — i.e. a freed hour lets
               the classroom zone drop to a setback temperature rather than fully shutting the
               building. Per freed building-hour: energy = kWh assumption; cost = kWh × price;
-              CO₂ = kWh × emission factor. Annualized as freed-hours/week × weeks/semester ×
-              semesters/year.
+              CO₂ = kWh × emission factor. Annualized as freed-hours/week × {WEEKS_PER_SEMESTER}{' '}
+              weeks × {SEMESTERS_PER_YEAR} semesters.
             </div>
           </>
         )}

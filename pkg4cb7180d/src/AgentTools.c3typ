@@ -1,0 +1,204 @@
+/**
+ * The tool layer the Block I/O agent acts through — a stateless service type whose static functions
+ * are the <i>only</i> way the agent learns anything about campus.
+ *
+ * Every function here reads live {@link Building}, {@link Room}, {@link Section},
+ * {@link BuildingHour} and {@link MoveRecommendation} records, or re-runs the existing optimizer in
+ * {@link OptimizationRun}. That is deliberate and it is the guarantee the agent rests on: because
+ * {@link BlockIoAgent#ask} can only quote values that came back from one of these calls, it cannot
+ * invent a building, a room number, a section, a time or a dollar figure. When a tool finds nothing,
+ * it returns an empty result and the agent says so.
+ *
+ * The read tools ({@link #freeRooms}, {@link #buildingStatus}, {@link #findSections},
+ * {@link #setbackSchedule}, {@link #roomDetail}, {@link #locate}, {@link #walkMinutes}) have no side
+ * effects at all. The two simulation tools ({@link #cancelSections}, {@link #closeBuilding}) work
+ * against a <b>scenario copy</b> of the occupancy grid: they never write
+ * {@link BuildingHour} rows and never change the status of a saved {@link MoveRecommendation}.
+ * Committing a simulation is an explicit, separate user action ("Apply to plan").
+ *
+ * This type holds no state of its own — it mixes nothing persistable and is never instantiated.
+ * Weekday letters throughout are {@code M T W R F} ({@code R} = Thursday); hour blocks are integers
+ * {@code 7..21}, each denoting {@code [hour:00, hour+1:00)}.
+ */
+entity type AgentTools {
+
+  /**
+   * Find open, class-free rooms a student can study in, ranked by how long they stay free.
+   *
+   * Only rooms in buildings that are <b>already running</b> during the given hour are ever returned,
+   * which is the energy rule the whole student experience is built on: the building is heated and lit
+   * for its scheduled classes regardless, so studying in one of its empty rooms costs nothing extra.
+   * A room qualifies only if no {@link Section} at all meets in it during the block — see
+   * {@link FreeRoom} for the exact semantics of the returned fields.
+   *
+   * @param day weekday letter ({@code M T W R F}); anything else yields an empty list
+   * @param hour hour block {@code 7..21}; outside that range yields an empty list
+   * @param minDurationMin only return rooms free for at least this many minutes from {@code hour},
+   *        so a "2 hours" request can be honoured exactly. Pass {@code 0} for no minimum.
+   * @param near optional origin for walking times, normally the student's pin from {@link #locate}.
+   *        When null, every {@link FreeRoom#walkMinutes} comes back as {@code -1} rather than a guess.
+   * @param maxWalkMin when {@code near} is given and this is positive, drop rooms further away than
+   *        this many walking minutes. Ignored when {@code near} is null.
+   * @param limit maximum rooms to return, applied after sorting
+   * @return matching rooms, longest-free first, then nearest, then quietest building
+   */
+  freeRooms: function(day: string, hour: int, minDurationMin: int, near: MapPin, maxWalkMin: int, limit: int): [FreeRoom] py
+
+  /**
+   * Report one building's energy state for a weekday and hour: how many classes are in session
+   * today, how many remain after approved swaps, whether it is running, able to power down, or
+   * already dark, and when its setback windows fall.
+   *
+   * This is what the map tooltip, the building drawer and the agent's building cards all read, so
+   * they cannot disagree. See {@link BuildingStatusInfo}.
+   *
+   * @param building a {@link Building#id}; an unknown name returns null so the agent can say it
+   *        could not find that building instead of describing one that does not exist
+   * @param day weekday letter ({@code M T W R F})
+   * @param hour hour block {@code 7..21}
+   * @return the building's state, or null when the building is unknown
+   */
+  buildingStatus: function(building: string, day: string, hour: int): BuildingStatusInfo py
+
+  /**
+   * Resolve free text into concrete class sections — the step that turns "CS 225's Friday lecture"
+   * into {@link Section} records the simulation tools can act on.
+   *
+   * The query is matched against the fields the loaded schedule actually has: course subject and
+   * number, section designator, CRN, section type, building and room. Note that the dataset carries
+   * no instructor names, so an instructor query will legitimately find nothing — the agent reports
+   * that rather than guessing at a plausible section.
+   *
+   * @param query free text from the user, e.g. {@code "CS 225 lecture"}, {@code "Altgeld Hall"},
+   *        {@code "31415"}
+   * @param day optional weekday letter to restrict matches to sections meeting that day
+   * @param limit maximum matches to return
+   * @return matching sections, best match first; empty when nothing matches
+   */
+  findSections: function(query: string, day: string, limit: int): [SectionMatch] py
+
+  /**
+   * Simulate cancelling class sections and report what it would free up — <b>without changing the
+   * saved plan</b>.
+   *
+   * The named sections are removed from a scenario copy of the occupancy grid, the affected
+   * buildings are recomputed, and the optimizer is re-run only for the building-hours that actually
+   * changed. The result names which buildings lose their last class, which can therefore power down
+   * earlier, which extra room swaps become possible, and the kWh, dollars and CO2 involved.
+   *
+   * No {@link BuildingHour} row is written and no {@link MoveRecommendation} status is touched; the
+   * user must click "Apply to plan" for any of it to take effect. See {@link CancelImpact}.
+   *
+   * @param sectionIds the {@link Section#id} values to treat as cancelled
+   * @param scope {@code "one day"} for a single meeting — energy reported as that day's amount — or
+   *        {@code "rest of term"} to annualise it. Drives {@link CancelImpact#annualized}.
+   * @param day optional weekday the cancellation applies to; defaults to the first day each section
+   *        meets
+   * @return the simulated impact, or a result with an empty section list when no id resolves
+   */
+  cancelSections: function(sectionIds: [string], scope: string, day: string): CancelImpact py
+
+  /**
+   * Commit a simulated cancellation — the one thing in the agent that deliberately does write.
+   *
+   * This is what the "Apply to plan" button on a cancellation answer calls. Each named
+   * {@link Section} has its {@link Section#cancelled} flag set, and then
+   * {@link OptimizationRun#runOptimization} re-runs over the remaining schedule, which rewrites
+   * both {@link BuildingHour#sectionsCurrent} and {@link BuildingHour#sectionsOptimized} and
+   * replaces the {@link MoveRecommendation} set. The whole app therefore moves together: campus
+   * map, KPI row, Room Swaps and the setback schedule all reflect the cancellation afterwards.
+   *
+   * Only whole-term cancellations can be applied. A single missed meeting has no representation in
+   * a weekly schedule, so the agent offers this button only on a {@code "rest of term"} answer and
+   * leaves the one-day figure as a simulation.
+   *
+   * The flag is reversible, so this is undoable: clearing {@link Section#cancelled} and re-running
+   * restores the original plan exactly.
+   *
+   * @param sectionIds the {@link Section#id} values to cancel; unknown ids are ignored
+   * @return the headline figures after the re-run, in the same shape the scenario chips animate
+   *         from. See {@link ScenarioResult}.
+   */
+  applyCancellation: function(sectionIds: [string]): ScenarioResult py
+
+  /**
+   * Simulate closing an entire building for the given weekdays and hours: where its classes would
+   * have to go, and what the closure is actually worth once the receiving buildings are accounted
+   * for.
+   *
+   * Each affected {@link Section} is test-fitted into a type-compatible room that is free at the
+   * same day and time in a building already running then. Classes with nowhere to go are counted
+   * honestly in {@link CloseImpact#sectionsUnplaceable} rather than silently dropped, and the
+   * reported saving is the <i>net</i> figure — gross freed hours minus hours the destination
+   * buildings must now stay on. Nothing is committed.
+   *
+   * @param building the {@link Building#id} to close; unknown names return null
+   * @param days weekday letters the closure covers; empty means all of {@code M T W R F}
+   * @param hourStart first hour block of the closure, inclusive ({@code 7..21})
+   * @param hourEnd one past the last hour block, exclusive
+   * @return the simulated impact, or null when the building is unknown
+   */
+  closeBuilding: function(building: string, days: [string], hourStart: int, hourEnd: int): CloseImpact py
+
+  /**
+   * Turn a description of a place into coordinates: an apartment brand name, a campus landmark, a
+   * building, or a street address.
+   *
+   * Resolution is local first and online only as a fallback. The {@link StudyLandmark} table and the
+   * {@link Building} coordinates both ship with the app, derived from the same OpenStreetMap
+   * footprints the 3D map renders, so the common student phrasings resolve with no network call —
+   * which is exactly why a live demo stays reliable. Unrecognised free text is passed to
+   * OpenStreetMap/Nominatim, and if that is unreachable the tool returns null and the agent asks for
+   * a landmark instead of pretending to know.
+   *
+   * @param text the user's description of the place
+   * @return the resolved point, including the {@link MapPin#usuallyPacked} crowding assumption when
+   *         the match is a known busy study spot; null when nothing could be resolved
+   */
+  locate: function(text: string): MapPin py
+
+  /**
+   * Estimate walking time in whole minutes between two points.
+   *
+   * Straight-line distance is scaled by 1.3 to approximate the street and path grid, then divided by
+   * a walking speed of 1.3 m/s. This is intentionally a transparent approximation rather than a
+   * routing-engine result: it needs no network, it is stable across runs, and it is honest about
+   * being an estimate.
+   *
+   * @param from origin point
+   * @param to destination point
+   * @return walking minutes, rounded, minimum 1; {@code -1} when either point is null
+   */
+  walkMinutes: function(from: MapPin, to: MapPin): int py
+
+  /**
+   * Build the campus-wide setback schedule: for every building, the merged runs of class-free hours
+   * remaining after <b>approved</b> room swaps, together with the hours per week and dollars per year
+   * each is worth.
+   *
+   * This is the data behind the Setback Schedule page and behind the agent's answer to "which
+   * building should we set back first?". Because only approved {@link MoveRecommendation}s are
+   * applied, the schedule never promises hours the user has not signed off on, and it changes the
+   * moment a swap is approved or rejected.
+   *
+   * @param day optional weekday letter to restrict the schedule to one day; null or empty for the
+   *        whole week
+   * @param limit maximum buildings to return, applied after sorting
+   * @return one entry per building with at least one setback window, highest
+   *         {@link BuildingSetback#dollarsPerYear} first
+   */
+  setbackSchedule: function(day: string, limit: int): [BuildingSetback] py
+
+  /**
+   * Assemble the full Room Detail view for one room: its type, today's meetings as a timeline, how
+   * long it stays free, and the walk from the student's location.
+   *
+   * @param roomId a {@link Room#id} — the {@code "Building Room"} composite; unknown ids return null
+   * @param day weekday letter ({@code M T W R F}) whose schedule to show
+   * @param hour hour block {@code 7..21} to evaluate "free now" and "free until" against
+   * @param near optional origin for the walking estimate; null leaves
+   *        {@link RoomDetailInfo#walkMinutes} as {@code -1}
+   * @return the room's detail, or null when the room is unknown
+   */
+  roomDetail: function(roomId: string, day: string, hour: int, near: MapPin): RoomDetailInfo py
+}

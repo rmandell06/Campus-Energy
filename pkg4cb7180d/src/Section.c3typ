@@ -55,6 +55,21 @@ entity type Section schema name 'SECTION' {
   movable: boolean
 
   /**
+   * True when this section has been taken out of the plan — the state behind the agent's
+   * "Apply to plan" button on a cancellation answer.
+   *
+   * Cancelling is modelled as a flag rather than a delete so that it is reversible and auditable:
+   * the section record, its room and its meeting pattern all survive, and clearing the flag restores
+   * it exactly. Everything that reads the schedule treats a cancelled section as absent —
+   * {@link AgentTools#freeRooms} will offer its room to students, {@link Building} occupancy drops,
+   * new {@link SetbackWindow}s open up, and {@link OptimizationRun#runOptimization} recomputes both
+   * {@link BuildingHour#sectionsCurrent} and {@link BuildingHour#sectionsOptimized} without it.
+   *
+   * Null and false are equivalent; the loaded term data has no cancellations.
+   */
+  cancelled: boolean
+
+  /**
    * The room this section currently meets in. Inverse of {@link Room#sections}.
    */
   room: Room

@@ -1,0 +1,26 @@
+/**
+ * The footprint-centroid coordinate of a {@link Building}, held as its own entity.
+ *
+ * Logically this is just two columns on {@link Building} ({@code lat}, {@code lon}), and that is
+ * where they are declared. In practice the running application cannot rely on those columns: they
+ * were added to {@link Building} after the type was first provisioned, and new scalar fields on an
+ * already-provisioned entity are not guaranteed to be migrated into the live schema. Reading
+ * {@code Building.lat} therefore throws on the deployed app even though every row in
+ * {@code data/Building} carries a value.
+ *
+ * A brand-new entity type does provision cleanly, so the coordinates are mirrored here and every
+ * geo-aware code path (the agent's locate / walk-time tools, map pins) reads them from
+ * {@code BuildingGeo} instead. One row per building that has a known location; buildings without a
+ * confident centroid simply have no row.
+ */
+entity type BuildingGeo schema name 'BUILDING_GEO' {
+
+  /** The {@link Building#id} this coordinate belongs to. The join key back to the building. */
+  building: !string
+
+  /** Latitude of the building's footprint centroid, in decimal degrees (WGS 84). */
+  lat: !double
+
+  /** Longitude of the building's footprint centroid, in decimal degrees (WGS 84). */
+  lon: !double
+}

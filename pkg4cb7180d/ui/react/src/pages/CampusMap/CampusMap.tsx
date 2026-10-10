@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import type { FeatureCollection } from 'geojson';
 import { PageHeader } from '@/components/ui/page-header';
-import { Spinner } from '@/components/ui/spinner';
+import { PageLoader } from '@/components/ui/page-loader';
 import CampusMapPanel from '@/components/CampusMap3D/CampusMapPanel';
 import { useCampusGeojson } from '@/hooks/useCampusGeojson';
 import { fetchAllBuildingHours } from '@/shared/energyApi';
@@ -62,9 +62,11 @@ export default function CampusMap() {
             {err}
           </div>
         ) : !ready || loading || geo.loading ? (
-          <div className="flex h-[60vh] items-center justify-center">
-            <Spinner />
-          </div>
+          <PageLoader
+            className="h-[60vh]"
+            message="Loading campus map…"
+            hint="Fetching building footprints and the week's schedule."
+          />
         ) : (
           <CampusMapPanel
             week={week as CampusWeek}

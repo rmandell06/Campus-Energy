@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Box, Grid3x3, Map as MapIcon } from 'lucide-react';
 import type { FeatureCollection } from 'geojson';
@@ -6,7 +6,7 @@ import { useIsMobile } from '@/hooks/useIsMobile';
 import { PageHeader } from '@/components/ui/page-header';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Spinner } from '@/components/ui/spinner';
+import { PageLoader } from '@/components/ui/page-loader';
 import Skyline3D, { type SkylineCell, type SkylineHoverInfo } from '@/components/Skyline3D/Skyline3D';
 import CampusMapPanel from '@/components/CampusMap3D/CampusMapPanel';
 import { useCampusGeojson } from '@/hooks/useCampusGeojson';
@@ -52,15 +52,22 @@ export default function Heatmap() {
   const [week, setWeek] = useState<CampusWeek | null>(null);
   const [weekLoading, setWeekLoading] = useState(false);
   const [weekError, setWeekError] = useState<string | null>(null);
+  // Mirror of `week` readable inside the effect without being a dependency.
+  // (Depending on `weekLoading` re-ran the effect the moment it flipped to true,
+  // whose cleanup cancelled the in-flight fetch → the spinner never resolved.)
+  const weekRef = useRef<CampusWeek | null>(null);
 
   useEffect(() => {
-    if (view !== 'map' || week || weekLoading) return;
+    if (view !== 'map' || weekRef.current) return;
     let cancelled = false;
     setWeekLoading(true);
     setWeekError(null);
     fetchAllBuildingHours()
       .then((recs) => {
-        if (!cancelled) setWeek(buildWeek(recs));
+        if (cancelled) return;
+        const w = buildWeek(recs);
+        weekRef.current = w;
+        setWeek(w);
       })
       .catch((e) => {
         if (!cancelled) setWeekError(e instanceof Error ? e.message : 'Failed to load campus map.');
@@ -71,7 +78,7 @@ export default function Heatmap() {
     return () => {
       cancelled = true;
     };
-  }, [view, week, weekLoading]);
+  }, [view]);
 
   useEffect(() => {
     let cancelled = false;
@@ -288,9 +295,11 @@ export default function Heatmap() {
               {weekError ?? geo.error}
             </div>
           ) : weekLoading || geo.loading || !week || !geo.data ? (
-            <div className="flex h-[clamp(420px,62vh,760px)] items-center justify-center">
-              <Spinner />
-            </div>
+            <PageLoader
+              className="h-[clamp(420px,62vh,760px)]"
+              message="Loading campus map…"
+              hint="Fetching building footprints and the week's schedule."
+            />
           ) : (
             <CampusMapPanel
               week={week}
@@ -302,9 +311,11 @@ export default function Heatmap() {
             />
           )
         ) : loading ? (
-          <div className="flex h-64 items-center justify-center">
-            <Spinner />
-          </div>
+          <PageLoader
+            className="h-[clamp(420px,62vh,760px)]"
+            message="Loading occupancy heatmap…"
+            hint="Fetching this day's section counts for every building-hour."
+          />
         ) : view === '3d' ? (
           <Card variant="elevated">
             <CardContent className="relative p-0">

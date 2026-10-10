@@ -11,7 +11,8 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { SideNavPanelV2, SideNavPanelV2Item } from '@/components/ui/side-nav-panel-v2';
-import { navigationConfig } from '@/config/navigation';
+import { navForRole } from '@/config/navigation';
+import { useRole, roleForPath } from '@/contexts/RoleProvider';
 import { NavigationItem } from '@/types/navigation';
 
 // Key under which the sidebar expanded/collapsed state is persisted so it
@@ -42,7 +43,13 @@ const readStoredExpanded = (): boolean => {
 export default function SideNav() {
   const navigate = useNavigate();
   const location = useLocation();
+  const { activeRole } = useRole();
   const [expanded, setExpanded] = useState<boolean>(readStoredExpanded);
+
+  // The route wins: a visitor deep-linked into /facilities sees facilities pages
+  // even if "student" is remembered. Falls back to the remembered role on routes
+  // that belong to neither side (the landing page, About the data).
+  const navItems = navForRole(roleForPath(location.pathname) ?? activeRole);
 
   // Persist the expanded/collapsed choice so a refresh restores it.
   useEffect(() => {
@@ -63,7 +70,7 @@ export default function SideNav() {
   // The panel's controlled `value` is the path of the active nav item. Fall back
   // to '' (not undefined) when no route matches, so the panel stays a controlled
   // component — passing undefined would flip it controlled→uncontrolled and warn.
-  const activeItem = navigationConfig.find(isActiveRoute);
+  const activeItem = navItems.find(isActiveRoute);
   const activeValue = activeItem?.path ?? '';
 
   return (
@@ -74,7 +81,7 @@ export default function SideNav() {
       onValueChange={(path) => navigate(path)}
       className="shrink-0 border-r border-[var(--c3-style-basic-border-border)] bg-[var(--c3-style-basic-bg-primary)]"
     >
-      {navigationConfig.map((item) => (
+      {navItems.map((item) => (
         <SideNavPanelV2Item
           key={item.id}
           value={item.path}

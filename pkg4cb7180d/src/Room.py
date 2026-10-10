@@ -3,6 +3,14 @@ HOUR_START = 7
 HOUR_END = 22  # exclusive; blocks are 7..21
 
 
+def _is_cancelled(s):
+    """Section#cancelled, tolerant of the field not being provisioned yet (treated as not cancelled)."""
+    try:
+        return bool(s.cancelled)
+    except Exception:
+        return False
+
+
 def _overlaps(sched, h):
     """True when any (startMin, endMin) in sched overlaps the hour block [h:00, h+1:00)."""
     lo = h * 60
@@ -56,10 +64,12 @@ def findStudySpots(cls, day, hour, scenario):
 
     # ---- 4. Current room schedules for the selected weekday ----
     sections = c3.Section.fetch(spec={
-        "include": "id,days,startMin,endMin,room.id", "limit": -1}).objs
+        "include": "id,days,startMin,endMin,cancelled,room.id", "limit": -1}).objs
     sec_info = {}        # section_id -> (startMin, endMin, days, room_id)
     room_sched = {}      # room_id -> [(startMin, endMin), ...] meeting on `day`
     for s in sections:
+        if _is_cancelled(s):
+            continue     # out of the plan: its room counts as free
         room_id = s.room.id if s.room is not None else None
         sec_info[s.id] = (s.startMin, s.endMin, s.days or "", room_id)
         if room_id is not None and day in (s.days or ""):
