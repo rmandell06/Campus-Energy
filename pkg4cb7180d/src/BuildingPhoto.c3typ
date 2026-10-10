@@ -1,0 +1,88 @@
+/**
+ * A real photograph that can be shown for a building — or, where the data supports it, for one
+ * specific classroom inside it.
+ *
+ * Room and building cards throughout the app show a picture, and they resolve it in a strict order
+ * of preference:
+ * <ol>
+ *   <li>a genuine photo of <i>that classroom</i>, used only when both building and room match
+ *       exactly ({@link #kind} is {@code "room"});</li>
+ *   <li>a genuine photo of the <i>building exterior</i>, clearly labelled as such
+ *       ({@link #kind} is {@code "building"});</li>
+ *   <li>failing both, an illustrated placeholder drawn in the frontend from the room type and
+ *       building name — no record of this type is involved.</li>
+ * </ol>
+ *
+ * The governing rule is that <b>a photo is never labelled as a room it is not</b>. A building
+ * exterior is always captioned "Building photo"; it is never passed off as the interior of room 329.
+ * That is why {@link #kind} is a required field rather than an inference.
+ *
+ * Rows are resolved once at build time from the Wikimedia Commons API and stored as reference data,
+ * so the running app makes no third-party API call to find a picture — it only loads the image URL.
+ * A candidate is accepted only when every distinctive word of the building's name appears in the
+ * file title, which is what keeps a "Daniels Hall" photograph from ever being shown for Davenport
+ * Hall. Buildings with no confident match simply have no row and fall through to the placeholder.
+ *
+ * Attribution is not optional: {@link #credit}, {@link #license} and {@link #sourceUrl} are rendered
+ * in small text wherever the image appears.
+ */
+entity type BuildingPhoto schema name 'BUILDING_PHOTO' {
+
+  /**
+   * Name of the {@link Building} this photo depicts (a {@link Building#id}). The lookup key for
+   * tier-2 resolution.
+   */
+  building: !string
+
+  /**
+   * What the image actually shows — {@code "building"} for an exterior, {@code "room"} for a
+   * specific classroom interior. The UI caption is driven entirely by this field, so an exterior can
+   * never be presented as a room. When {@link #kind} is {@code "room"}, {@link #roomId} identifies
+   * which one.
+   */
+  kind: !string
+
+  /**
+   * The {@link Room#id} ({@code "Building Room"} composite) this photo depicts, set only when
+   * {@link #kind} is {@code "room"}. Null for building exteriors.
+   */
+  roomId: string
+
+  /**
+   * Direct URL of the image to display — a width-constrained thumbnail rather than the full-size
+   * original, so cards stay light. Query strings are stripped at generation time. Images are
+   * lazy-loaded and browser-cached by the frontend.
+   */
+  imageUrl: !string
+
+  /**
+   * The source file's title (e.g. {@code "Altgeld Hall (Urbana, Illinois).jpg"}). Doubles as the
+   * image's alt text and as the human-checkable evidence that the name-matching rule described above
+   * was satisfied.
+   */
+  title: string
+
+  /**
+   * The photographer or uploader to credit, as published by the source. Falls back to a generic
+   * contributor credit when the source provides no artist. Always displayed.
+   */
+  credit: string
+
+  /**
+   * Short licence name for the image (e.g. {@code "CC BY-SA 4.0"}). Displayed alongside
+   * {@link #credit}; required for lawful reuse of Commons media.
+   */
+  license: string
+
+  /**
+   * Canonical page for the image on the source site, linked from the attribution line so a viewer
+   * can verify the licence and authorship themselves.
+   */
+  sourceUrl: string
+
+  /**
+   * Human-readable name of the source collection (e.g. {@code "Wikimedia Commons"}), shown in the
+   * attribution and noted on the About the data page.
+   */
+  sourceName: string
+}

@@ -1,0 +1,106 @@
+/**
+ * One structured result card rendered beneath a Block I/O agent answer.
+ *
+ * The agent panel deliberately is <i>not</i> a chat transcript: {@link AgentReply#answer} carries at
+ * most two or three sentences of prose, and everything quantitative lands here as a card the user
+ * can click. Every numeric string on a card originates from an {@link AgentTools} call — the agent
+ * formats tool output, it never invents a building, room, section, time or dollar figure.
+ *
+ * {@link #kind} tells the frontend which card component to render and which optional fields are
+ * populated. This is a plain, non-persisted value type.
+ */
+type AgentCard {
+
+  /**
+   * Which card renderer to use, and therefore which optional fields are filled in:
+   * <ul>
+   *   <li>{@code "room"} — a free classroom from {@link AgentTools#freeRooms}; uses {@link #roomId},
+   *       {@link #freeUntilLabel}, {@link #minutesFree}, {@link #walkMinutes}. Clicking it opens
+   *       Room Detail and flies the map there.</li>
+   *   <li>{@code "building"} — a building status or what-if impact; uses {@link #building}.</li>
+   *   <li>{@code "swap"} — a room swap ({@link MoveRecommendation}) that unlocks.</li>
+   *   <li>{@code "setback"} — a {@link SetbackWindow} / {@link BuildingSetback} roll-up.</li>
+   *   <li>{@code "scenario"} — a {@link ScenarioResult} summary.</li>
+   *   <li>{@code "note"} — a plain explanatory card, used for labelled assumptions and for
+   *       honest "nothing found" messages.</li>
+   * </ul>
+   */
+  kind: !string
+
+  /**
+   * The card's headline — for a room card the building plus room number (e.g.
+   * {@code "Gregory Hall 329"}), for a building card the {@link Building#id}.
+   */
+  title: !string
+
+  /**
+   * One short supporting line under {@link #title} (e.g. the room type, or the weekday and time the
+   * figures were computed for). Optional.
+   */
+  subtitle: string
+
+  /**
+   * Pre-formatted fact lines rendered as a small list. Already localised and rounded by the agent so
+   * the frontend never re-does arithmetic — which keeps the displayed numbers identical to the tool
+   * results they came from.
+   */
+  lines: [string]
+
+  /**
+   * The {@link Room#id} ({@code "Building Room"} composite) this card refers to, when
+   * {@link #kind} is {@code "room"}. Lets the frontend open {@link RoomDetailInfo} on click.
+   */
+  roomId: string
+
+  /**
+   * The {@link Building#id} this card refers to. Present on room, building, swap and setback cards;
+   * drives the accompanying {@code "flyTo"} {@link MapAction}.
+   */
+  building: string
+
+  /**
+   * Label for the card's single emphasised metric (e.g. {@code "Saves"}, {@code "Hours freed"}).
+   */
+  metricLabel: string
+
+  /**
+   * The emphasised metric, already formatted for display (e.g. {@code "$96K/yr"},
+   * {@code "9 hrs/week"}). A string rather than a number precisely so the agent controls rounding.
+   */
+  metricValue: string
+
+  /**
+   * Walking time in whole minutes from the student's pinned location, or {@code -1} when no location
+   * is known. Mirrors {@link FreeRoom#walkMinutes}.
+   */
+  walkMinutes: int
+
+  /**
+   * Human-readable free-until text copied from {@link FreeRoom#freeUntilLabel} (e.g.
+   * {@code "free until 2:50 PM"}). This is the exact next-class start time, not an hour boundary.
+   */
+  freeUntilLabel: string
+
+  /**
+   * Minutes the room stays class-free from the selected hour, from {@link FreeRoom#minutesFree}.
+   * Lets the UI confirm the card satisfies the requested study duration.
+   */
+  minutesFree: int
+
+  /**
+   * Latitude of the card's subject, for pin placement and walking lines.
+   */
+  lat: double
+
+  /**
+   * Longitude of the card's subject.
+   */
+  lon: double
+
+  /**
+   * True when this card states a labelled <i>assumption</i> rather than live data — specifically the
+   * "usually packed" crowding heuristic for popular study spots, which is editorial knowledge and
+   * not measured occupancy. The UI must badge these cards so the distinction is never implied away.
+   */
+  isAssumption: boolean
+}

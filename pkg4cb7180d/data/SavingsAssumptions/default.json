@@ -1,0 +1,16 @@
+[
+{
+"id": "default",
+"kwhPerFreedHourLow": 50,
+"kwhPerFreedHourMid": 100,
+"kwhPerFreedHourHigh": 150,
+"electricityPriceLow": 0.08,
+"electricityPriceMid": 0.1,
+"electricityPriceHigh": 0.12,
+"emissionFactorLow": 0.35,
+"emissionFactorMid": 0.4,
+"emissionFactorHigh": 0.45,
+"weeksPerSemester": 15,
+"semestersPerYear": 2
+}
+]

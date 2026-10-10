@@ -1,0 +1,91 @@
+/* Scoped animations for the Data Source refresh pipeline. Kept out of the
+   frozen campus-theme.css. Palette stays within the two sanctioned data colours
+   (energy-on orange on the raw side, powered-down ice blue on the saved end);
+   all chrome is grayscale. */
+
+/* A packet of "data" sliding along a connector from the raw side to the next
+   stage. The gradient runs orange→ice-blue to echo the pipeline direction. */
+@keyframes ds-flow {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+.ds-connector {
+  position: relative;
+  overflow: hidden;
+}
+
+.ds-connector::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--energy-on) 40%,
+    var(--powered-down) 60%,
+    transparent 100%
+  );
+  opacity: 0;
+  animation: ds-flow 2.1s linear infinite;
+}
+
+/* Vertical variant for the stacked mobile layout. */
+@keyframes ds-flow-y {
+  0% {
+    transform: translateY(-120%);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(120%);
+    opacity: 0;
+  }
+}
+
+.ds-connector-y::after {
+  animation-name: ds-flow-y;
+}
+
+/* Staged reveal: each stage glides up + fades in when it becomes visible. */
+.ds-stage {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ds-stage[data-shown='true'] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-connector::after {
+    animation: none;
+    opacity: 0.5;
+  }
+  .ds-stage {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

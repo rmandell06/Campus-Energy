@@ -1,0 +1,10 @@
+{
+  "author": "{{author}}",
+  "name": "pkg4cb7180d",
+  "description": "{{description}}",
+  "dependencies": {
+    "mcpServer": "8.10",
+    "testtools": "*"
+  },
+  "version": "1.0.0"
+}

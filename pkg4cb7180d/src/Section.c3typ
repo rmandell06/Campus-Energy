@@ -1,0 +1,76 @@
+/**
+ * One class-section meeting pattern from the real UIUC Course Explorer Fall 2026 schedule —
+ * a fixed set of weekdays, a start/end time, and a {@link #room}. The optimizer never changes a
+ * section's days or times; it may only change the {@link #room} (and does so for all of the
+ * section's meeting days at once), and only when {@link #movable} is true.
+ *
+ * The {@link #id} is the dataset's {@code sid} (stable primary key).
+ */
+entity type Section schema name 'SECTION' {
+
+  /** UIUC course reference number (CRN) for this section. */
+  crn: string
+
+  /** Subject code, e.g. {@code "CS"}. */
+  subject: string
+
+  /** Catalog number, e.g. {@code "225"}. */
+  number: string
+
+  /** Section designator, e.g. {@code "AL1"}. */
+  section: string
+
+  /**
+   * UIUC section-type code: {@code LEC} lecture, {@code LCD} lecture-discussion, {@code DIS}
+   * discussion, {@code LAB} lab, {@code LBD} lab-discussion, {@code SEM} seminar, {@code Q} quiz,
+   * {@code CNF} conference, {@code ST} studio, {@code PR} practice, among others. A section may
+   * only move to a {@link Room} whose {@link Room#typesHosted} contains this code.
+   */
+  sectionType: string
+
+  /**
+   * Meeting days as letters drawn from {@code M T W R F} (where {@code R} = Thursday), e.g.
+   * {@code "MWF"}. The section meets at the same {@link #startMin}/{@link #endMin} on each listed
+   * day.
+   */
+  days: string
+
+  /** Start time as minutes after midnight (e.g. 540 for 9:00 AM). */
+  startMin: int
+
+  /** End time as minutes after midnight (e.g. 590 for 9:50 AM). */
+  endMin: int
+
+  /** Human-readable start time display string, e.g. {@code "09:00 AM"}. */
+  startTime: string
+
+  /** Human-readable end time display string, e.g. {@code "09:50 AM"}. */
+  endTime: string
+
+  /**
+   * True when this section is eligible to be relocated — lecture/discussion/seminar-style
+   * sections that are not labs and not in a specialty venue. Labs and specialty-venue sections
+   * are never moved by the optimizer.
+   */
+  movable: boolean
+
+  /**
+   * True when this section has been taken out of the plan — the state behind the agent's
+   * "Apply to plan" button on a cancellation answer.
+   *
+   * Cancelling is modelled as a flag rather than a delete so that it is reversible and auditable:
+   * the section record, its room and its meeting pattern all survive, and clearing the flag restores
+   * it exactly. Everything that reads the schedule treats a cancelled section as absent —
+   * {@link AgentTools#freeRooms} will offer its room to students, {@link Building} occupancy drops,
+   * new {@link SetbackWindow}s open up, and {@link OptimizationRun#runOptimization} recomputes both
+   * {@link BuildingHour#sectionsCurrent} and {@link BuildingHour#sectionsOptimized} without it.
+   *
+   * Null and false are equivalent; the loaded term data has no cancellations.
+   */
+  cancelled: boolean
+
+  /**
+   * The room this section currently meets in. Inverse of {@link Room#sections}.
+   */
+  room: Room
+}

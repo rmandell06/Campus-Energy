@@ -1,0 +1,30 @@
+/* Building row labels for the 3D skyline. Rendered as an HTML overlay (not a
+   deck.gl TextLayer) so they always sit on top of the bars and can be clamped
+   to pixel-accurate positions inside the canvas. Anchored by their right edge
+   (translate(-100%, -50%)) so text ends just left of the first bar column. */
+.sky-label-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.sky-row-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  line-height: 1;
+  color: var(--mono-ink-2);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85);
+  pointer-events: none;
+  transform: translate(-9999px, -9999px);
+  will-change: transform;
+}
+
+.sky-row-label[data-focus='true'] {
+  color: var(--powered-down);
+}

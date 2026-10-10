@@ -1,0 +1,62 @@
+/**
+ * One class meeting that occupies a room on a given weekday — the atom of the mini timeline shown
+ * on a Room Detail card and inside the Facilities building drawer.
+ *
+ * A {@link Section} carries a meeting <i>pattern</i> ({@link Section#days} plus
+ * {@link Section#startMin}/{@link Section#endMin}), so a single section produces one of these slots
+ * on each weekday it meets. Slots let the UI answer "what else happens in this room today?" without
+ * re-deriving the schedule in the browser.
+ *
+ * Weekday letters are {@code M T W R F} ({@code R} = Thursday); minute fields are minutes after
+ * local midnight. This is a plain, non-persisted value type.
+ */
+type RoomSectionSlot {
+
+  /**
+   * The {@link Section#id} this slot came from, so the UI can cross-reference it with a
+   * {@link MoveRecommendation} or a simulated cancellation.
+   */
+  sectionId: string
+
+  /**
+   * The course this meeting belongs to, as {@link Section#subject} plus {@link Section#number}
+   * (e.g. {@code "CS 225"}).
+   */
+  courseLabel: string
+
+  /**
+   * The section designator within the course (e.g. {@code "A"}, {@code "AL1"}), from
+   * {@link Section#section}.
+   */
+  sectionLabel: string
+
+  /**
+   * The section-type code from {@link Section#sectionType} (e.g. {@code "LEC"}, {@code "LAB"},
+   * {@code "DIS"}). Drives the plain-English room type shown on {@link FreeRoom#roomType}.
+   */
+  typeCode: string
+
+  /**
+   * Meeting start, in minutes after midnight. Used to position the slot on the timeline.
+   */
+  startMin: int
+
+  /**
+   * Meeting end, in minutes after midnight. A class ending exactly on the hour does not occupy that
+   * final hour block.
+   */
+  endMin: int
+
+  /**
+   * The meeting window formatted for display (e.g. {@code "9:00 AM - 9:50 AM"}), so the frontend
+   * never has to re-format clock times and risk disagreeing with the backend.
+   */
+  timeLabel: string
+
+  /**
+   * True when an <b>accepted</b> {@link MoveRecommendation} relocates this class out of the room, so
+   * the slot exists under today's schedule but not "With Block I/O". The timeline renders these
+   * struck through, which is how a user sees exactly which meeting frees a building-hour.
+   */
+  movedAway: boolean
+}

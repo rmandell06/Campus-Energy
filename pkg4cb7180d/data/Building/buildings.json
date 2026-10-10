@@ -1,0 +1,532 @@
+[
+ {
+  "id": "1010 W Nevada",
+  "sectionsPerWeek": 52,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "1203 1/2 W Nevada",
+  "sectionsPerWeek": 10,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "1205 W Nevada",
+  "sectionsPerWeek": 3,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "1205 W Oregon",
+  "sectionsPerWeek": 9,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "1207 W Oregon",
+  "sectionsPerWeek": 11,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "805 W Pennsylvania",
+  "sectionsPerWeek": 3,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "901 W Oregon",
+  "sectionsPerWeek": 12,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "907 1/2 W Nevada",
+  "sectionsPerWeek": 10,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "ACES Lib, Info & Alum Ctr",
+  "sectionsPerWeek": 7,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Activities & Recreation Center",
+  "sectionsPerWeek": 17,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Agricultural Bioprocess Lab",
+  "sectionsPerWeek": 1,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Agricultural Engr Sciences Bld",
+  "sectionsPerWeek": 53,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Allen Residence Hall",
+  "sectionsPerWeek": 12,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Animal Sciences Laboratory",
+  "sectionsPerWeek": 50,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Architecture Annex",
+  "sectionsPerWeek": 3,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Architecture Building",
+  "sectionsPerWeek": 63,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Armory",
+  "sectionsPerWeek": 191,
+  "isSpecialtyVenue": true
+ },
+ {
+  "id": "Art and Design Building",
+  "sectionsPerWeek": 72,
+  "isSpecialtyVenue": true
+ },
+ {
+  "id": "Art-East Annex, Studio 2",
+  "sectionsPerWeek": 3,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Astronomy Building",
+  "sectionsPerWeek": 7,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Beckman Institute",
+  "sectionsPerWeek": 5,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Bevier Hall",
+  "sectionsPerWeek": 114,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Burrill Hall",
+  "sectionsPerWeek": 188,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Business Instructional Fac",
+  "sectionsPerWeek": 257,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Campus Instructional Facility",
+  "sectionsPerWeek": 383,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Campus Recreation Center East",
+  "sectionsPerWeek": 9,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Ceramics Building",
+  "sectionsPerWeek": 20,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Ceramics Kiln House",
+  "sectionsPerWeek": 7,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Chemical and Life Sci Lab",
+  "sectionsPerWeek": 10,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Chemistry Annex",
+  "sectionsPerWeek": 185,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Child Development Laboratory",
+  "sectionsPerWeek": 5,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Christopher Hall",
+  "sectionsPerWeek": 17,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Civil & Envir Eng Bldg",
+  "sectionsPerWeek": 32,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Coordinated Science Lab",
+  "sectionsPerWeek": 1,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Dance Studio",
+  "sectionsPerWeek": 18,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Danville IL",
+  "sectionsPerWeek": 1,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Davenport Hall",
+  "sectionsPerWeek": 224,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "David Kinley Hall",
+  "sectionsPerWeek": 331,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Digital Computer Laboratory",
+  "sectionsPerWeek": 44,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Education Building",
+  "sectionsPerWeek": 209,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Electrical & Computer Eng Bldg",
+  "sectionsPerWeek": 257,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Engineering Hall",
+  "sectionsPerWeek": 46,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Engineering Sciences Building",
+  "sectionsPerWeek": 10,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "English Building",
+  "sectionsPerWeek": 269,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Everitt Laboratory",
+  "sectionsPerWeek": 95,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "FAR Meeting Space",
+  "sectionsPerWeek": 1,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Flagg Hall",
+  "sectionsPerWeek": 31,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Foellinger Auditorium",
+  "sectionsPerWeek": 10,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Freer Hall",
+  "sectionsPerWeek": 70,
+  "isSpecialtyVenue": true
+ },
+ {
+  "id": "Grainger Engineering Library",
+  "sectionsPerWeek": 1,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Gregory Hall",
+  "sectionsPerWeek": 307,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Harding Band Building",
+  "sectionsPerWeek": 19,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Henry Administration Bldg",
+  "sectionsPerWeek": 130,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Huff Hall",
+  "sectionsPerWeek": 66,
+  "isSpecialtyVenue": true
+ },
+ {
+  "id": "Illini Center",
+  "sectionsPerWeek": 6,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Illini Union",
+  "sectionsPerWeek": 6,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Illinois Street Residence Lng",
+  "sectionsPerWeek": 8,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Inst Gov & Public Affairs Bldg",
+  "sectionsPerWeek": 1,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Inst Labor &  Industrial Rel",
+  "sectionsPerWeek": 15,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Japan House",
+  "sectionsPerWeek": 1,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Krannert Art Museum",
+  "sectionsPerWeek": 4,
+  "isSpecialtyVenue": true
+ },
+ {
+  "id": "Krannert Center for Perf Arts",
+  "sectionsPerWeek": 105,
+  "isSpecialtyVenue": true
+ },
+ {
+  "id": "Library",
+  "sectionsPerWeek": 8,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Lincoln Hall",
+  "sectionsPerWeek": 239,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Literatures, Cultures, & Ling",
+  "sectionsPerWeek": 340,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Loomis Laboratory",
+  "sectionsPerWeek": 152,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Materials Science & Eng Bld",
+  "sectionsPerWeek": 52,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Meat Science Laboratory",
+  "sectionsPerWeek": 3,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Mechanical Engineering Lab",
+  "sectionsPerWeek": 10,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Micro & Nanotechnology Lab",
+  "sectionsPerWeek": 7,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Morrill Hall",
+  "sectionsPerWeek": 1,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Mumford Hall",
+  "sectionsPerWeek": 75,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Music Building",
+  "sectionsPerWeek": 110,
+  "isSpecialtyVenue": true
+ },
+ {
+  "id": "National Soybean Res Ctr",
+  "sectionsPerWeek": 11,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Natural History Building",
+  "sectionsPerWeek": 170,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Newmark Civil Engineering Bldg",
+  "sectionsPerWeek": 57,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Noble Hall",
+  "sectionsPerWeek": 2,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Noyes Laboratory",
+  "sectionsPerWeek": 366,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Nuclear Radiations Laboratory",
+  "sectionsPerWeek": 3,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Outdoor Space",
+  "sectionsPerWeek": 2,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Pennsylvania Lounge Bld - PAR",
+  "sectionsPerWeek": 3,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Plant Sciences Laboratory",
+  "sectionsPerWeek": 10,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Psychology Building",
+  "sectionsPerWeek": 168,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Richmond Studio",
+  "sectionsPerWeek": 9,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Roger Adams Laboratory",
+  "sectionsPerWeek": 15,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Sch of Info Sciences Bldg",
+  "sectionsPerWeek": 75,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Sidney Lu Mech Engr Bldg",
+  "sectionsPerWeek": 196,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Siebel Center for Comp Sci",
+  "sectionsPerWeek": 119,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Siebel Center for Design",
+  "sectionsPerWeek": 7,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Smith Memorial Hall",
+  "sectionsPerWeek": 57,
+  "isSpecialtyVenue": true
+ },
+ {
+  "id": "South Farms",
+  "sectionsPerWeek": 3,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Speech & Hearing Science Bldg",
+  "sectionsPerWeek": 22,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Spurlock Museum",
+  "sectionsPerWeek": 4,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Stock Pavilion",
+  "sectionsPerWeek": 14,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Storefront Studio",
+  "sectionsPerWeek": 6,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Student Dining & Res Program",
+  "sectionsPerWeek": 3,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Talbot Laboratory",
+  "sectionsPerWeek": 78,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Temple Hoyne Buell Hall",
+  "sectionsPerWeek": 60,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Transportation Building",
+  "sectionsPerWeek": 103,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Turner Hall",
+  "sectionsPerWeek": 67,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Vet Med Basic Sciences Bldg",
+  "sectionsPerWeek": 10,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Veterinary Teaching Hospital",
+  "sectionsPerWeek": 7,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Washington DC",
+  "sectionsPerWeek": 2,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Weston Hall",
+  "sectionsPerWeek": 10,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Wohlers Hall",
+  "sectionsPerWeek": 167,
+  "isSpecialtyVenue": false
+ },
+ {
+  "id": "Wymer Hall",
+  "sectionsPerWeek": 80,
+  "isSpecialtyVenue": false
+ }
+]

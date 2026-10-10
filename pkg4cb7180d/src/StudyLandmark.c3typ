@@ -1,0 +1,97 @@
+/**
+ * A named place a student is likely to mention when saying where they are or where they want to
+ * study — a Green Street apartment building, a library, the Union, a quad, a rec centre.
+ *
+ * This table exists so the agent can answer location questions <b>without a network call</b>. Every
+ * coordinate here was derived at build time from the same OpenStreetMap footprints the 3D campus map
+ * renders, which means the headline demo query ("I live at HERE Champaign…") resolves instantly and
+ * identically whether or not the online geocoder is reachable. {@link AgentTools#locate} consults
+ * this table first and only falls through to OpenStreetMap/Nominatim for text it does not recognise.
+ *
+ * The second job of this type is to carry the <i>crowding</i> heuristic. {@link #usuallyPacked}
+ * flags the popular study spots near Green Street and the engineering quad that are reliably full at
+ * peak hours, so the agent can steer students to empty classrooms nearby instead of sending them
+ * somewhere they will not find a seat. That flag is an editorial assumption, not measured occupancy,
+ * and the UI labels it as such — see {@link #usuallyPacked}.
+ *
+ * The {@link #id} is the landmark's display name (e.g. {@code "Grainger Engineering Library"}).
+ */
+entity type StudyLandmark schema name 'STUDY_LANDMARK' {
+
+  /**
+   * Latitude of the place in decimal degrees (WGS 84), from the area-weighted centroid of its
+   * OpenStreetMap footprint. Feeds {@link GeoPoint#lat} and the {@code "dropPin"}
+   * {@link MapAction}.
+   */
+  lat: !double
+
+  /**
+   * Longitude of the place in decimal degrees (WGS 84). Feeds {@link GeoPoint#lon}.
+   */
+  lon: !double
+
+  /**
+   * What kind of place this is, which determines how the agent uses it:
+   * <ul>
+   *   <li>{@code "apartment"} — student housing; a plausible answer to "where are you?" and
+   *       therefore a walking-distance origin.</li>
+   *   <li>{@code "library"}, {@code "union"}, {@code "rec"} — destinations students ask for by
+   *       name, and the places most likely to be {@link #usuallyPacked}.</li>
+   *   <li>{@code "academic"} — a teaching building students use as a landmark ("near Siebel").</li>
+   *   <li>{@code "quad"} — an open-space anchor ("near the quad") resolved to its adjacent
+   *       building's centroid.</li>
+   * </ul>
+   */
+  category: string
+
+  /**
+   * True when this place is treated as <b>usually packed at peak hours</b> — Grainger Engineering
+   * Library, the Main and Undergraduate libraries, the Illini Union, and the ECEB and Siebel common
+   * areas.
+   *
+   * This is an <b>assumption, not live occupancy data</b>: the app has no seat sensors, and the
+   * About the data page says so explicitly. Its only effect is editorial — when a student asks for
+   * somewhere to study, the agent skips these in favour of genuinely empty classrooms nearby and
+   * gives the one-line reason ("Grainger is usually packed now; these are empty classrooms in
+   * buildings that are already on"). Surfaced to the UI via {@link GeoPoint#usuallyPacked} and
+   * badged on any {@link AgentCard} whose {@link AgentCard#isAssumption} is true.
+   */
+  usuallyPacked: boolean
+
+  /**
+   * One line of human context — a street cross-reference for an apartment, the reason a spot is
+   * considered packed, or a disambiguation note (for instance that the undergraduate collection now
+   * sits inside the Main Library complex, so the two share floors). Copied onto
+   * {@link GeoPoint#note} when a query resolves here.
+   */
+  note: string
+
+  /**
+   * Alternative lower-case spellings students actually type, including bare brand names and common
+   * abbreviations (e.g. {@code ["grainger", "grainger library", "engineering library"]}).
+   * {@link AgentTools#locate} matches the query against these as well as against {@link #id}, which
+   * is what lets "here" or "the arc" resolve without an exact name.
+   */
+  aliases: [string]
+
+  /**
+   * The OpenStreetMap feature name the coordinates were taken from. Kept purely as provenance so a
+   * future data refresh can verify or re-derive {@link #lat} and {@link #lon} against the map data
+   * rather than trusting a stale copy.
+   */
+  osmName: string
+
+  /**
+   * The {@link Building#id} this landmark <i>is</i>, when the place also appears in the class
+   * schedule — for instance {@code "Grainger Engineering Library"}, {@code "Illini Union"} and
+   * {@code "Siebel Center for Comp Sci"} are all teaching buildings as well as landmarks. Null for
+   * places that only exist as landmarks (an apartment block, a quad).
+   *
+   * This link is stored rather than inferred because name similarity is not safe here: the Illini
+   * <i>Union</i> and Illini <i>Hall</i> share a lead word but are different places, and
+   * {@code "Siebel Center for Comp Sci"} is not a string match for its own full name. An explicit id
+   * is what lets {@link BlockIoAgent#ask} drop a {@link #usuallyPacked} venue out of its room
+   * recommendations with certainty, instead of guessing and risking excluding the wrong building.
+   */
+  buildingId: string
+}

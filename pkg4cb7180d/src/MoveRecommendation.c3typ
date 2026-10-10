@@ -1,0 +1,52 @@
+/**
+ * A recommendation to relocate one {@link Section} from its current room ({@link #fromRoom}) to a
+ * free room ({@link #toRoom}) in a busier building, produced by the optimizer. Accepting or
+ * rejecting a recommendation drives the KPIs on the Overview and Moves screens: KPIs recompute
+ * from the set of {@link #status accepted} moves only.
+ *
+ * The move preserves the section's days and times exactly — only the room changes, for every one
+ * of the section's meeting days. Several display fields are denormalized onto this record so the
+ * moves table and exports render without extra joins.
+ */
+entity type MoveRecommendation schema name 'MOVE_RECOMMENDATION' {
+
+  /** The section being relocated. */
+  section: Section
+
+  /** The room the section currently meets in (the move's origin). */
+  fromRoom: Room
+
+  /** The free room the section is recommended to move into (the move's destination). */
+  toRoom: Room
+
+  /**
+   * The number of building-hours per week this single move frees — i.e. hour blocks in which the
+   * origin building goes from occupied to empty as a direct result of (this and prior) moves.
+   * Attributed greedily in optimizer order.
+   */
+  buildingHoursFreed: int
+
+  /**
+   * Lifecycle status: {@code "proposed"} (default, from the optimizer), {@code "accepted"}, or
+   * {@code "rejected"}. Only accepted moves contribute to the recomputed savings KPIs.
+   */
+  status: string
+
+  /** The run that produced this recommendation. Inverse of {@link OptimizationRun#moves}. */
+  optimizationRun: OptimizationRun
+
+  /** Denormalized course label for display, e.g. {@code "CS 225"}. */
+  courseLabel: string
+
+  /** Denormalized section designator for display, e.g. {@code "AL1"}. */
+  sectionLabel: string
+
+  /** Denormalized UIUC type code for display/filtering, e.g. {@code "LEC"}. */
+  typeCode: string
+
+  /** Denormalized meeting days for display/filtering, e.g. {@code "MWF"}. */
+  days: string
+
+  /** Denormalized time-of-day label for display, e.g. {@code "09:00 AM - 09:50 AM"}. */
+  timeLabel: string
+}

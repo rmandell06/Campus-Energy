@@ -1,0 +1,97 @@
+/**
+ * A single declarative instruction the Block I/O agent returns so the shared 3D campus map
+ * (<code>components/CampusMap3D</code>) can act on an answer instead of merely describing it.
+ *
+ * The agent never touches the map directly. {@link BlockIoAgent#ask} resolves a question using the
+ * tools on {@link AgentTools}, then emits an ordered list of these actions on
+ * {@link AgentReply#actions}; the frontend map controller replays them in order. Keeping the
+ * instructions declarative means the same reply can be re-applied after a remount, logged for a
+ * demo, or ignored entirely on a surface that has no map.
+ *
+ * Only the fields relevant to {@link #kind} are populated — every other field is null. This is a
+ * plain, non-persisted value type. Weekday letters are {@code M T W R F} ({@code R} = Thursday);
+ * hour blocks are integers {@code 7..21}, each denoting {@code [hour:00, hour+1:00)}.
+ */
+type MapAction {
+
+  /**
+   * Which map operation to perform. One of:
+   * <ul>
+   *   <li>{@code "flyTo"} — ease the camera to {@link #building}.</li>
+   *   <li>{@code "highlight"} — emphasise {@link #buildings} in {@link #color}, dimming the rest.</li>
+   *   <li>{@code "setTime"} — move the day/hour scrubber to {@link #day} + {@link #hour}.</li>
+   *   <li>{@code "setScenario"} — switch the Today / With Block I/O toggle via {@link #scenario}.</li>
+   *   <li>{@code "dropPin"} — place a labelled marker at {@link #lat}/{@link #lon}.</li>
+   *   <li>{@code "drawWalk"} — draw the walking line from the dropped pin to {@link #toBuilding}.</li>
+   *   <li>{@code "clear"} — remove all agent-added pins, lines and highlights.</li>
+   * </ul>
+   */
+  kind: !string
+
+  /**
+   * Target building name (a {@link Building#id}) for {@code "flyTo"}. Must be a building that
+   * actually exists in the loaded data — the agent only ever echoes names returned by a tool.
+   */
+  building: string
+
+  /**
+   * The set of {@link Building#id} values to emphasise for {@code "highlight"}, in priority order
+   * (first is the primary result). Empty or null for every other {@link #kind}.
+   */
+  buildings: [string]
+
+  /**
+   * Weekday letter ({@code M T W R F}, {@code R} = Thursday) for {@code "setTime"}, so the map
+   * shows the same day the answer was computed for.
+   */
+  day: string
+
+  /**
+   * Hour block {@code 7..21} for {@code "setTime"}, denoting {@code [hour:00, hour+1:00)}.
+   */
+  hour: int
+
+  /**
+   * Latitude in decimal degrees for {@code "dropPin"} — typically the student's resolved location
+   * from {@link AgentTools#locate}.
+   */
+  lat: double
+
+  /**
+   * Longitude in decimal degrees for {@code "dropPin"}.
+   */
+  lon: double
+
+  /**
+   * Short marker caption for {@code "dropPin"} (e.g. {@code "HERE Champaign"}) or the walking-time
+   * caption for {@code "drawWalk"} (e.g. {@code "7 min walk"}).
+   */
+  label: string
+
+  /**
+   * Scenario to activate for {@code "setScenario"}: {@code "today"} (baseline schedule),
+   * {@code "withBlockIo"} (after approved swaps), or one of the optimizer preset keys understood by
+   * {@link OptimizationRun#runScenario} (see {@link ScenarioResult#name}).
+   */
+  scenario: string
+
+  /**
+   * Which palette entry {@code "highlight"} and {@code "dropPin"} should use. One of
+   * {@code "energy"} (Illini orange — building running), {@code "poweredDown"} (ice blue — freed /
+   * set back), or {@code "pin"} (neutral marker for the student's own location). The frontend maps
+   * these to the two sanctioned data colours; the agent never sends raw hex.
+   */
+  color: string
+
+  /**
+   * Destination {@link Building#id} for the {@code "drawWalk"} line — the room's building, so the
+   * student can see the route from their pin.
+   */
+  toBuilding: string
+
+  /**
+   * Estimated walking time in whole minutes for the {@code "drawWalk"} label, as computed by
+   * {@link AgentTools#walkMinutes}.
+   */
+  walkMinutes: int
+}

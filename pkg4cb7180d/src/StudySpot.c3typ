@@ -1,0 +1,62 @@
+/**
+ * One recommended, energy-neutral study location produced by {@link Room#findStudySpots}.
+ *
+ * A study spot is an <i>empty</i> classroom — no class section meets in it during the selected
+ * weekday + hour block — that sits inside a building which is <b>already occupied</b> (and
+ * therefore already lit and climate-conditioned) during that same block. Steering students into
+ * rooms that are already "energy-on" means the recommendation adds effectively zero marginal
+ * HVAC/lighting load, so it never undoes the consolidation savings the optimizer creates by
+ * leaving other buildings dark (see {@link BuildingHour} and {@link OptimizationRun}).
+ *
+ * This is a plain, non-persisted value type (it mixes nothing); instances are computed on demand
+ * and returned to the UI. Weekday letters are {@code M T W R F} ({@code R} = Thursday); hour
+ * blocks are integers {@code 7..21}, each denoting the interval {@code [hour:00, hour+1:00)}.
+ */
+type StudySpot {
+
+  /**
+   * The {@link Room#id} of the recommended room — the {@code "Building Room"} composite string
+   * (e.g. {@code "Bevier Hall 103"}). Stable key the UI can use to link to room/building detail.
+   */
+  roomId: string
+
+  /**
+   * The room designator within its building (e.g. {@code "103"}); mirrors {@link Room#roomName}.
+   */
+  roomName: string
+
+  /**
+   * The name of the {@link Building} containing this spot (e.g. {@code "Bevier Hall"}). This
+   * building is guaranteed to be occupied — hence already energy-on — during the selected block.
+   */
+  building: string
+
+  /**
+   * How many class sections are meeting in {@link #building} during the selected hour block. This
+   * is the occupancy that proves the building is already lit/conditioned, so it is always
+   * {@code >= 1}. A <i>lower</i> value means a quieter building — pleasant to study in and still
+   * energy-neutral — which is why results are ranked by this ascending.
+   */
+  buildingSections: int
+
+  /**
+   * The section-type codes the room is already set up to host (e.g. {@code ["LEC", "LCD"]}), taken
+   * from {@link Room#typesHosted}. Surfaced purely as a capability/size hint for the student; it
+   * does not affect eligibility as a study spot.
+   */
+  roomTypes: [string]
+
+  /**
+   * The number of consecutive class-free hour blocks the room offers starting at the selected
+   * hour, clamped to the {@code 7..21} window (minimum 1 — the selected block itself). Lets the
+   * UI show "good for a quick break" vs. "settle in for a while".
+   */
+  freeHours: int
+
+  /**
+   * Human-readable summary of how long the room stays free, derived from {@link #freeHours} — e.g.
+   * {@code "free until 2 PM"}, or {@code "free rest of day"} when it stays open through the end of
+   * the {@code 7..21} window.
+   */
+  freeUntilLabel: string
+}

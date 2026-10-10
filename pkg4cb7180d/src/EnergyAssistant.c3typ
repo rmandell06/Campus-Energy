@@ -1,0 +1,28 @@
+/**
+ * Grounded natural-language assistant for the Campus Energy Optimizer.
+ *
+ * {@link EnergyAssistant#ask} answers a free-text question about the UIUC Fall 2026
+ * schedule and the latest {@link OptimizationRun}. It first assembles a compact,
+ * factual grounding context straight from the loaded C3 data — headline KPIs from
+ * {@link OptimizationRun#overviewStats}, the per-weekday empty-building-hour counts,
+ * the editable {@link SavingsAssumptions}, and the buildings that give up the most
+ * sections — then asks the configured completion LLM to answer using only those
+ * facts. If no LLM is reachable, it falls back to a deterministic answer built from
+ * the same grounding facts, so the four reference questions always get a correct,
+ * data-backed response.
+ *
+ * This type holds no data of its own; it is a thin, stateless service entry point.
+ */
+entity type EnergyAssistant schema name 'ENERGY_ASSISTANT' {
+
+  /**
+   * Answer a question about the schedule and optimization, grounded in the loaded
+   * data and the current savings assumptions.
+   *
+   * @param question
+   *          The user's natural-language question.
+   * @return A plain-text answer. Every quantitative claim traces back to loaded
+   *         records and the {@link SavingsAssumptions} singleton.
+   */
+  ask: function(question: string): string py
+}

@@ -1,0 +1,31 @@
+/**
+ * The complete set of headline statistics the Overview page renders, derived from the latest
+ * {@link OptimizationRun} and its {@link OptimizationRun#moves accepted moves}. Returned by
+ * {@link OptimizationRun#overviewStats}.
+ */
+type OverviewStats {
+
+  /** Empty building-hours per week under the baseline (current) schedule. */
+  emptyBefore: int
+
+  /** Empty building-hours per week after applying the accepted moves. */
+  emptyAfter: int
+
+  /** Freed building-hours per week ({@link #emptyAfter} − {@link #emptyBefore}). */
+  freedHoursPerWeek: int
+
+  /** Total number of moves the optimizer proposed in the latest run. */
+  movesCount: int
+
+  /** Number of those moves currently in the {@code accepted} state. */
+  acceptedCount: int
+
+  /** Id of the latest {@link OptimizationRun}, or null if the optimizer has never run. */
+  runId: string
+
+  /** Per-weekday empty-building-hour comparison for the comparison chart. */
+  byWeekday: [WeekdayStat]
+
+  /** Annualized energy / cost / emissions savings for {@link #freedHoursPerWeek}. */
+  savings: SavingsResult
+}

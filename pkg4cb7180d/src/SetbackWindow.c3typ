@@ -1,0 +1,67 @@
+/**
+ * A merged run of consecutive class-free hours in one building on one weekday — a window during
+ * which building automation can safely put the classroom zones into setback.
+ *
+ * This is the actionable output of the whole app. The optimizer moves classes out of
+ * near-empty buildings; wherever that leaves an unbroken stretch of zero-class hours, this type
+ * names it as a sentence a facilities engineer can hand to a BAS scheduler:
+ * {@code "Fri 3pm-10pm: no classes, safe to set back"}.
+ *
+ * Windows are computed from the live {@link Section} schedule with <b>approved</b>
+ * {@link MoveRecommendation}s applied — rejected and still-proposed swaps are excluded, so the
+ * Setback Schedule page only ever promises hours the user has actually signed off on. Adjacent
+ * empty hours are merged into one window rather than listed individually.
+ *
+ * Weekday letters are {@code M T W R F} ({@code R} = Thursday); hour blocks are integers
+ * {@code 7..21}, each denoting {@code [hour:00, hour+1:00)}. Plain, non-persisted value type.
+ */
+type SetbackWindow {
+
+  /**
+   * Name of the {@link Building} this window applies to (a {@link Building#id}).
+   */
+  building: !string
+
+  /**
+   * Weekday letter ({@code M T W R F}, {@code R} = Thursday).
+   */
+  day: !string
+
+  /**
+   * The weekday spelled for display (e.g. {@code "Fri"}), so the UI and CSV export agree.
+   */
+  dayLabel: string
+
+  /**
+   * First class-free hour block in the run, inclusive, in {@code 7..21}.
+   */
+  startHour: !int
+
+  /**
+   * One past the last class-free hour block — <b>exclusive</b>, so a window covering the 15:00 and
+   * 16:00 blocks has {@code startHour = 15} and {@code endHour = 17} and reads "3pm-5pm".
+   */
+  endHour: !int
+
+  /**
+   * Length of the window in whole hours, equal to {@link #endHour} minus {@link #startHour}. Summed
+   * across a building's windows to give {@link BuildingSetback#hoursPerWeek}, which drives the
+   * savings model.
+   */
+  hours: int
+
+  /**
+   * The window as a complete sentence for display and export — e.g.
+   * {@code "Fri 3pm-10pm: no classes, safe to set back"}. Built on the backend from the fields above
+   * so the wording is identical everywhere it appears.
+   */
+  label: !string
+
+  /**
+   * True when this window exists <i>only</i> because approved swaps emptied the building — it is
+   * new savings Block I/O created, not a gap that was already in the timetable. Lets the UI
+   * distinguish "we found this" from "this was always free", and is what the agent highlights on the
+   * map after a cancellation or scenario change.
+   */
+  newlyFreed: boolean
+}

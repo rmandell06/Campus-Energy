@@ -1,0 +1,55 @@
+/**
+ * A resolved point on the map, returned by {@link AgentTools#locate}.
+ *
+ * This is the working replacement for the original {@code GeoPoint} value type. The live
+ * application's {@code GeoPoint} metadata is frozen at a stale one-field version ({@code lat} only):
+ * it was defined before the full coordinate shape existed and — like a new scalar field on an
+ * already-provisioned entity — never picked up the added fields, so {@code GeoPoint.make} throws on
+ * {@code lon}, {@code label}, {@code source} and the rest. A brand-new value type provisions
+ * cleanly, so every geo-aware agent path builds and reads this instead.
+ *
+ * Students describe where they are in wildly different ways — an apartment brand name
+ * ({@code "HERE Champaign"}), a campus landmark ({@code "the quad"}), a building, or the browser's
+ * geolocation. {@link AgentTools#locate} normalises all of them into this one shape so downstream
+ * tools ({@link AgentTools#freeRooms}, {@link AgentTools#walkMinutes}) and the {@code "dropPin"}
+ * {@link MapAction} have exact coordinates to work with.
+ *
+ * This is a plain, non-persisted value type.
+ */
+type MapPin {
+
+  /**
+   * Display name for the resolved place, used as the {@code "dropPin"} marker caption and echoed in
+   * the agent's answer so the user can confirm it understood them (e.g. {@code "HERE Champaign"}).
+   */
+  label: !string
+
+  /** Latitude in decimal degrees (WGS 84). */
+  lat: !double
+
+  /** Longitude in decimal degrees (WGS 84). */
+  lon: !double
+
+  /**
+   * How the point was resolved, which also indicates how much to trust it: {@code "landmark"}
+   * (matched a {@link StudyLandmark} offline), {@code "building"} (matched a {@link Building} via
+   * {@link BuildingGeo}), {@code "geocoder"} (resolved online via OpenStreetMap/Nominatim), or
+   * {@code "browser"} (the device's own geolocation API).
+   */
+  source: !string
+
+  /**
+   * True when this place is one of the popular study spots treated as <i>usually packed</i> at peak
+   * hours — Grainger Engineering Library, the Main and Undergraduate libraries, the Illini Union,
+   * and the ECEB / Siebel common areas. An <b>editorial assumption, not measured occupancy</b> (see
+   * {@link StudyLandmark#usuallyPacked}); when a student asks for a spot at one of these, the agent
+   * recommends nearby empty classrooms instead and says why in one line.
+   */
+  usuallyPacked: boolean
+
+  /**
+   * Optional one-line context about the place — why it is considered packed, or a disambiguation
+   * note. Copied from {@link StudyLandmark#note} when the match came from the landmark table.
+   */
+  note: string
+}

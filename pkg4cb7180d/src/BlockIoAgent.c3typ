@@ -1,0 +1,69 @@
+/**
+ * The built-in Block I/O agent — the component that turns a plain-English question into real tool
+ * calls, a short answer, clickable result cards and actions that drive the 3D campus map.
+ *
+ * It is not a chatbot page. The agent is docked beside the map on both role home pages, and the
+ * point of it is that it <i>acts</i>: a student asking for somewhere to study gets a pin dropped at
+ * their address, a walking line to the best room and three cards they can open; a facilities user
+ * asking about a cancelled lecture gets the map flown to the affected building with the newly freed
+ * hours highlighted.
+ *
+ * <h4>How an answer is produced</h4>
+ * {@link #ask} classifies the question into an intent, calls the matching tools on
+ * {@link AgentTools} (and {@link OptimizationRun#runScenario} for scenario questions), then formats
+ * what came back into an {@link AgentReply}. Intent resolution is deterministic rather than
+ * delegated to a language model, for three reasons that all matter for a live demo: the same question
+ * always produces the same answer, there is no network dependency or latency in the critical path,
+ * and the agent structurally cannot hallucinate — it has no channel through which to emit a number
+ * that did not come from a tool result.
+ *
+ * <h4>Two invariants</h4>
+ * <b>Every figure is traceable.</b> Buildings, room numbers, sections, times, hours, dollars and
+ * emissions are all copied from tool output. If a building is not in the data, or no room satisfies
+ * the constraints, the reply comes back with {@link AgentReply#notFound} set and says plainly what it
+ * could not find.
+ *
+ * <b>Asking never changes anything.</b> What-if questions run as simulations against a scenario
+ * copy — see {@link AgentTools#cancelSections}. The saved plan, the {@link MoveRecommendation} set,
+ * the KPIs and the setback schedule move only when the user clicks the button described by
+ * {@link AgentReply#applyLabel}.
+ *
+ * The agent is role-aware: {@link #ask} takes the caller's role so that student questions are
+ * answered in terms of rooms, walking distance and crowding, and facilities questions in terms of
+ * buildings, swaps, setback windows and money.
+ *
+ * This type holds no state of its own and is never instantiated.
+ */
+entity type BlockIoAgent {
+
+  /**
+   * Answer one question, running whatever tools the question requires.
+   *
+   * @param question the user's question in plain English, exactly as typed or as sent by a suggested
+   *        chip
+   * @param role {@code "student"} or {@code "facilities"} — selects the intent set and the framing of
+   *        the answer. An unrecognised value is treated as {@code "student"}.
+   * @param day optional weekday letter ({@code M T W R F}) giving the agent the map's current day, so
+   *        "right now" and "this hour" resolve to what the user is looking at. Defaults to the
+   *        current weekday, falling back to Monday outside the teaching week.
+   * @param hour optional hour block {@code 7..21} giving the map's current hour. Defaults to the
+   *        current hour, falling back to 10am outside class hours.
+   * @param near optional already-resolved student location, so a follow-up question does not have to
+   *        re-geocode the address the user gave earlier in the conversation
+   * @return the complete reply — answer, the tool steps that ran, result cards, map actions and
+   *         follow-up suggestions. See {@link AgentReply}.
+   */
+  ask: function(question: string, role: string, day: string, hour: int, near: MapPin): AgentReply py
+
+  /**
+   * The suggested question chips to show in the panel header for a given role.
+   *
+   * These are not decoration — each one is a question the agent is known to answer well, and they
+   * double as the app's documentation of its own capabilities. Returned from the backend rather than
+   * hard-coded in the UI so the chips and the intent router can never drift apart.
+   *
+   * @param role {@code "student"} or {@code "facilities"}
+   * @return chip labels in display order
+   */
+  suggestions: function(role: string): [string] py
+}

@@ -1,0 +1,100 @@
+/**
+ * The result of simulating the closure of an entire building for a set of weekdays and hours,
+ * returned by {@link AgentTools#closeBuilding}.
+ *
+ * Where {@link CancelImpact} answers "a class went away", this answers the more aggressive
+ * facilities question: <i>what if we just shut this building on Fridays?</i> The tool takes every
+ * {@link Section} meeting there inside the given window, tries to rehouse each one in a
+ * type-compatible room in a building that is already running at that exact day and hour, and reports
+ * the <b>net</b> effect — because classes pushed into other buildings can keep those buildings on
+ * longer, which eats into the saving.
+ *
+ * The honest parts matter most here: {@link #sectionsUnplaceable} counts classes that simply have
+ * nowhere to go, and {@link #netHoursFreed} can be much smaller than {@link #hoursFreed}. As with
+ * every simulation, the saved plan is untouched until the user applies it.
+ *
+ * Weekday letters are {@code M T W R F} ({@code R} = Thursday); hour blocks are integers
+ * {@code 7..21}, each denoting {@code [hour:00, hour+1:00)}. Plain, non-persisted value type.
+ */
+type CloseImpact {
+
+  /**
+   * Name of the {@link Building} being closed (a {@link Building#id}).
+   */
+  building: !string
+
+  /**
+   * The weekdays the closure covers, as single letters ({@code M T W R F}).
+   */
+  days: [string]
+
+  /**
+   * First hour block of the closure, inclusive, in {@code 7..21}.
+   */
+  hourStart: int
+
+  /**
+   * One past the last hour block of the closure — exclusive, matching
+   * {@link SetbackWindow#endHour}.
+   */
+  hourEnd: int
+
+  /**
+   * How many class-section meetings fall inside the closure window and therefore need rehousing.
+   */
+  sectionsAffected: int
+
+  /**
+   * How many of those were successfully placed in a type-compatible, time-free room in another
+   * building that is already running at that hour.
+   */
+  sectionsRelocated: int
+
+  /**
+   * How many could not be placed anywhere — no compatible room is free at that exact day and time.
+   * A non-zero value is the headline caveat: the closure is not actually feasible as stated, and the
+   * agent says so rather than quietly dropping the classes.
+   */
+  sectionsUnplaceable: int
+
+  /**
+   * Names of the {@link Building}s that would absorb the relocated classes, busiest first. These are
+   * the buildings that take on extra load, so they are where a facilities team would look for
+   * knock-on effects.
+   */
+  destinations: [string]
+
+  /**
+   * Building-hours per week freed in the closed building itself — the gross saving, before
+   * accounting for the destinations.
+   */
+  hoursFreed: int
+
+  /**
+   * {@link #hoursFreed} minus any building-hours that destination buildings newly have to stay on
+   * for in order to host the relocated classes. This is the figure that actually matters, and it can
+   * be substantially lower than the gross — occasionally even negative, if the closure wakes
+   * buildings that would otherwise have been dark.
+   */
+  netHoursFreed: int
+
+  /**
+   * Annual dollar savings implied by {@link #netHoursFreed}, priced through
+   * {@link SavingsAssumptions#compute}. Derived from the net figure, never the gross.
+   */
+  dollars: double
+
+  /**
+   * Annual avoided emissions in metric tons of CO2, likewise derived from
+   * {@link #netHoursFreed}.
+   */
+  co2Tons: double
+
+  /**
+   * The whole result as one plain-English summary, e.g.
+   * {@code "Closing Altgeld Hall on Fridays moves 11 classes into Gregory Hall and Lincoln Hall, netting 7 freed hours a week (about $2.1K/yr). 2 classes have nowhere to go."}
+   * Assembled on the backend so the prose always matches the numbers — including the caveat when
+   * {@link #sectionsUnplaceable} is non-zero.
+   */
+  summary: !string
+}

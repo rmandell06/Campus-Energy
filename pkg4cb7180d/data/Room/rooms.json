@@ -1,0 +1,9668 @@
+[
+{
+"id": "1010 W Nevada 2018",
+"roomName": "2018",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 7,
+"building": {
+"id": "1010 W Nevada"
+}
+},
+{
+"id": "1010 W Nevada 2019",
+"roomName": "2019",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 6,
+"building": {
+"id": "1010 W Nevada"
+}
+},
+{
+"id": "1010 W Nevada 2023",
+"roomName": "2023",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 10,
+"building": {
+"id": "1010 W Nevada"
+}
+},
+{
+"id": "1010 W Nevada 2027",
+"roomName": "2027",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 12,
+"building": {
+"id": "1010 W Nevada"
+}
+},
+{
+"id": "1010 W Nevada 2030",
+"roomName": "2030",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 8,
+"building": {
+"id": "1010 W Nevada"
+}
+},
+{
+"id": "1010 W Nevada 2101",
+"roomName": "2101",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 9,
+"building": {
+"id": "1010 W Nevada"
+}
+},
+{
+"id": "1203 1/2 W Nevada 122",
+"roomName": "122",
+"typesHosted": [
+"LAB",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 10,
+"building": {
+"id": "1203 1/2 W Nevada"
+}
+},
+{
+"id": "1205 W Nevada 102",
+"roomName": "102",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 3,
+"building": {
+"id": "1205 W Nevada"
+}
+},
+{
+"id": "1205 W Oregon 212",
+"roomName": "212",
+"typesHosted": [
+"CNF",
+"LCD"
+],
+"sectionCount": 9,
+"building": {
+"id": "1205 W Oregon"
+}
+},
+{
+"id": "1207 W Oregon 103",
+"roomName": "103",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 9,
+"building": {
+"id": "1207 W Oregon"
+}
+},
+{
+"id": "1207 W Oregon 133",
+"roomName": "133",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 2,
+"building": {
+"id": "1207 W Oregon"
+}
+},
+{
+"id": "805 W Pennsylvania 121",
+"roomName": "121",
+"typesHosted": [
+"CNF"
+],
+"sectionCount": 1,
+"building": {
+"id": "805 W Pennsylvania"
+}
+},
+{
+"id": "805 W Pennsylvania 5",
+"roomName": "5",
+"typesHosted": [
+"CNF",
+"LBD"
+],
+"sectionCount": 2,
+"building": {
+"id": "805 W Pennsylvania"
+}
+},
+{
+"id": "901 W Oregon 101",
+"roomName": "101",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 12,
+"building": {
+"id": "901 W Oregon"
+}
+},
+{
+"id": "907 1/2 W Nevada 109",
+"roomName": "109",
+"typesHosted": [
+"LAB",
+"LEC"
+],
+"sectionCount": 9,
+"building": {
+"id": "907 1/2 W Nevada"
+}
+},
+{
+"id": "907 1/2 W Nevada 110",
+"roomName": "110",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 1,
+"building": {
+"id": "907 1/2 W Nevada"
+}
+},
+{
+"id": "ACES Lib, Info & Alum Ctr 29",
+"roomName": "29",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 4,
+"building": {
+"id": "ACES Lib, Info & Alum Ctr"
+}
+},
+{
+"id": "ACES Lib, Info & Alum Ctr 29/30",
+"roomName": "29/30",
+"typesHosted": [
+"LAB",
+"LCD"
+],
+"sectionCount": 3,
+"building": {
+"id": "ACES Lib, Info & Alum Ctr"
+}
+},
+{
+"id": "Activities & Recreation Center GYM2",
+"roomName": "GYM2",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 5,
+"building": {
+"id": "Activities & Recreation Center"
+}
+},
+{
+"id": "Activities & Recreation Center GYM3",
+"roomName": "GYM3",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 8,
+"building": {
+"id": "Activities & Recreation Center"
+}
+},
+{
+"id": "Activities & Recreation Center MP5",
+"roomName": "MP5",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 4,
+"building": {
+"id": "Activities & Recreation Center"
+}
+},
+{
+"id": "Agricultural Bioprocess Lab 201",
+"roomName": "201",
+"typesHosted": [
+"LBD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Agricultural Bioprocess Lab"
+}
+},
+{
+"id": "Agricultural Engr Sciences Bld 119",
+"roomName": "119",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 6,
+"building": {
+"id": "Agricultural Engr Sciences Bld"
+}
+},
+{
+"id": "Agricultural Engr Sciences Bld 137",
+"roomName": "137",
+"typesHosted": [
+"LAB",
+"LCD"
+],
+"sectionCount": 5,
+"building": {
+"id": "Agricultural Engr Sciences Bld"
+}
+},
+{
+"id": "Agricultural Engr Sciences Bld 185",
+"roomName": "185",
+"typesHosted": [
+"DIS"
+],
+"sectionCount": 1,
+"building": {
+"id": "Agricultural Engr Sciences Bld"
+}
+},
+{
+"id": "Agricultural Engr Sciences Bld 208",
+"roomName": "208",
+"typesHosted": [
+"DIS",
+"LAB",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 12,
+"building": {
+"id": "Agricultural Engr Sciences Bld"
+}
+},
+{
+"id": "Agricultural Engr Sciences Bld 220",
+"roomName": "220",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 5,
+"building": {
+"id": "Agricultural Engr Sciences Bld"
+}
+},
+{
+"id": "Agricultural Engr Sciences Bld 242",
+"roomName": "242",
+"typesHosted": [
+"LAB",
+"LEC"
+],
+"sectionCount": 6,
+"building": {
+"id": "Agricultural Engr Sciences Bld"
+}
+},
+{
+"id": "Agricultural Engr Sciences Bld 248",
+"roomName": "248",
+"typesHosted": [
+"LAB",
+"LCD",
+"LEC"
+],
+"sectionCount": 8,
+"building": {
+"id": "Agricultural Engr Sciences Bld"
+}
+},
+{
+"id": "Agricultural Engr Sciences Bld 272",
+"roomName": "272",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC",
+"ONL"
+],
+"sectionCount": 8,
+"building": {
+"id": "Agricultural Engr Sciences Bld"
+}
+},
+{
+"id": "Agricultural Engr Sciences Bld 280",
+"roomName": "280",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 2,
+"building": {
+"id": "Agricultural Engr Sciences Bld"
+}
+},
+{
+"id": "Allen Residence Hall 151",
+"roomName": "151",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 2,
+"building": {
+"id": "Allen Residence Hall"
+}
+},
+{
+"id": "Allen Residence Hall 155",
+"roomName": "155",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Allen Residence Hall"
+}
+},
+{
+"id": "Allen Residence Hall 40",
+"roomName": "40",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 4,
+"building": {
+"id": "Allen Residence Hall"
+}
+},
+{
+"id": "Allen Residence Hall 63",
+"roomName": "63",
+"typesHosted": [
+"LBD"
+],
+"sectionCount": 2,
+"building": {
+"id": "Allen Residence Hall"
+}
+},
+{
+"id": "Allen Residence Hall 64",
+"roomName": "64",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Allen Residence Hall"
+}
+},
+{
+"id": "Allen Residence Hall 89",
+"roomName": "89",
+"typesHosted": [
+"LAB",
+"ST"
+],
+"sectionCount": 2,
+"building": {
+"id": "Allen Residence Hall"
+}
+},
+{
+"id": "Animal Sciences Laboratory 107",
+"roomName": "107",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 13,
+"building": {
+"id": "Animal Sciences Laboratory"
+}
+},
+{
+"id": "Animal Sciences Laboratory 131",
+"roomName": "131",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 14,
+"building": {
+"id": "Animal Sciences Laboratory"
+}
+},
+{
+"id": "Animal Sciences Laboratory 150",
+"roomName": "150",
+"typesHosted": [
+"LCD",
+"LEC",
+"SEM"
+],
+"sectionCount": 11,
+"building": {
+"id": "Animal Sciences Laboratory"
+}
+},
+{
+"id": "Animal Sciences Laboratory 292",
+"roomName": "292",
+"typesHosted": [
+"DIS",
+"LCD",
+"M10",
+"M2",
+"M3",
+"M6",
+"SEM"
+],
+"sectionCount": 10,
+"building": {
+"id": "Animal Sciences Laboratory"
+}
+},
+{
+"id": "Animal Sciences Laboratory 396",
+"roomName": "396",
+"typesHosted": [
+"M9"
+],
+"sectionCount": 1,
+"building": {
+"id": "Animal Sciences Laboratory"
+}
+},
+{
+"id": "Animal Sciences Laboratory 404",
+"roomName": "404",
+"typesHosted": [
+"M7"
+],
+"sectionCount": 1,
+"building": {
+"id": "Animal Sciences Laboratory"
+}
+},
+{
+"id": "Architecture Annex ARR",
+"roomName": "ARR",
+"typesHosted": [
+"LAB",
+"SEM"
+],
+"sectionCount": 3,
+"building": {
+"id": "Architecture Annex"
+}
+},
+{
+"id": "Architecture Building 102A",
+"roomName": "102A",
+"typesHosted": [
+"DIS",
+"LAB",
+"LCD"
+],
+"sectionCount": 6,
+"building": {
+"id": "Architecture Building"
+}
+},
+{
+"id": "Architecture Building 102B",
+"roomName": "102B",
+"typesHosted": [
+"DIS",
+"LAB",
+"LEC",
+"SEM"
+],
+"sectionCount": 7,
+"building": {
+"id": "Architecture Building"
+}
+},
+{
+"id": "Architecture Building 111",
+"roomName": "111",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 1,
+"building": {
+"id": "Architecture Building"
+}
+},
+{
+"id": "Architecture Building 120",
+"roomName": "120",
+"typesHosted": [
+"LCD",
+"LEC",
+"S0"
+],
+"sectionCount": 9,
+"building": {
+"id": "Architecture Building"
+}
+},
+{
+"id": "Architecture Building 200",
+"roomName": "200",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 1,
+"building": {
+"id": "Architecture Building"
+}
+},
+{
+"id": "Architecture Building 205",
+"roomName": "205",
+"typesHosted": [
+"LCD",
+"SEM"
+],
+"sectionCount": 2,
+"building": {
+"id": "Architecture Building"
+}
+},
+{
+"id": "Architecture Building 300",
+"roomName": "300",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 1,
+"building": {
+"id": "Architecture Building"
+}
+},
+{
+"id": "Architecture Building 301",
+"roomName": "301",
+"typesHosted": [
+"D3",
+"DIS",
+"LAB",
+"LCD",
+"LEC"
+],
+"sectionCount": 16,
+"building": {
+"id": "Architecture Building"
+}
+},
+{
+"id": "Architecture Building 302",
+"roomName": "302",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 16,
+"building": {
+"id": "Architecture Building"
+}
+},
+{
+"id": "Architecture Building 403",
+"roomName": "403",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 1,
+"building": {
+"id": "Architecture Building"
+}
+},
+{
+"id": "Architecture Building 410",
+"roomName": "410",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 1,
+"building": {
+"id": "Architecture Building"
+}
+},
+{
+"id": "Architecture Building 6E",
+"roomName": "6E",
+"typesHosted": [
+"SEM"
+],
+"sectionCount": 2,
+"building": {
+"id": "Architecture Building"
+}
+},
+{
+"id": "Armory 100",
+"roomName": "100",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 2,
+"building": {
+"id": "Armory"
+}
+},
+{
+"id": "Armory 101",
+"roomName": "101",
+"typesHosted": [
+"LAB",
+"LCD",
+"LEC",
+"S1"
+],
+"sectionCount": 11,
+"building": {
+"id": "Armory"
+}
+},
+{
+"id": "Armory 134",
+"roomName": "134",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 8,
+"building": {
+"id": "Armory"
+}
+},
+{
+"id": "Armory 136",
+"roomName": "136",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 2,
+"building": {
+"id": "Armory"
+}
+},
+{
+"id": "Armory 137",
+"roomName": "137",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 5,
+"building": {
+"id": "Armory"
+}
+},
+{
+"id": "Armory 143",
+"roomName": "143",
+"typesHosted": [
+"DIS",
+"LAB",
+"LCD"
+],
+"sectionCount": 10,
+"building": {
+"id": "Armory"
+}
+},
+{
+"id": "Armory 144",
+"roomName": "144",
+"typesHosted": [
+"DIS",
+"LAB",
+"LBD",
+"LCD"
+],
+"sectionCount": 16,
+"building": {
+"id": "Armory"
+}
+},
+{
+"id": "Armory 145",
+"roomName": "145",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 11,
+"building": {
+"id": "Armory"
+}
+},
+{
+"id": "Armory 146",
+"roomName": "146",
+"typesHosted": [
+"LAB",
+"LBD",
+"LCD"
+],
+"sectionCount": 3,
+"building": {
+"id": "Armory"
+}
+},
+{
+"id": "Armory 147",
+"roomName": "147",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 15,
+"building": {
+"id": "Armory"
+}
+},
+{
+"id": "Armory 148",
+"roomName": "148",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 8,
+"building": {
+"id": "Armory"
+}
+},
+{
+"id": "Armory 151",
+"roomName": "151",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Armory"
+}
+},
+{
+"id": "Armory 160",
+"roomName": "160",
+"typesHosted": [
+"CNF",
+"LBD",
+"LCD"
+],
+"sectionCount": 7,
+"building": {
+"id": "Armory"
+}
+},
+{
+"id": "Armory 241",
+"roomName": "241",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 14,
+"building": {
+"id": "Armory"
+}
+},
+{
+"id": "Armory 242",
+"roomName": "242",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 14,
+"building": {
+"id": "Armory"
+}
+},
+{
+"id": "Armory 243",
+"roomName": "243",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 18,
+"building": {
+"id": "Armory"
+}
+},
+{
+"id": "Armory 331",
+"roomName": "331",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 3,
+"building": {
+"id": "Armory"
+}
+},
+{
+"id": "Armory 370",
+"roomName": "370",
+"typesHosted": [
+"DIS",
+"IND",
+"LCD"
+],
+"sectionCount": 16,
+"building": {
+"id": "Armory"
+}
+},
+{
+"id": "Armory 384",
+"roomName": "384",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC",
+"S6"
+],
+"sectionCount": 16,
+"building": {
+"id": "Armory"
+}
+},
+{
+"id": "Armory 386",
+"roomName": "386",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "Armory"
+}
+},
+{
+"id": "Art and Design Building 106",
+"roomName": "106",
+"typesHosted": [
+"ST"
+],
+"sectionCount": 4,
+"building": {
+"id": "Art and Design Building"
+}
+},
+{
+"id": "Art and Design Building 107",
+"roomName": "107",
+"typesHosted": [
+"LCD",
+"ST"
+],
+"sectionCount": 4,
+"building": {
+"id": "Art and Design Building"
+}
+},
+{
+"id": "Art and Design Building 12",
+"roomName": "12",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 4,
+"building": {
+"id": "Art and Design Building"
+}
+},
+{
+"id": "Art and Design Building 208",
+"roomName": "208",
+"typesHosted": [
+"ST"
+],
+"sectionCount": 1,
+"building": {
+"id": "Art and Design Building"
+}
+},
+{
+"id": "Art and Design Building 209",
+"roomName": "209",
+"typesHosted": [
+"ST"
+],
+"sectionCount": 3,
+"building": {
+"id": "Art and Design Building"
+}
+},
+{
+"id": "Art and Design Building 216",
+"roomName": "216",
+"typesHosted": [
+"ST"
+],
+"sectionCount": 2,
+"building": {
+"id": "Art and Design Building"
+}
+},
+{
+"id": "Art and Design Building 219",
+"roomName": "219",
+"typesHosted": [
+"ST"
+],
+"sectionCount": 3,
+"building": {
+"id": "Art and Design Building"
+}
+},
+{
+"id": "Art and Design Building 224",
+"roomName": "224",
+"typesHosted": [
+"LAB",
+"ST"
+],
+"sectionCount": 3,
+"building": {
+"id": "Art and Design Building"
+}
+},
+{
+"id": "Art and Design Building 228",
+"roomName": "228",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 5,
+"building": {
+"id": "Art and Design Building"
+}
+},
+{
+"id": "Art and Design Building 229",
+"roomName": "229",
+"typesHosted": [
+"ST"
+],
+"sectionCount": 5,
+"building": {
+"id": "Art and Design Building"
+}
+},
+{
+"id": "Art and Design Building 312",
+"roomName": "312",
+"typesHosted": [
+"LAB",
+"LEC",
+"SEM"
+],
+"sectionCount": 7,
+"building": {
+"id": "Art and Design Building"
+}
+},
+{
+"id": "Art and Design Building 315",
+"roomName": "315",
+"typesHosted": [
+"ST"
+],
+"sectionCount": 3,
+"building": {
+"id": "Art and Design Building"
+}
+},
+{
+"id": "Art and Design Building 316",
+"roomName": "316",
+"typesHosted": [
+"LCD",
+"LEC",
+"SEM"
+],
+"sectionCount": 6,
+"building": {
+"id": "Art and Design Building"
+}
+},
+{
+"id": "Art and Design Building 319",
+"roomName": "319",
+"typesHosted": [
+"LAB",
+"ST"
+],
+"sectionCount": 3,
+"building": {
+"id": "Art and Design Building"
+}
+},
+{
+"id": "Art and Design Building 33",
+"roomName": "33",
+"typesHosted": [
+"ST"
+],
+"sectionCount": 3,
+"building": {
+"id": "Art and Design Building"
+}
+},
+{
+"id": "Art and Design Building 330",
+"roomName": "330",
+"typesHosted": [
+"ST"
+],
+"sectionCount": 4,
+"building": {
+"id": "Art and Design Building"
+}
+},
+{
+"id": "Art and Design Building 331",
+"roomName": "331",
+"typesHosted": [
+"LAB",
+"LEC",
+"ST"
+],
+"sectionCount": 4,
+"building": {
+"id": "Art and Design Building"
+}
+},
+{
+"id": "Art and Design Building 340",
+"roomName": "340",
+"typesHosted": [
+"SEM",
+"ST"
+],
+"sectionCount": 5,
+"building": {
+"id": "Art and Design Building"
+}
+},
+{
+"id": "Art and Design Building 40",
+"roomName": "40",
+"typesHosted": [
+"ST"
+],
+"sectionCount": 1,
+"building": {
+"id": "Art and Design Building"
+}
+},
+{
+"id": "Art and Design Building 9",
+"roomName": "9",
+"typesHosted": [
+"ST"
+],
+"sectionCount": 2,
+"building": {
+"id": "Art and Design Building"
+}
+},
+{
+"id": "Art-East Annex, Studio 2 FAB LAB",
+"roomName": "FAB LAB",
+"typesHosted": [
+"LBD",
+"LCD"
+],
+"sectionCount": 3,
+"building": {
+"id": "Art-East Annex, Studio 2"
+}
+},
+{
+"id": "Astronomy Building 134",
+"roomName": "134",
+"typesHosted": [
+"DIS",
+"L3",
+"LEC",
+"SEM"
+],
+"sectionCount": 7,
+"building": {
+"id": "Astronomy Building"
+}
+},
+{
+"id": "Beckman Institute 1005",
+"roomName": "1005",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Beckman Institute"
+}
+},
+{
+"id": "Beckman Institute 2269",
+"roomName": "2269",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Beckman Institute"
+}
+},
+{
+"id": "Beckman Institute 4269",
+"roomName": "4269",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 3,
+"building": {
+"id": "Beckman Institute"
+}
+},
+{
+"id": "Bevier Hall 103",
+"roomName": "103",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD"
+],
+"sectionCount": 15,
+"building": {
+"id": "Bevier Hall"
+}
+},
+{
+"id": "Bevier Hall 108",
+"roomName": "108",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 9,
+"building": {
+"id": "Bevier Hall"
+}
+},
+{
+"id": "Bevier Hall 122",
+"roomName": "122",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 4,
+"building": {
+"id": "Bevier Hall"
+}
+},
+{
+"id": "Bevier Hall 132",
+"roomName": "132",
+"typesHosted": [
+"LCD",
+"LEC",
+"S5"
+],
+"sectionCount": 11,
+"building": {
+"id": "Bevier Hall"
+}
+},
+{
+"id": "Bevier Hall 144",
+"roomName": "144",
+"typesHosted": [
+"DIS",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "Bevier Hall"
+}
+},
+{
+"id": "Bevier Hall 166",
+"roomName": "166",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 10,
+"building": {
+"id": "Bevier Hall"
+}
+},
+{
+"id": "Bevier Hall 180",
+"roomName": "180",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 9,
+"building": {
+"id": "Bevier Hall"
+}
+},
+{
+"id": "Bevier Hall 242",
+"roomName": "242",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 9,
+"building": {
+"id": "Bevier Hall"
+}
+},
+{
+"id": "Bevier Hall 286",
+"roomName": "286",
+"typesHosted": [
+"LAB",
+"LEC"
+],
+"sectionCount": 5,
+"building": {
+"id": "Bevier Hall"
+}
+},
+{
+"id": "Bevier Hall 292",
+"roomName": "292",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 4,
+"building": {
+"id": "Bevier Hall"
+}
+},
+{
+"id": "Bevier Hall 328",
+"roomName": "328",
+"typesHosted": [
+"DIS",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "Bevier Hall"
+}
+},
+{
+"id": "Bevier Hall 358",
+"roomName": "358",
+"typesHosted": [
+"LAB",
+"LCD"
+],
+"sectionCount": 2,
+"building": {
+"id": "Bevier Hall"
+}
+},
+{
+"id": "Bevier Hall 372",
+"roomName": "372",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 2,
+"building": {
+"id": "Bevier Hall"
+}
+},
+{
+"id": "Bevier Hall 393",
+"roomName": "393",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 12,
+"building": {
+"id": "Bevier Hall"
+}
+},
+{
+"id": "Burrill Hall 105",
+"roomName": "105",
+"typesHosted": [
+"DIS",
+"LEC"
+],
+"sectionCount": 32,
+"building": {
+"id": "Burrill Hall"
+}
+},
+{
+"id": "Burrill Hall 106",
+"roomName": "106",
+"typesHosted": [
+"CNF",
+"DIS"
+],
+"sectionCount": 19,
+"building": {
+"id": "Burrill Hall"
+}
+},
+{
+"id": "Burrill Hall 107",
+"roomName": "107",
+"typesHosted": [
+"DIS"
+],
+"sectionCount": 11,
+"building": {
+"id": "Burrill Hall"
+}
+},
+{
+"id": "Burrill Hall 124",
+"roomName": "124",
+"typesHosted": [
+"CNF",
+"LCD",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "Burrill Hall"
+}
+},
+{
+"id": "Burrill Hall 136",
+"roomName": "136",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 9,
+"building": {
+"id": "Burrill Hall"
+}
+},
+{
+"id": "Burrill Hall 140",
+"roomName": "140",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 10,
+"building": {
+"id": "Burrill Hall"
+}
+},
+{
+"id": "Burrill Hall 164A",
+"roomName": "164A",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 6,
+"building": {
+"id": "Burrill Hall"
+}
+},
+{
+"id": "Burrill Hall 182",
+"roomName": "182",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 7,
+"building": {
+"id": "Burrill Hall"
+}
+},
+{
+"id": "Burrill Hall 186",
+"roomName": "186",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 8,
+"building": {
+"id": "Burrill Hall"
+}
+},
+{
+"id": "Burrill Hall 215",
+"roomName": "215",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 8,
+"building": {
+"id": "Burrill Hall"
+}
+},
+{
+"id": "Burrill Hall 216",
+"roomName": "216",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 4,
+"building": {
+"id": "Burrill Hall"
+}
+},
+{
+"id": "Burrill Hall 230",
+"roomName": "230",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 7,
+"building": {
+"id": "Burrill Hall"
+}
+},
+{
+"id": "Burrill Hall 231",
+"roomName": "231",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 7,
+"building": {
+"id": "Burrill Hall"
+}
+},
+{
+"id": "Burrill Hall 242",
+"roomName": "242",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 7,
+"building": {
+"id": "Burrill Hall"
+}
+},
+{
+"id": "Burrill Hall 246",
+"roomName": "246",
+"typesHosted": [
+"LBD"
+],
+"sectionCount": 5,
+"building": {
+"id": "Burrill Hall"
+}
+},
+{
+"id": "Burrill Hall 413",
+"roomName": "413",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 7,
+"building": {
+"id": "Burrill Hall"
+}
+},
+{
+"id": "Burrill Hall 488",
+"roomName": "488",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 2,
+"building": {
+"id": "Burrill Hall"
+}
+},
+{
+"id": "Burrill Hall 495C",
+"roomName": "495C",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 1,
+"building": {
+"id": "Burrill Hall"
+}
+},
+{
+"id": "Burrill Hall 5",
+"roomName": "5",
+"typesHosted": [
+"DIS"
+],
+"sectionCount": 13,
+"building": {
+"id": "Burrill Hall"
+}
+},
+{
+"id": "Burrill Hall 6",
+"roomName": "6",
+"typesHosted": [
+"CNF",
+"DIS"
+],
+"sectionCount": 7,
+"building": {
+"id": "Burrill Hall"
+}
+},
+{
+"id": "Burrill Hall 7",
+"roomName": "7",
+"typesHosted": [
+"DIS",
+"LEC"
+],
+"sectionCount": 6,
+"building": {
+"id": "Burrill Hall"
+}
+},
+{
+"id": "Burrill Hall ARR",
+"roomName": "ARR",
+"typesHosted": [
+"DIS"
+],
+"sectionCount": 1,
+"building": {
+"id": "Burrill Hall"
+}
+},
+{
+"id": "Business Instructional Fac 1001",
+"roomName": "1001",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 9,
+"building": {
+"id": "Business Instructional Fac"
+}
+},
+{
+"id": "Business Instructional Fac 1025",
+"roomName": "1025",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 17,
+"building": {
+"id": "Business Instructional Fac"
+}
+},
+{
+"id": "Business Instructional Fac 1029C",
+"roomName": "1029C",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 3,
+"building": {
+"id": "Business Instructional Fac"
+}
+},
+{
+"id": "Business Instructional Fac 1029G",
+"roomName": "1029G",
+"typesHosted": [
+"DIS"
+],
+"sectionCount": 1,
+"building": {
+"id": "Business Instructional Fac"
+}
+},
+{
+"id": "Business Instructional Fac 1049",
+"roomName": "1049",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 12,
+"building": {
+"id": "Business Instructional Fac"
+}
+},
+{
+"id": "Business Instructional Fac 2001",
+"roomName": "2001",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 16,
+"building": {
+"id": "Business Instructional Fac"
+}
+},
+{
+"id": "Business Instructional Fac 2005",
+"roomName": "2005",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 13,
+"building": {
+"id": "Business Instructional Fac"
+}
+},
+{
+"id": "Business Instructional Fac 2007",
+"roomName": "2007",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 12,
+"building": {
+"id": "Business Instructional Fac"
+}
+},
+{
+"id": "Business Instructional Fac 2011",
+"roomName": "2011",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 10,
+"building": {
+"id": "Business Instructional Fac"
+}
+},
+{
+"id": "Business Instructional Fac 2041",
+"roomName": "2041",
+"typesHosted": [
+"LCD",
+"S1"
+],
+"sectionCount": 16,
+"building": {
+"id": "Business Instructional Fac"
+}
+},
+{
+"id": "Business Instructional Fac 2043",
+"roomName": "2043",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 14,
+"building": {
+"id": "Business Instructional Fac"
+}
+},
+{
+"id": "Business Instructional Fac 2057",
+"roomName": "2057",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 14,
+"building": {
+"id": "Business Instructional Fac"
+}
+},
+{
+"id": "Business Instructional Fac 2063",
+"roomName": "2063",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 20,
+"building": {
+"id": "Business Instructional Fac"
+}
+},
+{
+"id": "Business Instructional Fac 3001",
+"roomName": "3001",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "Business Instructional Fac"
+}
+},
+{
+"id": "Business Instructional Fac 3003",
+"roomName": "3003",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 14,
+"building": {
+"id": "Business Instructional Fac"
+}
+},
+{
+"id": "Business Instructional Fac 3007",
+"roomName": "3007",
+"typesHosted": [
+"LCD",
+"S2"
+],
+"sectionCount": 13,
+"building": {
+"id": "Business Instructional Fac"
+}
+},
+{
+"id": "Business Instructional Fac 3009",
+"roomName": "3009",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 12,
+"building": {
+"id": "Business Instructional Fac"
+}
+},
+{
+"id": "Business Instructional Fac 3039",
+"roomName": "3039",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 9,
+"building": {
+"id": "Business Instructional Fac"
+}
+},
+{
+"id": "Business Instructional Fac 3041",
+"roomName": "3041",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 10,
+"building": {
+"id": "Business Instructional Fac"
+}
+},
+{
+"id": "Business Instructional Fac 3057",
+"roomName": "3057",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 13,
+"building": {
+"id": "Business Instructional Fac"
+}
+},
+{
+"id": "Business Instructional Fac 3063",
+"roomName": "3063",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 14,
+"building": {
+"id": "Business Instructional Fac"
+}
+},
+{
+"id": "Business Instructional Fac ARR",
+"roomName": "ARR",
+"typesHosted": [
+"LCD",
+"S13"
+],
+"sectionCount": 4,
+"building": {
+"id": "Business Instructional Fac"
+}
+},
+{
+"id": "Campus Instructional Facility 0027/1025",
+"roomName": "0027/1025",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 14,
+"building": {
+"id": "Campus Instructional Facility"
+}
+},
+{
+"id": "Campus Instructional Facility 1035",
+"roomName": "1035",
+"typesHosted": [
+"D1",
+"DIS",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 14,
+"building": {
+"id": "Campus Instructional Facility"
+}
+},
+{
+"id": "Campus Instructional Facility 1038",
+"roomName": "1038",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 3,
+"building": {
+"id": "Campus Instructional Facility"
+}
+},
+{
+"id": "Campus Instructional Facility 18",
+"roomName": "18",
+"typesHosted": [
+"D1",
+"DIS",
+"L1",
+"LBD",
+"LCD",
+"LEC",
+"S4"
+],
+"sectionCount": 24,
+"building": {
+"id": "Campus Instructional Facility"
+}
+},
+{
+"id": "Campus Instructional Facility 2018",
+"roomName": "2018",
+"typesHosted": [
+"D2",
+"D4",
+"DIS",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 20,
+"building": {
+"id": "Campus Instructional Facility"
+}
+},
+{
+"id": "Campus Instructional Facility 2025",
+"roomName": "2025",
+"typesHosted": [
+"D1",
+"DIS",
+"LBD",
+"LCD"
+],
+"sectionCount": 28,
+"building": {
+"id": "Campus Instructional Facility"
+}
+},
+{
+"id": "Campus Instructional Facility 2035",
+"roomName": "2035",
+"typesHosted": [
+"CNF",
+"LCD",
+"LEC"
+],
+"sectionCount": 13,
+"building": {
+"id": "Campus Instructional Facility"
+}
+},
+{
+"id": "Campus Instructional Facility 2036",
+"roomName": "2036",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 18,
+"building": {
+"id": "Campus Instructional Facility"
+}
+},
+{
+"id": "Campus Instructional Facility 2039",
+"roomName": "2039",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC",
+"S5"
+],
+"sectionCount": 11,
+"building": {
+"id": "Campus Instructional Facility"
+}
+},
+{
+"id": "Campus Instructional Facility 3018",
+"roomName": "3018",
+"typesHosted": [
+"D3",
+"DIS",
+"L5",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 17,
+"building": {
+"id": "Campus Instructional Facility"
+}
+},
+{
+"id": "Campus Instructional Facility 3025",
+"roomName": "3025",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 10,
+"building": {
+"id": "Campus Instructional Facility"
+}
+},
+{
+"id": "Campus Instructional Facility 3031",
+"roomName": "3031",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "Campus Instructional Facility"
+}
+},
+{
+"id": "Campus Instructional Facility 3038",
+"roomName": "3038",
+"typesHosted": [
+"D1",
+"D4",
+"DIS",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 22,
+"building": {
+"id": "Campus Instructional Facility"
+}
+},
+{
+"id": "Campus Instructional Facility 3039",
+"roomName": "3039",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 12,
+"building": {
+"id": "Campus Instructional Facility"
+}
+},
+{
+"id": "Campus Instructional Facility 35",
+"roomName": "35",
+"typesHosted": [
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 13,
+"building": {
+"id": "Campus Instructional Facility"
+}
+},
+{
+"id": "Campus Instructional Facility 36",
+"roomName": "36",
+"typesHosted": [
+"D1",
+"D5",
+"DIS"
+],
+"sectionCount": 20,
+"building": {
+"id": "Campus Instructional Facility"
+}
+},
+{
+"id": "Campus Instructional Facility 4018",
+"roomName": "4018",
+"typesHosted": [
+"DIS",
+"LAB",
+"LCD"
+],
+"sectionCount": 24,
+"building": {
+"id": "Campus Instructional Facility"
+}
+},
+{
+"id": "Campus Instructional Facility 4025",
+"roomName": "4025",
+"typesHosted": [
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 21,
+"building": {
+"id": "Campus Instructional Facility"
+}
+},
+{
+"id": "Campus Instructional Facility 4029",
+"roomName": "4029",
+"typesHosted": [
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 18,
+"building": {
+"id": "Campus Instructional Facility"
+}
+},
+{
+"id": "Campus Instructional Facility 4031",
+"roomName": "4031",
+"typesHosted": [
+"LAB",
+"LCD"
+],
+"sectionCount": 20,
+"building": {
+"id": "Campus Instructional Facility"
+}
+},
+{
+"id": "Campus Instructional Facility 4035",
+"roomName": "4035",
+"typesHosted": [
+"LAB",
+"LCD",
+"LEC"
+],
+"sectionCount": 22,
+"building": {
+"id": "Campus Instructional Facility"
+}
+},
+{
+"id": "Campus Instructional Facility 4036",
+"roomName": "4036",
+"typesHosted": [
+"DIS",
+"LAB",
+"LEC",
+"S5"
+],
+"sectionCount": 21,
+"building": {
+"id": "Campus Instructional Facility"
+}
+},
+{
+"id": "Campus Instructional Facility 4039",
+"roomName": "4039",
+"typesHosted": [
+"DIS",
+"LAB",
+"LCD",
+"LEC"
+],
+"sectionCount": 7,
+"building": {
+"id": "Campus Instructional Facility"
+}
+},
+{
+"id": "Campus Recreation Center East 1003",
+"roomName": "1003",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 5,
+"building": {
+"id": "Campus Recreation Center East"
+}
+},
+{
+"id": "Campus Recreation Center East 1048",
+"roomName": "1048",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 1,
+"building": {
+"id": "Campus Recreation Center East"
+}
+},
+{
+"id": "Campus Recreation Center East MAC GYM",
+"roomName": "MAC GYM",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 3,
+"building": {
+"id": "Campus Recreation Center East"
+}
+},
+{
+"id": "Ceramics Building 214",
+"roomName": "214",
+"typesHosted": [
+"D1",
+"D2",
+"LAB",
+"LCD"
+],
+"sectionCount": 15,
+"building": {
+"id": "Ceramics Building"
+}
+},
+{
+"id": "Ceramics Building 218",
+"roomName": "218",
+"typesHosted": [
+"LCD",
+"S20"
+],
+"sectionCount": 5,
+"building": {
+"id": "Ceramics Building"
+}
+},
+{
+"id": "Ceramics Kiln House 105",
+"roomName": "105",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 5,
+"building": {
+"id": "Ceramics Kiln House"
+}
+},
+{
+"id": "Ceramics Kiln House 122",
+"roomName": "122",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 2,
+"building": {
+"id": "Ceramics Kiln House"
+}
+},
+{
+"id": "Chemical and Life Sci Lab B102",
+"roomName": "B102",
+"typesHosted": [
+"C1",
+"C3",
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 8,
+"building": {
+"id": "Chemical and Life Sci Lab"
+}
+},
+{
+"id": "Chemical and Life Sci Lab B124",
+"roomName": "B124",
+"typesHosted": [
+"DIS"
+],
+"sectionCount": 1,
+"building": {
+"id": "Chemical and Life Sci Lab"
+}
+},
+{
+"id": "Chemical and Life Sci Lab B126",
+"roomName": "B126",
+"typesHosted": [
+"DIS"
+],
+"sectionCount": 1,
+"building": {
+"id": "Chemical and Life Sci Lab"
+}
+},
+{
+"id": "Chemistry Annex 1006",
+"roomName": "1006",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 22,
+"building": {
+"id": "Chemistry Annex"
+}
+},
+{
+"id": "Chemistry Annex 1007",
+"roomName": "1007",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 21,
+"building": {
+"id": "Chemistry Annex"
+}
+},
+{
+"id": "Chemistry Annex 1024",
+"roomName": "1024",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 13,
+"building": {
+"id": "Chemistry Annex"
+}
+},
+{
+"id": "Chemistry Annex 152",
+"roomName": "152",
+"typesHosted": [
+"DIS",
+"Q"
+],
+"sectionCount": 12,
+"building": {
+"id": "Chemistry Annex"
+}
+},
+{
+"id": "Chemistry Annex 2006",
+"roomName": "2006",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 18,
+"building": {
+"id": "Chemistry Annex"
+}
+},
+{
+"id": "Chemistry Annex 2007",
+"roomName": "2007",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 13,
+"building": {
+"id": "Chemistry Annex"
+}
+},
+{
+"id": "Chemistry Annex 2012",
+"roomName": "2012",
+"typesHosted": [
+"DIS",
+"LAB",
+"Q"
+],
+"sectionCount": 32,
+"building": {
+"id": "Chemistry Annex"
+}
+},
+{
+"id": "Chemistry Annex 3006",
+"roomName": "3006",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 7,
+"building": {
+"id": "Chemistry Annex"
+}
+},
+{
+"id": "Chemistry Annex 3007",
+"roomName": "3007",
+"typesHosted": [
+"DIS",
+"LAB"
+],
+"sectionCount": 2,
+"building": {
+"id": "Chemistry Annex"
+}
+},
+{
+"id": "Chemistry Annex 3026",
+"roomName": "3026",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 6,
+"building": {
+"id": "Chemistry Annex"
+}
+},
+{
+"id": "Chemistry Annex 6",
+"roomName": "6",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 21,
+"building": {
+"id": "Chemistry Annex"
+}
+},
+{
+"id": "Chemistry Annex 7",
+"roomName": "7",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 18,
+"building": {
+"id": "Chemistry Annex"
+}
+},
+{
+"id": "Child Development Laboratory 109B",
+"roomName": "109B",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 5,
+"building": {
+"id": "Child Development Laboratory"
+}
+},
+{
+"id": "Christopher Hall 3",
+"roomName": "3",
+"typesHosted": [
+"DIS",
+"LAB",
+"LCD",
+"LEC"
+],
+"sectionCount": 7,
+"building": {
+"id": "Christopher Hall"
+}
+},
+{
+"id": "Christopher Hall 7",
+"roomName": "7",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 10,
+"building": {
+"id": "Christopher Hall"
+}
+},
+{
+"id": "Civil & Envir Eng Bldg 1015",
+"roomName": "1015",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 6,
+"building": {
+"id": "Civil & Envir Eng Bldg"
+}
+},
+{
+"id": "Civil & Envir Eng Bldg 1017",
+"roomName": "1017",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 6,
+"building": {
+"id": "Civil & Envir Eng Bldg"
+}
+},
+{
+"id": "Civil & Envir Eng Bldg 2015",
+"roomName": "2015",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 7,
+"building": {
+"id": "Civil & Envir Eng Bldg"
+}
+},
+{
+"id": "Civil & Envir Eng Bldg 3017",
+"roomName": "3017",
+"typesHosted": [
+"LAB",
+"LCD"
+],
+"sectionCount": 5,
+"building": {
+"id": "Civil & Envir Eng Bldg"
+}
+},
+{
+"id": "Civil & Envir Eng Bldg 3019",
+"roomName": "3019",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 8,
+"building": {
+"id": "Civil & Envir Eng Bldg"
+}
+},
+{
+"id": "Coordinated Science Lab 301",
+"roomName": "301",
+"typesHosted": [
+"LEC"
+],
+"sectionCount": 1,
+"building": {
+"id": "Coordinated Science Lab"
+}
+},
+{
+"id": "Dance Studio 103",
+"roomName": "103",
+"typesHosted": [
+"LAB",
+"LBD",
+"LCD"
+],
+"sectionCount": 11,
+"building": {
+"id": "Dance Studio"
+}
+},
+{
+"id": "Dance Studio 111",
+"roomName": "111",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 7,
+"building": {
+"id": "Dance Studio"
+}
+},
+{
+"id": "Danville IL ARR",
+"roomName": "ARR",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Danville IL"
+}
+},
+{
+"id": "Davenport Hall 109A",
+"roomName": "109A",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Davenport Hall"
+}
+},
+{
+"id": "Davenport Hall 113",
+"roomName": "113",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 13,
+"building": {
+"id": "Davenport Hall"
+}
+},
+{
+"id": "Davenport Hall 116",
+"roomName": "116",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 7,
+"building": {
+"id": "Davenport Hall"
+}
+},
+{
+"id": "Davenport Hall 121",
+"roomName": "121",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 3,
+"building": {
+"id": "Davenport Hall"
+}
+},
+{
+"id": "Davenport Hall 122",
+"roomName": "122",
+"typesHosted": [
+"LEC"
+],
+"sectionCount": 2,
+"building": {
+"id": "Davenport Hall"
+}
+},
+{
+"id": "Davenport Hall 132",
+"roomName": "132",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 16,
+"building": {
+"id": "Davenport Hall"
+}
+},
+{
+"id": "Davenport Hall 136",
+"roomName": "136",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 13,
+"building": {
+"id": "Davenport Hall"
+}
+},
+{
+"id": "Davenport Hall 137C",
+"roomName": "137C",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"SEM"
+],
+"sectionCount": 10,
+"building": {
+"id": "Davenport Hall"
+}
+},
+{
+"id": "Davenport Hall 169",
+"roomName": "169",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 15,
+"building": {
+"id": "Davenport Hall"
+}
+},
+{
+"id": "Davenport Hall 209A",
+"roomName": "209A",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 6,
+"building": {
+"id": "Davenport Hall"
+}
+},
+{
+"id": "Davenport Hall 212",
+"roomName": "212",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD"
+],
+"sectionCount": 22,
+"building": {
+"id": "Davenport Hall"
+}
+},
+{
+"id": "Davenport Hall 214",
+"roomName": "214",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD"
+],
+"sectionCount": 19,
+"building": {
+"id": "Davenport Hall"
+}
+},
+{
+"id": "Davenport Hall 215",
+"roomName": "215",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 9,
+"building": {
+"id": "Davenport Hall"
+}
+},
+{
+"id": "Davenport Hall 219",
+"roomName": "219",
+"typesHosted": [
+"LBD"
+],
+"sectionCount": 6,
+"building": {
+"id": "Davenport Hall"
+}
+},
+{
+"id": "Davenport Hall 220",
+"roomName": "220",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 2,
+"building": {
+"id": "Davenport Hall"
+}
+},
+{
+"id": "Davenport Hall 230",
+"roomName": "230",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 2,
+"building": {
+"id": "Davenport Hall"
+}
+},
+{
+"id": "Davenport Hall 312",
+"roomName": "312",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 19,
+"building": {
+"id": "Davenport Hall"
+}
+},
+{
+"id": "Davenport Hall 313",
+"roomName": "313",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 19,
+"building": {
+"id": "Davenport Hall"
+}
+},
+{
+"id": "Davenport Hall 314",
+"roomName": "314",
+"typesHosted": [
+"DIS"
+],
+"sectionCount": 8,
+"building": {
+"id": "Davenport Hall"
+}
+},
+{
+"id": "Davenport Hall 329",
+"roomName": "329",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 10,
+"building": {
+"id": "Davenport Hall"
+}
+},
+{
+"id": "Davenport Hall 330",
+"roomName": "330",
+"typesHosted": [
+"DIS"
+],
+"sectionCount": 6,
+"building": {
+"id": "Davenport Hall"
+}
+},
+{
+"id": "Davenport Hall 336",
+"roomName": "336",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD"
+],
+"sectionCount": 13,
+"building": {
+"id": "Davenport Hall"
+}
+},
+{
+"id": "Davenport Hall 338",
+"roomName": "338",
+"typesHosted": [
+"LAB",
+"LBD",
+"LEC"
+],
+"sectionCount": 3,
+"building": {
+"id": "Davenport Hall"
+}
+},
+{
+"id": "David Kinley Hall 106",
+"roomName": "106",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 4,
+"building": {
+"id": "David Kinley Hall"
+}
+},
+{
+"id": "David Kinley Hall 108",
+"roomName": "108",
+"typesHosted": [
+"LCD",
+"S3"
+],
+"sectionCount": 3,
+"building": {
+"id": "David Kinley Hall"
+}
+},
+{
+"id": "David Kinley Hall 111",
+"roomName": "111",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 6,
+"building": {
+"id": "David Kinley Hall"
+}
+},
+{
+"id": "David Kinley Hall 113",
+"roomName": "113",
+"typesHosted": [
+"DIS",
+"LAB",
+"LCD"
+],
+"sectionCount": 22,
+"building": {
+"id": "David Kinley Hall"
+}
+},
+{
+"id": "David Kinley Hall 114",
+"roomName": "114",
+"typesHosted": [
+"LEC"
+],
+"sectionCount": 10,
+"building": {
+"id": "David Kinley Hall"
+}
+},
+{
+"id": "David Kinley Hall 115",
+"roomName": "115",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 17,
+"building": {
+"id": "David Kinley Hall"
+}
+},
+{
+"id": "David Kinley Hall 119",
+"roomName": "119",
+"typesHosted": [
+"CNF",
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 19,
+"building": {
+"id": "David Kinley Hall"
+}
+},
+{
+"id": "David Kinley Hall 123",
+"roomName": "123",
+"typesHosted": [
+"DIS",
+"LCD",
+"S11",
+"S9"
+],
+"sectionCount": 13,
+"building": {
+"id": "David Kinley Hall"
+}
+},
+{
+"id": "David Kinley Hall 125",
+"roomName": "125",
+"typesHosted": [
+"DIS",
+"LCD",
+"S13"
+],
+"sectionCount": 17,
+"building": {
+"id": "David Kinley Hall"
+}
+},
+{
+"id": "David Kinley Hall 206",
+"roomName": "206",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 16,
+"building": {
+"id": "David Kinley Hall"
+}
+},
+{
+"id": "David Kinley Hall 209",
+"roomName": "209",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 13,
+"building": {
+"id": "David Kinley Hall"
+}
+},
+{
+"id": "David Kinley Hall 212",
+"roomName": "212",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC",
+"S10"
+],
+"sectionCount": 13,
+"building": {
+"id": "David Kinley Hall"
+}
+},
+{
+"id": "David Kinley Hall 215",
+"roomName": "215",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"S10",
+"S3"
+],
+"sectionCount": 19,
+"building": {
+"id": "David Kinley Hall"
+}
+},
+{
+"id": "David Kinley Hall 215B",
+"roomName": "215B",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 16,
+"building": {
+"id": "David Kinley Hall"
+}
+},
+{
+"id": "David Kinley Hall 219",
+"roomName": "219",
+"typesHosted": [
+"CNF",
+"DIS",
+"LCD"
+],
+"sectionCount": 14,
+"building": {
+"id": "David Kinley Hall"
+}
+},
+{
+"id": "David Kinley Hall 222",
+"roomName": "222",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 10,
+"building": {
+"id": "David Kinley Hall"
+}
+},
+{
+"id": "David Kinley Hall 223",
+"roomName": "223",
+"typesHosted": [
+"DIS",
+"LCD",
+"S5"
+],
+"sectionCount": 17,
+"building": {
+"id": "David Kinley Hall"
+}
+},
+{
+"id": "David Kinley Hall 307",
+"roomName": "307",
+"typesHosted": [
+"DIS",
+"LAB",
+"LBD",
+"LCD",
+"S5",
+"S8",
+"S9"
+],
+"sectionCount": 12,
+"building": {
+"id": "David Kinley Hall"
+}
+},
+{
+"id": "David Kinley Hall 310",
+"roomName": "310",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 14,
+"building": {
+"id": "David Kinley Hall"
+}
+},
+{
+"id": "David Kinley Hall 312",
+"roomName": "312",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"S7"
+],
+"sectionCount": 13,
+"building": {
+"id": "David Kinley Hall"
+}
+},
+{
+"id": "David Kinley Hall 317",
+"roomName": "317",
+"typesHosted": [
+"C1",
+"C2",
+"C3",
+"C4",
+"DIS",
+"LCD",
+"LEC",
+"M1",
+"M3",
+"S4",
+"S5"
+],
+"sectionCount": 17,
+"building": {
+"id": "David Kinley Hall"
+}
+},
+{
+"id": "David Kinley Hall 322",
+"roomName": "322",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 12,
+"building": {
+"id": "David Kinley Hall"
+}
+},
+{
+"id": "David Kinley Hall 325",
+"roomName": "325",
+"typesHosted": [
+"DIS",
+"LCD",
+"S2"
+],
+"sectionCount": 19,
+"building": {
+"id": "David Kinley Hall"
+}
+},
+{
+"id": "David Kinley Hall 326",
+"roomName": "326",
+"typesHosted": [
+"DIS",
+"INT",
+"LCD",
+"SEM"
+],
+"sectionCount": 10,
+"building": {
+"id": "David Kinley Hall"
+}
+},
+{
+"id": "David Kinley Hall 404",
+"roomName": "404",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 5,
+"building": {
+"id": "David Kinley Hall"
+}
+},
+{
+"id": "Digital Computer Laboratory 1310",
+"roomName": "1310",
+"typesHosted": [
+"DIS",
+"L1",
+"LAB",
+"LCD",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "Digital Computer Laboratory"
+}
+},
+{
+"id": "Digital Computer Laboratory 1320",
+"roomName": "1320",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 10,
+"building": {
+"id": "Digital Computer Laboratory"
+}
+},
+{
+"id": "Digital Computer Laboratory 2320",
+"roomName": "2320",
+"typesHosted": [
+"LAB",
+"LCD"
+],
+"sectionCount": 15,
+"building": {
+"id": "Digital Computer Laboratory"
+}
+},
+{
+"id": "Digital Computer Laboratory L440",
+"roomName": "L440",
+"typesHosted": [
+"DIS"
+],
+"sectionCount": 8,
+"building": {
+"id": "Digital Computer Laboratory"
+}
+},
+{
+"id": "Education Building 162",
+"roomName": "162",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"S1",
+"S7"
+],
+"sectionCount": 15,
+"building": {
+"id": "Education Building"
+}
+},
+{
+"id": "Education Building 166",
+"roomName": "166",
+"typesHosted": [
+"DIS",
+"L1",
+"LAB",
+"LBD",
+"LCD"
+],
+"sectionCount": 13,
+"building": {
+"id": "Education Building"
+}
+},
+{
+"id": "Education Building 17",
+"roomName": "17",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC",
+"P1"
+],
+"sectionCount": 14,
+"building": {
+"id": "Education Building"
+}
+},
+{
+"id": "Education Building 176",
+"roomName": "176",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 2,
+"building": {
+"id": "Education Building"
+}
+},
+{
+"id": "Education Building 2",
+"roomName": "2",
+"typesHosted": [
+"CNF",
+"LCD",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "Education Building"
+}
+},
+{
+"id": "Education Building 210A",
+"roomName": "210A",
+"typesHosted": [
+"LCD",
+"LEC",
+"S2"
+],
+"sectionCount": 6,
+"building": {
+"id": "Education Building"
+}
+},
+{
+"id": "Education Building 22",
+"roomName": "22",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 12,
+"building": {
+"id": "Education Building"
+}
+},
+{
+"id": "Education Building 242",
+"roomName": "242",
+"typesHosted": [
+"DIS",
+"LCD",
+"S3"
+],
+"sectionCount": 14,
+"building": {
+"id": "Education Building"
+}
+},
+{
+"id": "Education Building 288A",
+"roomName": "288A",
+"typesHosted": [
+"LCD",
+"PR"
+],
+"sectionCount": 2,
+"building": {
+"id": "Education Building"
+}
+},
+{
+"id": "Education Building 323",
+"roomName": "323",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 13,
+"building": {
+"id": "Education Building"
+}
+},
+{
+"id": "Education Building 37",
+"roomName": "37",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD"
+],
+"sectionCount": 16,
+"building": {
+"id": "Education Building"
+}
+},
+{
+"id": "Education Building 376",
+"roomName": "376",
+"typesHosted": [
+"LCD",
+"PR"
+],
+"sectionCount": 8,
+"building": {
+"id": "Education Building"
+}
+},
+{
+"id": "Education Building 382",
+"roomName": "382",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 13,
+"building": {
+"id": "Education Building"
+}
+},
+{
+"id": "Education Building 385",
+"roomName": "385",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 14,
+"building": {
+"id": "Education Building"
+}
+},
+{
+"id": "Education Building 389",
+"roomName": "389",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 10,
+"building": {
+"id": "Education Building"
+}
+},
+{
+"id": "Education Building 42A",
+"roomName": "42A",
+"typesHosted": [
+"DIS",
+"LCD",
+"PR"
+],
+"sectionCount": 17,
+"building": {
+"id": "Education Building"
+}
+},
+{
+"id": "Education Building 4F",
+"roomName": "4F",
+"typesHosted": [
+"DIS",
+"LCD",
+"S2"
+],
+"sectionCount": 15,
+"building": {
+"id": "Education Building"
+}
+},
+{
+"id": "Education Building 4G",
+"roomName": "4G",
+"typesHosted": [
+"DIS",
+"LAB",
+"LCD",
+"LEC"
+],
+"sectionCount": 14,
+"building": {
+"id": "Education Building"
+}
+},
+{
+"id": "Electrical & Computer Eng Bldg 1001",
+"roomName": "1001",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 18,
+"building": {
+"id": "Electrical & Computer Eng Bldg"
+}
+},
+{
+"id": "Electrical & Computer Eng Bldg 1002",
+"roomName": "1002",
+"typesHosted": [
+"DIS",
+"LAB",
+"LEC"
+],
+"sectionCount": 16,
+"building": {
+"id": "Electrical & Computer Eng Bldg"
+}
+},
+{
+"id": "Electrical & Computer Eng Bldg 1013",
+"roomName": "1013",
+"typesHosted": [
+"DIS",
+"LEC"
+],
+"sectionCount": 8,
+"building": {
+"id": "Electrical & Computer Eng Bldg"
+}
+},
+{
+"id": "Electrical & Computer Eng Bldg 1015",
+"roomName": "1015",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 9,
+"building": {
+"id": "Electrical & Computer Eng Bldg"
+}
+},
+{
+"id": "Electrical & Computer Eng Bldg 2013",
+"roomName": "2013",
+"typesHosted": [
+"DIS",
+"LAB",
+"LCD",
+"LEC"
+],
+"sectionCount": 9,
+"building": {
+"id": "Electrical & Computer Eng Bldg"
+}
+},
+{
+"id": "Electrical & Computer Eng Bldg 2015",
+"roomName": "2015",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 12,
+"building": {
+"id": "Electrical & Computer Eng Bldg"
+}
+},
+{
+"id": "Electrical & Computer Eng Bldg 2017",
+"roomName": "2017",
+"typesHosted": [
+"DIS",
+"LEC"
+],
+"sectionCount": 10,
+"building": {
+"id": "Electrical & Computer Eng Bldg"
+}
+},
+{
+"id": "Electrical & Computer Eng Bldg 2022",
+"roomName": "2022",
+"typesHosted": [
+"DIS",
+"LAB"
+],
+"sectionCount": 14,
+"building": {
+"id": "Electrical & Computer Eng Bldg"
+}
+},
+{
+"id": "Electrical & Computer Eng Bldg 2076",
+"roomName": "2076",
+"typesHosted": [
+"LEC"
+],
+"sectionCount": 1,
+"building": {
+"id": "Electrical & Computer Eng Bldg"
+}
+},
+{
+"id": "Electrical & Computer Eng Bldg 3013",
+"roomName": "3013",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "Electrical & Computer Eng Bldg"
+}
+},
+{
+"id": "Electrical & Computer Eng Bldg 3014",
+"roomName": "3014",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 3,
+"building": {
+"id": "Electrical & Computer Eng Bldg"
+}
+},
+{
+"id": "Electrical & Computer Eng Bldg 3015",
+"roomName": "3015",
+"typesHosted": [
+"DIS",
+"LEC"
+],
+"sectionCount": 10,
+"building": {
+"id": "Electrical & Computer Eng Bldg"
+}
+},
+{
+"id": "Electrical & Computer Eng Bldg 3017",
+"roomName": "3017",
+"typesHosted": [
+"DIS",
+"LEC"
+],
+"sectionCount": 8,
+"building": {
+"id": "Electrical & Computer Eng Bldg"
+}
+},
+{
+"id": "Electrical & Computer Eng Bldg 3020",
+"roomName": "3020",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 7,
+"building": {
+"id": "Electrical & Computer Eng Bldg"
+}
+},
+{
+"id": "Electrical & Computer Eng Bldg 3026",
+"roomName": "3026",
+"typesHosted": [
+"DIS"
+],
+"sectionCount": 7,
+"building": {
+"id": "Electrical & Computer Eng Bldg"
+}
+},
+{
+"id": "Electrical & Computer Eng Bldg 3071",
+"roomName": "3071",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 7,
+"building": {
+"id": "Electrical & Computer Eng Bldg"
+}
+},
+{
+"id": "Electrical & Computer Eng Bldg 3073",
+"roomName": "3073",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 19,
+"building": {
+"id": "Electrical & Computer Eng Bldg"
+}
+},
+{
+"id": "Electrical & Computer Eng Bldg 3075",
+"roomName": "3075",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 9,
+"building": {
+"id": "Electrical & Computer Eng Bldg"
+}
+},
+{
+"id": "Electrical & Computer Eng Bldg 3077",
+"roomName": "3077",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 6,
+"building": {
+"id": "Electrical & Computer Eng Bldg"
+}
+},
+{
+"id": "Electrical & Computer Eng Bldg 3080",
+"roomName": "3080",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 3,
+"building": {
+"id": "Electrical & Computer Eng Bldg"
+}
+},
+{
+"id": "Electrical & Computer Eng Bldg 3081",
+"roomName": "3081",
+"typesHosted": [
+"DIS",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "Electrical & Computer Eng Bldg"
+}
+},
+{
+"id": "Electrical & Computer Eng Bldg 4022",
+"roomName": "4022",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 2,
+"building": {
+"id": "Electrical & Computer Eng Bldg"
+}
+},
+{
+"id": "Electrical & Computer Eng Bldg 4024",
+"roomName": "4024",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 3,
+"building": {
+"id": "Electrical & Computer Eng Bldg"
+}
+},
+{
+"id": "Electrical & Computer Eng Bldg 4070",
+"roomName": "4070",
+"typesHosted": [
+"DIS",
+"LEC"
+],
+"sectionCount": 13,
+"building": {
+"id": "Electrical & Computer Eng Bldg"
+}
+},
+{
+"id": "Electrical & Computer Eng Bldg 4072",
+"roomName": "4072",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 6,
+"building": {
+"id": "Electrical & Computer Eng Bldg"
+}
+},
+{
+"id": "Electrical & Computer Eng Bldg 4074",
+"roomName": "4074",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 21,
+"building": {
+"id": "Electrical & Computer Eng Bldg"
+}
+},
+{
+"id": "Electrical & Computer Eng Bldg 5072",
+"roomName": "5072",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 9,
+"building": {
+"id": "Electrical & Computer Eng Bldg"
+}
+},
+{
+"id": "Electrical & Computer Eng Bldg 5080",
+"roomName": "5080",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 5,
+"building": {
+"id": "Electrical & Computer Eng Bldg"
+}
+},
+{
+"id": "Engineering Hall 106B1",
+"roomName": "106B1",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 9,
+"building": {
+"id": "Engineering Hall"
+}
+},
+{
+"id": "Engineering Hall 106B3",
+"roomName": "106B3",
+"typesHosted": [
+"DIS",
+"LAB",
+"LCD",
+"LEC"
+],
+"sectionCount": 10,
+"building": {
+"id": "Engineering Hall"
+}
+},
+{
+"id": "Engineering Hall 106B6",
+"roomName": "106B6",
+"typesHosted": [
+"D1",
+"DIS",
+"LAB",
+"LCD",
+"S1"
+],
+"sectionCount": 9,
+"building": {
+"id": "Engineering Hall"
+}
+},
+{
+"id": "Engineering Hall 106B8",
+"roomName": "106B8",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC",
+"S10"
+],
+"sectionCount": 11,
+"building": {
+"id": "Engineering Hall"
+}
+},
+{
+"id": "Engineering Hall 110A",
+"roomName": "110A",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 4,
+"building": {
+"id": "Engineering Hall"
+}
+},
+{
+"id": "Engineering Hall 403A",
+"roomName": "403A",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 3,
+"building": {
+"id": "Engineering Hall"
+}
+},
+{
+"id": "Engineering Sciences Building 190",
+"roomName": "190",
+"typesHosted": [
+"LEC"
+],
+"sectionCount": 1,
+"building": {
+"id": "Engineering Sciences Building"
+}
+},
+{
+"id": "Engineering Sciences Building 4122",
+"roomName": "4122",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 1,
+"building": {
+"id": "Engineering Sciences Building"
+}
+},
+{
+"id": "Engineering Sciences Building 5105",
+"roomName": "5105",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 1,
+"building": {
+"id": "Engineering Sciences Building"
+}
+},
+{
+"id": "Engineering Sciences Building 6103",
+"roomName": "6103",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 4,
+"building": {
+"id": "Engineering Sciences Building"
+}
+},
+{
+"id": "Engineering Sciences Building 6105",
+"roomName": "6105",
+"typesHosted": [
+"LAB",
+"LEC"
+],
+"sectionCount": 2,
+"building": {
+"id": "Engineering Sciences Building"
+}
+},
+{
+"id": "Engineering Sciences Building 6106",
+"roomName": "6106",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 1,
+"building": {
+"id": "Engineering Sciences Building"
+}
+},
+{
+"id": "English Building 104",
+"roomName": "104",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "English Building"
+}
+},
+{
+"id": "English Building 107A",
+"roomName": "107A",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 3,
+"building": {
+"id": "English Building"
+}
+},
+{
+"id": "English Building 108",
+"roomName": "108",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD"
+],
+"sectionCount": 18,
+"building": {
+"id": "English Building"
+}
+},
+{
+"id": "English Building 113",
+"roomName": "113",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 13,
+"building": {
+"id": "English Building"
+}
+},
+{
+"id": "English Building 115",
+"roomName": "115",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD"
+],
+"sectionCount": 15,
+"building": {
+"id": "English Building"
+}
+},
+{
+"id": "English Building 119",
+"roomName": "119",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD"
+],
+"sectionCount": 12,
+"building": {
+"id": "English Building"
+}
+},
+{
+"id": "English Building 123",
+"roomName": "123",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 14,
+"building": {
+"id": "English Building"
+}
+},
+{
+"id": "English Building 125",
+"roomName": "125",
+"typesHosted": [
+"DIS",
+"LCD",
+"M2"
+],
+"sectionCount": 7,
+"building": {
+"id": "English Building"
+}
+},
+{
+"id": "English Building 127",
+"roomName": "127",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 11,
+"building": {
+"id": "English Building"
+}
+},
+{
+"id": "English Building 131",
+"roomName": "131",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "English Building"
+}
+},
+{
+"id": "English Building 135",
+"roomName": "135",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 12,
+"building": {
+"id": "English Building"
+}
+},
+{
+"id": "English Building 149",
+"roomName": "149",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 13,
+"building": {
+"id": "English Building"
+}
+},
+{
+"id": "English Building 150",
+"roomName": "150",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 15,
+"building": {
+"id": "English Building"
+}
+},
+{
+"id": "English Building 156",
+"roomName": "156",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 15,
+"building": {
+"id": "English Building"
+}
+},
+{
+"id": "English Building 160",
+"roomName": "160",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "English Building"
+}
+},
+{
+"id": "English Building 23",
+"roomName": "23",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 1,
+"building": {
+"id": "English Building"
+}
+},
+{
+"id": "English Building 259",
+"roomName": "259",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 8,
+"building": {
+"id": "English Building"
+}
+},
+{
+"id": "English Building 29",
+"roomName": "29",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 12,
+"building": {
+"id": "English Building"
+}
+},
+{
+"id": "English Building 303",
+"roomName": "303",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 12,
+"building": {
+"id": "English Building"
+}
+},
+{
+"id": "English Building 307",
+"roomName": "307",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 6,
+"building": {
+"id": "English Building"
+}
+},
+{
+"id": "English Building 309",
+"roomName": "309",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 10,
+"building": {
+"id": "English Building"
+}
+},
+{
+"id": "English Building 36",
+"roomName": "36",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 11,
+"building": {
+"id": "English Building"
+}
+},
+{
+"id": "English Building 44",
+"roomName": "44",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 12,
+"building": {
+"id": "English Building"
+}
+},
+{
+"id": "English Building 61",
+"roomName": "61",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 5,
+"building": {
+"id": "English Building"
+}
+},
+{
+"id": "English Building 69",
+"roomName": "69",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD"
+],
+"sectionCount": 11,
+"building": {
+"id": "English Building"
+}
+},
+{
+"id": "Everitt Laboratory 1302",
+"roomName": "1302",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 9,
+"building": {
+"id": "Everitt Laboratory"
+}
+},
+{
+"id": "Everitt Laboratory 1306",
+"roomName": "1306",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "Everitt Laboratory"
+}
+},
+{
+"id": "Everitt Laboratory 201",
+"roomName": "201",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 3,
+"building": {
+"id": "Everitt Laboratory"
+}
+},
+{
+"id": "Everitt Laboratory 2101",
+"roomName": "2101",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC",
+"S15"
+],
+"sectionCount": 12,
+"building": {
+"id": "Everitt Laboratory"
+}
+},
+{
+"id": "Everitt Laboratory 215",
+"roomName": "215",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 3,
+"building": {
+"id": "Everitt Laboratory"
+}
+},
+{
+"id": "Everitt Laboratory 2233",
+"roomName": "2233",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC",
+"S12"
+],
+"sectionCount": 14,
+"building": {
+"id": "Everitt Laboratory"
+}
+},
+{
+"id": "Everitt Laboratory 2310",
+"roomName": "2310",
+"typesHosted": [
+"L5",
+"LAB",
+"LCD",
+"LEC"
+],
+"sectionCount": 13,
+"building": {
+"id": "Everitt Laboratory"
+}
+},
+{
+"id": "Everitt Laboratory 3109",
+"roomName": "3109",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 4,
+"building": {
+"id": "Everitt Laboratory"
+}
+},
+{
+"id": "Everitt Laboratory 3117",
+"roomName": "3117",
+"typesHosted": [
+"D1",
+"D2",
+"D3",
+"DIS",
+"LBD",
+"LCD",
+"LEC",
+"S3"
+],
+"sectionCount": 14,
+"building": {
+"id": "Everitt Laboratory"
+}
+},
+{
+"id": "Everitt Laboratory 3217",
+"roomName": "3217",
+"typesHosted": [
+"D2",
+"D3",
+"LAB",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 12,
+"building": {
+"id": "Everitt Laboratory"
+}
+},
+{
+"id": "FAR Meeting Space ARR",
+"roomName": "ARR",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 1,
+"building": {
+"id": "FAR Meeting Space"
+}
+},
+{
+"id": "Flagg Hall 123",
+"roomName": "123",
+"typesHosted": [
+"ST"
+],
+"sectionCount": 1,
+"building": {
+"id": "Flagg Hall"
+}
+},
+{
+"id": "Flagg Hall 128",
+"roomName": "128",
+"typesHosted": [
+"ST"
+],
+"sectionCount": 1,
+"building": {
+"id": "Flagg Hall"
+}
+},
+{
+"id": "Flagg Hall 129",
+"roomName": "129",
+"typesHosted": [
+"LCD",
+"ST"
+],
+"sectionCount": 3,
+"building": {
+"id": "Flagg Hall"
+}
+},
+{
+"id": "Flagg Hall 131",
+"roomName": "131",
+"typesHosted": [
+"DIS",
+"LCD",
+"SEM"
+],
+"sectionCount": 10,
+"building": {
+"id": "Flagg Hall"
+}
+},
+{
+"id": "Flagg Hall 306",
+"roomName": "306",
+"typesHosted": [
+"LCD",
+"ST"
+],
+"sectionCount": 2,
+"building": {
+"id": "Flagg Hall"
+}
+},
+{
+"id": "Flagg Hall 309",
+"roomName": "309",
+"typesHosted": [
+"ST"
+],
+"sectionCount": 6,
+"building": {
+"id": "Flagg Hall"
+}
+},
+{
+"id": "Flagg Hall 320",
+"roomName": "320",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 3,
+"building": {
+"id": "Flagg Hall"
+}
+},
+{
+"id": "Flagg Hall 329",
+"roomName": "329",
+"typesHosted": [
+"ST"
+],
+"sectionCount": 1,
+"building": {
+"id": "Flagg Hall"
+}
+},
+{
+"id": "Flagg Hall 334",
+"roomName": "334",
+"typesHosted": [
+"ST"
+],
+"sectionCount": 1,
+"building": {
+"id": "Flagg Hall"
+}
+},
+{
+"id": "Flagg Hall 404",
+"roomName": "404",
+"typesHosted": [
+"SEM"
+],
+"sectionCount": 1,
+"building": {
+"id": "Flagg Hall"
+}
+},
+{
+"id": "Flagg Hall 410",
+"roomName": "410",
+"typesHosted": [
+"SEM"
+],
+"sectionCount": 1,
+"building": {
+"id": "Flagg Hall"
+}
+},
+{
+"id": "Flagg Hall 420",
+"roomName": "420",
+"typesHosted": [
+"ST"
+],
+"sectionCount": 1,
+"building": {
+"id": "Flagg Hall"
+}
+},
+{
+"id": "Foellinger Auditorium AUD",
+"roomName": "AUD",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 10,
+"building": {
+"id": "Foellinger Auditorium"
+}
+},
+{
+"id": "Freer Hall 121A",
+"roomName": "121A",
+"typesHosted": [
+"INT",
+"LAB",
+"LCD",
+"LEC"
+],
+"sectionCount": 12,
+"building": {
+"id": "Freer Hall"
+}
+},
+{
+"id": "Freer Hall 130",
+"roomName": "130",
+"typesHosted": [
+"LAB",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 6,
+"building": {
+"id": "Freer Hall"
+}
+},
+{
+"id": "Freer Hall 224",
+"roomName": "224",
+"typesHosted": [
+"LCD",
+"SEM"
+],
+"sectionCount": 6,
+"building": {
+"id": "Freer Hall"
+}
+},
+{
+"id": "Freer Hall 255",
+"roomName": "255",
+"typesHosted": [
+"LAB",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 15,
+"building": {
+"id": "Freer Hall"
+}
+},
+{
+"id": "Freer Hall 356",
+"roomName": "356",
+"typesHosted": [
+"INT",
+"LAB",
+"LCD"
+],
+"sectionCount": 9,
+"building": {
+"id": "Freer Hall"
+}
+},
+{
+"id": "Freer Hall 450",
+"roomName": "450",
+"typesHosted": [
+"LAB",
+"LBD",
+"LCD"
+],
+"sectionCount": 18,
+"building": {
+"id": "Freer Hall"
+}
+},
+{
+"id": "Freer Hall ARR",
+"roomName": "ARR",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 4,
+"building": {
+"id": "Freer Hall"
+}
+},
+{
+"id": "Grainger Engineering Library ARR",
+"roomName": "ARR",
+"typesHosted": [
+"LBD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Grainger Engineering Library"
+}
+},
+{
+"id": "Gregory Hall 1",
+"roomName": "1",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 3,
+"building": {
+"id": "Gregory Hall"
+}
+},
+{
+"id": "Gregory Hall 100",
+"roomName": "100",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 7,
+"building": {
+"id": "Gregory Hall"
+}
+},
+{
+"id": "Gregory Hall 111",
+"roomName": "111",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 19,
+"building": {
+"id": "Gregory Hall"
+}
+},
+{
+"id": "Gregory Hall 112",
+"roomName": "112",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "Gregory Hall"
+}
+},
+{
+"id": "Gregory Hall 13",
+"roomName": "13",
+"typesHosted": [
+"LAB",
+"LCD",
+"LEC"
+],
+"sectionCount": 8,
+"building": {
+"id": "Gregory Hall"
+}
+},
+{
+"id": "Gregory Hall 205",
+"roomName": "205",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 12,
+"building": {
+"id": "Gregory Hall"
+}
+},
+{
+"id": "Gregory Hall 207",
+"roomName": "207",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 17,
+"building": {
+"id": "Gregory Hall"
+}
+},
+{
+"id": "Gregory Hall 213",
+"roomName": "213",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "Gregory Hall"
+}
+},
+{
+"id": "Gregory Hall 215",
+"roomName": "215",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 12,
+"building": {
+"id": "Gregory Hall"
+}
+},
+{
+"id": "Gregory Hall 217",
+"roomName": "217",
+"typesHosted": [
+"DIS",
+"LAB",
+"LCD",
+"LEC"
+],
+"sectionCount": 14,
+"building": {
+"id": "Gregory Hall"
+}
+},
+{
+"id": "Gregory Hall 219",
+"roomName": "219",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 9,
+"building": {
+"id": "Gregory Hall"
+}
+},
+{
+"id": "Gregory Hall 221",
+"roomName": "221",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 19,
+"building": {
+"id": "Gregory Hall"
+}
+},
+{
+"id": "Gregory Hall 223",
+"roomName": "223",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 8,
+"building": {
+"id": "Gregory Hall"
+}
+},
+{
+"id": "Gregory Hall 307",
+"roomName": "307",
+"typesHosted": [
+"DIS",
+"IND",
+"LAB",
+"LCD"
+],
+"sectionCount": 12,
+"building": {
+"id": "Gregory Hall"
+}
+},
+{
+"id": "Gregory Hall 31",
+"roomName": "31",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 12,
+"building": {
+"id": "Gregory Hall"
+}
+},
+{
+"id": "Gregory Hall 311",
+"roomName": "311",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD"
+],
+"sectionCount": 24,
+"building": {
+"id": "Gregory Hall"
+}
+},
+{
+"id": "Gregory Hall 313",
+"roomName": "313",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 12,
+"building": {
+"id": "Gregory Hall"
+}
+},
+{
+"id": "Gregory Hall 315",
+"roomName": "315",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 14,
+"building": {
+"id": "Gregory Hall"
+}
+},
+{
+"id": "Gregory Hall 317",
+"roomName": "317",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "Gregory Hall"
+}
+},
+{
+"id": "Gregory Hall 319",
+"roomName": "319",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 7,
+"building": {
+"id": "Gregory Hall"
+}
+},
+{
+"id": "Gregory Hall 321",
+"roomName": "321",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 10,
+"building": {
+"id": "Gregory Hall"
+}
+},
+{
+"id": "Gregory Hall 325",
+"roomName": "325",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 9,
+"building": {
+"id": "Gregory Hall"
+}
+},
+{
+"id": "Gregory Hall 327",
+"roomName": "327",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 14,
+"building": {
+"id": "Gregory Hall"
+}
+},
+{
+"id": "Gregory Hall 329",
+"roomName": "329",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "Gregory Hall"
+}
+},
+{
+"id": "Gregory Hall 331",
+"roomName": "331",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 13,
+"building": {
+"id": "Gregory Hall"
+}
+},
+{
+"id": "Gregory Hall 336",
+"roomName": "336",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 6,
+"building": {
+"id": "Gregory Hall"
+}
+},
+{
+"id": "Gregory Hall 402",
+"roomName": "402",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 2,
+"building": {
+"id": "Gregory Hall"
+}
+},
+{
+"id": "Harding Band Building 141",
+"roomName": "141",
+"typesHosted": [
+"LBD",
+"LCD",
+"LEC",
+"PR"
+],
+"sectionCount": 13,
+"building": {
+"id": "Harding Band Building"
+}
+},
+{
+"id": "Harding Band Building 167",
+"roomName": "167",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Harding Band Building"
+}
+},
+{
+"id": "Harding Band Building ARR",
+"roomName": "ARR",
+"typesHosted": [
+"PR"
+],
+"sectionCount": 5,
+"building": {
+"id": "Harding Band Building"
+}
+},
+{
+"id": "Henry Administration Bldg 137",
+"roomName": "137",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 13,
+"building": {
+"id": "Henry Administration Bldg"
+}
+},
+{
+"id": "Henry Administration Bldg 138",
+"roomName": "138",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "Henry Administration Bldg"
+}
+},
+{
+"id": "Henry Administration Bldg 140",
+"roomName": "140",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 15,
+"building": {
+"id": "Henry Administration Bldg"
+}
+},
+{
+"id": "Henry Administration Bldg 142",
+"roomName": "142",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 14,
+"building": {
+"id": "Henry Administration Bldg"
+}
+},
+{
+"id": "Henry Administration Bldg 143",
+"roomName": "143",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 15,
+"building": {
+"id": "Henry Administration Bldg"
+}
+},
+{
+"id": "Henry Administration Bldg 148",
+"roomName": "148",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 14,
+"building": {
+"id": "Henry Administration Bldg"
+}
+},
+{
+"id": "Henry Administration Bldg 149",
+"roomName": "149",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 12,
+"building": {
+"id": "Henry Administration Bldg"
+}
+},
+{
+"id": "Henry Administration Bldg 152",
+"roomName": "152",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 13,
+"building": {
+"id": "Henry Administration Bldg"
+}
+},
+{
+"id": "Henry Administration Bldg 154",
+"roomName": "154",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 12,
+"building": {
+"id": "Henry Administration Bldg"
+}
+},
+{
+"id": "Henry Administration Bldg 156",
+"roomName": "156",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 11,
+"building": {
+"id": "Henry Administration Bldg"
+}
+},
+{
+"id": "Huff Hall 1001",
+"roomName": "1001",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 12,
+"building": {
+"id": "Huff Hall"
+}
+},
+{
+"id": "Huff Hall 1002",
+"roomName": "1002",
+"typesHosted": [
+"DIS",
+"LAB",
+"LCD"
+],
+"sectionCount": 11,
+"building": {
+"id": "Huff Hall"
+}
+},
+{
+"id": "Huff Hall 112",
+"roomName": "112",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "Huff Hall"
+}
+},
+{
+"id": "Huff Hall 2001",
+"roomName": "2001",
+"typesHosted": [
+"INT",
+"LCD",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "Huff Hall"
+}
+},
+{
+"id": "Huff Hall 2021C",
+"roomName": "2021C",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 4,
+"building": {
+"id": "Huff Hall"
+}
+},
+{
+"id": "Huff Hall 209",
+"roomName": "209",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 6,
+"building": {
+"id": "Huff Hall"
+}
+},
+{
+"id": "Huff Hall 3019",
+"roomName": "3019",
+"typesHosted": [
+"DIS",
+"LAB",
+"LCD",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "Huff Hall"
+}
+},
+{
+"id": "Illini Center ARR",
+"roomName": "ARR",
+"typesHosted": [
+"DIS",
+"LCD",
+"S10",
+"S11"
+],
+"sectionCount": 6,
+"building": {
+"id": "Illini Center"
+}
+},
+{
+"id": "Illini Union 60",
+"roomName": "60",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 6,
+"building": {
+"id": "Illini Union"
+}
+},
+{
+"id": "Illinois Street Residence Lng 89",
+"roomName": "89",
+"typesHosted": [
+"DIS"
+],
+"sectionCount": 2,
+"building": {
+"id": "Illinois Street Residence Lng"
+}
+},
+{
+"id": "Illinois Street Residence Lng 94AB",
+"roomName": "94AB",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 6,
+"building": {
+"id": "Illinois Street Residence Lng"
+}
+},
+{
+"id": "Inst Gov & Public Affairs Bldg 110",
+"roomName": "110",
+"typesHosted": [
+"S3"
+],
+"sectionCount": 1,
+"building": {
+"id": "Inst Gov & Public Affairs Bldg"
+}
+},
+{
+"id": "Inst Labor &  Industrial Rel 35/43",
+"roomName": "35/43",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 4,
+"building": {
+"id": "Inst Labor &  Industrial Rel"
+}
+},
+{
+"id": "Inst Labor &  Industrial Rel 51",
+"roomName": "51",
+"typesHosted": [
+"LCD",
+"Q"
+],
+"sectionCount": 7,
+"building": {
+"id": "Inst Labor &  Industrial Rel"
+}
+},
+{
+"id": "Inst Labor &  Industrial Rel 53",
+"roomName": "53",
+"typesHosted": [
+"LCD",
+"S5"
+],
+"sectionCount": 4,
+"building": {
+"id": "Inst Labor &  Industrial Rel"
+}
+},
+{
+"id": "Japan House ARR",
+"roomName": "ARR",
+"typesHosted": [
+"INT"
+],
+"sectionCount": 1,
+"building": {
+"id": "Japan House"
+}
+},
+{
+"id": "Krannert Art Museum 62",
+"roomName": "62",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 4,
+"building": {
+"id": "Krannert Art Museum"
+}
+},
+{
+"id": "Krannert Center for Perf Arts 2119",
+"roomName": "2119",
+"typesHosted": [
+"LAB",
+"LBD"
+],
+"sectionCount": 2,
+"building": {
+"id": "Krannert Center for Perf Arts"
+}
+},
+{
+"id": "Krannert Center for Perf Arts 2121",
+"roomName": "2121",
+"typesHosted": [
+"LBD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Krannert Center for Perf Arts"
+}
+},
+{
+"id": "Krannert Center for Perf Arts 2122",
+"roomName": "2122",
+"typesHosted": [
+"LBD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Krannert Center for Perf Arts"
+}
+},
+{
+"id": "Krannert Center for Perf Arts 2127",
+"roomName": "2127",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 7,
+"building": {
+"id": "Krannert Center for Perf Arts"
+}
+},
+{
+"id": "Krannert Center for Perf Arts 2310",
+"roomName": "2310",
+"typesHosted": [
+"LBD",
+"LEC",
+"PR"
+],
+"sectionCount": 7,
+"building": {
+"id": "Krannert Center for Perf Arts"
+}
+},
+{
+"id": "Krannert Center for Perf Arts 2312",
+"roomName": "2312",
+"typesHosted": [
+"LBD"
+],
+"sectionCount": 3,
+"building": {
+"id": "Krannert Center for Perf Arts"
+}
+},
+{
+"id": "Krannert Center for Perf Arts 2317",
+"roomName": "2317",
+"typesHosted": [
+"LCD",
+"LEC",
+"PR"
+],
+"sectionCount": 11,
+"building": {
+"id": "Krannert Center for Perf Arts"
+}
+},
+{
+"id": "Krannert Center for Perf Arts 2418",
+"roomName": "2418",
+"typesHosted": [
+"LAB",
+"LBD",
+"LCD",
+"PR"
+],
+"sectionCount": 9,
+"building": {
+"id": "Krannert Center for Perf Arts"
+}
+},
+{
+"id": "Krannert Center for Perf Arts 2500",
+"roomName": "2500",
+"typesHosted": [
+"B1",
+"LAB",
+"LBD",
+"LCD"
+],
+"sectionCount": 9,
+"building": {
+"id": "Krannert Center for Perf Arts"
+}
+},
+{
+"id": "Krannert Center for Perf Arts 3601",
+"roomName": "3601",
+"typesHosted": [
+"LBD",
+"LCD",
+"SEM"
+],
+"sectionCount": 7,
+"building": {
+"id": "Krannert Center for Perf Arts"
+}
+},
+{
+"id": "Krannert Center for Perf Arts 3604",
+"roomName": "3604",
+"typesHosted": [
+"LBD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Krannert Center for Perf Arts"
+}
+},
+{
+"id": "Krannert Center for Perf Arts 3605",
+"roomName": "3605",
+"typesHosted": [
+"LAB",
+"LBD"
+],
+"sectionCount": 8,
+"building": {
+"id": "Krannert Center for Perf Arts"
+}
+},
+{
+"id": "Krannert Center for Perf Arts 3607",
+"roomName": "3607",
+"typesHosted": [
+"C1",
+"CNF",
+"LBD",
+"LCD"
+],
+"sectionCount": 6,
+"building": {
+"id": "Krannert Center for Perf Arts"
+}
+},
+{
+"id": "Krannert Center for Perf Arts 4114",
+"roomName": "4114",
+"typesHosted": [
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 7,
+"building": {
+"id": "Krannert Center for Perf Arts"
+}
+},
+{
+"id": "Krannert Center for Perf Arts 4118",
+"roomName": "4118",
+"typesHosted": [
+"B3",
+"LBD",
+"LCD"
+],
+"sectionCount": 7,
+"building": {
+"id": "Krannert Center for Perf Arts"
+}
+},
+{
+"id": "Krannert Center for Perf Arts 4501C",
+"roomName": "4501C",
+"typesHosted": [
+"LAB",
+"LBD",
+"LCD"
+],
+"sectionCount": 3,
+"building": {
+"id": "Krannert Center for Perf Arts"
+}
+},
+{
+"id": "Krannert Center for Perf Arts 4503",
+"roomName": "4503",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"SEM"
+],
+"sectionCount": 8,
+"building": {
+"id": "Krannert Center for Perf Arts"
+}
+},
+{
+"id": "Krannert Center for Perf Arts 4506",
+"roomName": "4506",
+"typesHosted": [
+"IND",
+"LBD",
+"LCD"
+],
+"sectionCount": 8,
+"building": {
+"id": "Krannert Center for Perf Arts"
+}
+},
+{
+"id": "Library 66",
+"roomName": "66",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 8,
+"building": {
+"id": "Library"
+}
+},
+{
+"id": "Lincoln Hall 1000",
+"roomName": "1000",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 9,
+"building": {
+"id": "Lincoln Hall"
+}
+},
+{
+"id": "Lincoln Hall 1002",
+"roomName": "1002",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 13,
+"building": {
+"id": "Lincoln Hall"
+}
+},
+{
+"id": "Lincoln Hall 1020",
+"roomName": "1020",
+"typesHosted": [
+"DIS",
+"LCD",
+"SEM"
+],
+"sectionCount": 9,
+"building": {
+"id": "Lincoln Hall"
+}
+},
+{
+"id": "Lincoln Hall 1022",
+"roomName": "1022",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 15,
+"building": {
+"id": "Lincoln Hall"
+}
+},
+{
+"id": "Lincoln Hall 1024",
+"roomName": "1024",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "Lincoln Hall"
+}
+},
+{
+"id": "Lincoln Hall 1026",
+"roomName": "1026",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 9,
+"building": {
+"id": "Lincoln Hall"
+}
+},
+{
+"id": "Lincoln Hall 1027",
+"roomName": "1027",
+"typesHosted": [
+"DIS",
+"LAB",
+"LBD",
+"LCD",
+"S6"
+],
+"sectionCount": 12,
+"building": {
+"id": "Lincoln Hall"
+}
+},
+{
+"id": "Lincoln Hall 1028",
+"roomName": "1028",
+"typesHosted": [
+"DIS",
+"LCD",
+"S2"
+],
+"sectionCount": 15,
+"building": {
+"id": "Lincoln Hall"
+}
+},
+{
+"id": "Lincoln Hall 1051",
+"roomName": "1051",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 14,
+"building": {
+"id": "Lincoln Hall"
+}
+},
+{
+"id": "Lincoln Hall 1057",
+"roomName": "1057",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 16,
+"building": {
+"id": "Lincoln Hall"
+}
+},
+{
+"id": "Lincoln Hall 1060",
+"roomName": "1060",
+"typesHosted": [
+"DIS",
+"LCD",
+"S9"
+],
+"sectionCount": 15,
+"building": {
+"id": "Lincoln Hall"
+}
+},
+{
+"id": "Lincoln Hall 1062",
+"roomName": "1062",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 11,
+"building": {
+"id": "Lincoln Hall"
+}
+},
+{
+"id": "Lincoln Hall 1064",
+"roomName": "1064",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 10,
+"building": {
+"id": "Lincoln Hall"
+}
+},
+{
+"id": "Lincoln Hall 1065",
+"roomName": "1065",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC",
+"S10"
+],
+"sectionCount": 10,
+"building": {
+"id": "Lincoln Hall"
+}
+},
+{
+"id": "Lincoln Hall 1066",
+"roomName": "1066",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 11,
+"building": {
+"id": "Lincoln Hall"
+}
+},
+{
+"id": "Lincoln Hall 1068",
+"roomName": "1068",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 9,
+"building": {
+"id": "Lincoln Hall"
+}
+},
+{
+"id": "Lincoln Hall 1090",
+"roomName": "1090",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 12,
+"building": {
+"id": "Lincoln Hall"
+}
+},
+{
+"id": "Lincoln Hall 1092",
+"roomName": "1092",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 8,
+"building": {
+"id": "Lincoln Hall"
+}
+},
+{
+"id": "Lincoln Hall 4007",
+"roomName": "4007",
+"typesHosted": [
+"LCD",
+"S1",
+"S2",
+"S4",
+"S5"
+],
+"sectionCount": 6,
+"building": {
+"id": "Lincoln Hall"
+}
+},
+{
+"id": "Lincoln Hall 4051",
+"roomName": "4051",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 6,
+"building": {
+"id": "Lincoln Hall"
+}
+},
+{
+"id": "Lincoln Hall 4053",
+"roomName": "4053",
+"typesHosted": [
+"LCD",
+"S3"
+],
+"sectionCount": 5,
+"building": {
+"id": "Lincoln Hall"
+}
+},
+{
+"id": "Lincoln Hall THEAT",
+"roomName": "THEAT",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 13,
+"building": {
+"id": "Lincoln Hall"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling 1018",
+"roomName": "1018",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 6,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling 1022",
+"roomName": "1022",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 10,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling 1024",
+"roomName": "1024",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 9,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling 1030",
+"roomName": "1030",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 17,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling 1032",
+"roomName": "1032",
+"typesHosted": [
+"D1",
+"LCD",
+"SEM"
+],
+"sectionCount": 6,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling 1038",
+"roomName": "1038",
+"typesHosted": [
+"DIS",
+"LAB",
+"LCD"
+],
+"sectionCount": 11,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling 1040",
+"roomName": "1040",
+"typesHosted": [
+"D1",
+"LAB",
+"LCD",
+"LEC"
+],
+"sectionCount": 13,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling 1046",
+"roomName": "1046",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 4,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling 1048",
+"roomName": "1048",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 9,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling 1110",
+"roomName": "1110",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 9,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling 1112",
+"roomName": "1112",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 4,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling 1118",
+"roomName": "1118",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 9,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling 1120",
+"roomName": "1120",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 11,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling 1126",
+"roomName": "1126",
+"typesHosted": [
+"DIS",
+"LAB",
+"LCD",
+"LEC"
+],
+"sectionCount": 10,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling 1128",
+"roomName": "1128",
+"typesHosted": [
+"DIS",
+"LAB",
+"LCD",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling 1134",
+"roomName": "1134",
+"typesHosted": [
+"LCD",
+"S1"
+],
+"sectionCount": 7,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling 1136",
+"roomName": "1136",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"RES"
+],
+"sectionCount": 16,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling 1140",
+"roomName": "1140",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 6,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling 3072E",
+"roomName": "3072E",
+"typesHosted": [
+"LAB",
+"LCD",
+"ONL"
+],
+"sectionCount": 4,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling G13",
+"roomName": "G13",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 13,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling G17",
+"roomName": "G17",
+"typesHosted": [
+"LAB",
+"LCD"
+],
+"sectionCount": 4,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling G18",
+"roomName": "G18",
+"typesHosted": [
+"DIS",
+"LAB",
+"LCD"
+],
+"sectionCount": 13,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling G20",
+"roomName": "G20",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 10,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling G23",
+"roomName": "G23",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 10,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling G24",
+"roomName": "G24",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 13,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling G27",
+"roomName": "G27",
+"typesHosted": [
+"DIS",
+"LAB",
+"LCD"
+],
+"sectionCount": 6,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling G3",
+"roomName": "G3",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 6,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling G30",
+"roomName": "G30",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 15,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling G32",
+"roomName": "G32",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 12,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling G36",
+"roomName": "G36",
+"typesHosted": [
+"B1",
+"DIS",
+"LAB",
+"LCD",
+"LEC"
+],
+"sectionCount": 17,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling G46",
+"roomName": "G46",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 13,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling G48",
+"roomName": "G48",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 10,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling G52",
+"roomName": "G52",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 10,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling G58",
+"roomName": "G58",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling G7",
+"roomName": "G7",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 2,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling G8A",
+"roomName": "G8A",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 3,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling G8B",
+"roomName": "G8B",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 6,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Literatures, Cultures, & Ling G96",
+"roomName": "G96",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 4,
+"building": {
+"id": "Literatures, Cultures, & Ling"
+}
+},
+{
+"id": "Loomis Laboratory 136",
+"roomName": "136",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "Loomis Laboratory"
+}
+},
+{
+"id": "Loomis Laboratory 137",
+"roomName": "137",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 19,
+"building": {
+"id": "Loomis Laboratory"
+}
+},
+{
+"id": "Loomis Laboratory 139",
+"roomName": "139",
+"typesHosted": [
+"DIS",
+"LBD"
+],
+"sectionCount": 18,
+"building": {
+"id": "Loomis Laboratory"
+}
+},
+{
+"id": "Loomis Laboratory 141",
+"roomName": "141",
+"typesHosted": [
+"CNF",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "Loomis Laboratory"
+}
+},
+{
+"id": "Loomis Laboratory 143",
+"roomName": "143",
+"typesHosted": [
+"DIS"
+],
+"sectionCount": 20,
+"building": {
+"id": "Loomis Laboratory"
+}
+},
+{
+"id": "Loomis Laboratory 144",
+"roomName": "144",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 8,
+"building": {
+"id": "Loomis Laboratory"
+}
+},
+{
+"id": "Loomis Laboratory 147",
+"roomName": "147",
+"typesHosted": [
+"DIS"
+],
+"sectionCount": 18,
+"building": {
+"id": "Loomis Laboratory"
+}
+},
+{
+"id": "Loomis Laboratory 151",
+"roomName": "151",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 8,
+"building": {
+"id": "Loomis Laboratory"
+}
+},
+{
+"id": "Loomis Laboratory 158",
+"roomName": "158",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 14,
+"building": {
+"id": "Loomis Laboratory"
+}
+},
+{
+"id": "Loomis Laboratory 222",
+"roomName": "222",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 13,
+"building": {
+"id": "Loomis Laboratory"
+}
+},
+{
+"id": "Loomis Laboratory 262",
+"roomName": "262",
+"typesHosted": [
+"LAB",
+"LEC"
+],
+"sectionCount": 3,
+"building": {
+"id": "Loomis Laboratory"
+}
+},
+{
+"id": "Loomis Laboratory 276",
+"roomName": "276",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 4,
+"building": {
+"id": "Loomis Laboratory"
+}
+},
+{
+"id": "Loomis Laboratory 35",
+"roomName": "35",
+"typesHosted": [
+"DIS"
+],
+"sectionCount": 5,
+"building": {
+"id": "Loomis Laboratory"
+}
+},
+{
+"id": "Materials Science & Eng Bld 100",
+"roomName": "100",
+"typesHosted": [
+"CNF",
+"LCD",
+"LEC"
+],
+"sectionCount": 16,
+"building": {
+"id": "Materials Science & Eng Bld"
+}
+},
+{
+"id": "Materials Science & Eng Bld 119",
+"roomName": "119",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "Materials Science & Eng Bld"
+}
+},
+{
+"id": "Materials Science & Eng Bld 305",
+"roomName": "305",
+"typesHosted": [
+"D3",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 12,
+"building": {
+"id": "Materials Science & Eng Bld"
+}
+},
+{
+"id": "Materials Science & Eng Bld 4101",
+"roomName": "4101",
+"typesHosted": [
+"D2",
+"DIS",
+"LBD",
+"LCD"
+],
+"sectionCount": 13,
+"building": {
+"id": "Materials Science & Eng Bld"
+}
+},
+{
+"id": "Meat Science Laboratory 208",
+"roomName": "208",
+"typesHosted": [
+"M5"
+],
+"sectionCount": 1,
+"building": {
+"id": "Meat Science Laboratory"
+}
+},
+{
+"id": "Meat Science Laboratory ARR",
+"roomName": "ARR",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 2,
+"building": {
+"id": "Meat Science Laboratory"
+}
+},
+{
+"id": "Mechanical Engineering Lab 1009",
+"roomName": "1009",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 10,
+"building": {
+"id": "Mechanical Engineering Lab"
+}
+},
+{
+"id": "Micro & Nanotechnology Lab ARR",
+"roomName": "ARR",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 7,
+"building": {
+"id": "Micro & Nanotechnology Lab"
+}
+},
+{
+"id": "Morrill Hall 407",
+"roomName": "407",
+"typesHosted": [
+"C2"
+],
+"sectionCount": 1,
+"building": {
+"id": "Morrill Hall"
+}
+},
+{
+"id": "Mumford Hall 103",
+"roomName": "103",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 10,
+"building": {
+"id": "Mumford Hall"
+}
+},
+{
+"id": "Mumford Hall 200",
+"roomName": "200",
+"typesHosted": [
+"LBD",
+"LEC"
+],
+"sectionCount": 3,
+"building": {
+"id": "Mumford Hall"
+}
+},
+{
+"id": "Mumford Hall 313",
+"roomName": "313",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 14,
+"building": {
+"id": "Mumford Hall"
+}
+},
+{
+"id": "Mumford Hall 316N",
+"roomName": "316N",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"S2"
+],
+"sectionCount": 12,
+"building": {
+"id": "Mumford Hall"
+}
+},
+{
+"id": "Mumford Hall 316S",
+"roomName": "316S",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 8,
+"building": {
+"id": "Mumford Hall"
+}
+},
+{
+"id": "Mumford Hall 320",
+"roomName": "320",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 14,
+"building": {
+"id": "Mumford Hall"
+}
+},
+{
+"id": "Mumford Hall 426",
+"roomName": "426",
+"typesHosted": [
+"D1",
+"DIS",
+"LCD",
+"SEM"
+],
+"sectionCount": 5,
+"building": {
+"id": "Mumford Hall"
+}
+},
+{
+"id": "Mumford Hall 65",
+"roomName": "65",
+"typesHosted": [
+"DIS",
+"LCD",
+"Q"
+],
+"sectionCount": 9,
+"building": {
+"id": "Mumford Hall"
+}
+},
+{
+"id": "Music Building 0061A",
+"roomName": "0061A",
+"typesHosted": [
+"LBD",
+"LEC",
+"PR"
+],
+"sectionCount": 5,
+"building": {
+"id": "Music Building"
+}
+},
+{
+"id": "Music Building 1030",
+"roomName": "1030",
+"typesHosted": [
+"LBD",
+"LEC",
+"PR"
+],
+"sectionCount": 14,
+"building": {
+"id": "Music Building"
+}
+},
+{
+"id": "Music Building 2334",
+"roomName": "2334",
+"typesHosted": [
+"LCD",
+"SEM"
+],
+"sectionCount": 5,
+"building": {
+"id": "Music Building"
+}
+},
+{
+"id": "Music Building 300",
+"roomName": "300",
+"typesHosted": [
+"PR"
+],
+"sectionCount": 1,
+"building": {
+"id": "Music Building"
+}
+},
+{
+"id": "Music Building 302",
+"roomName": "302",
+"typesHosted": [
+"LBD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Music Building"
+}
+},
+{
+"id": "Music Building 303",
+"roomName": "303",
+"typesHosted": [
+"DIS"
+],
+"sectionCount": 2,
+"building": {
+"id": "Music Building"
+}
+},
+{
+"id": "Music Building 304",
+"roomName": "304",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD"
+],
+"sectionCount": 14,
+"building": {
+"id": "Music Building"
+}
+},
+{
+"id": "Music Building 320",
+"roomName": "320",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 9,
+"building": {
+"id": "Music Building"
+}
+},
+{
+"id": "Music Building 322",
+"roomName": "322",
+"typesHosted": [
+"LBD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Music Building"
+}
+},
+{
+"id": "Music Building 323",
+"roomName": "323",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 6,
+"building": {
+"id": "Music Building"
+}
+},
+{
+"id": "Music Building 324",
+"roomName": "324",
+"typesHosted": [
+"LBD"
+],
+"sectionCount": 3,
+"building": {
+"id": "Music Building"
+}
+},
+{
+"id": "Music Building 325",
+"roomName": "325",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 4,
+"building": {
+"id": "Music Building"
+}
+},
+{
+"id": "Music Building 354",
+"roomName": "354",
+"typesHosted": [
+"DIS",
+"LCD",
+"PR"
+],
+"sectionCount": 4,
+"building": {
+"id": "Music Building"
+}
+},
+{
+"id": "Music Building 356",
+"roomName": "356",
+"typesHosted": [
+"DIS"
+],
+"sectionCount": 10,
+"building": {
+"id": "Music Building"
+}
+},
+{
+"id": "Music Building 357",
+"roomName": "357",
+"typesHosted": [
+"DIS",
+"LBD"
+],
+"sectionCount": 7,
+"building": {
+"id": "Music Building"
+}
+},
+{
+"id": "Music Building 358",
+"roomName": "358",
+"typesHosted": [
+"DIS"
+],
+"sectionCount": 3,
+"building": {
+"id": "Music Building"
+}
+},
+{
+"id": "Music Building 359",
+"roomName": "359",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"LEC",
+"SEM"
+],
+"sectionCount": 12,
+"building": {
+"id": "Music Building"
+}
+},
+{
+"id": "Music Building 360",
+"roomName": "360",
+"typesHosted": [
+"LBD",
+"LCD",
+"SEM"
+],
+"sectionCount": 4,
+"building": {
+"id": "Music Building"
+}
+},
+{
+"id": "Music Building 4033",
+"roomName": "4033",
+"typesHosted": [
+"LBD",
+"LCD"
+],
+"sectionCount": 3,
+"building": {
+"id": "Music Building"
+}
+},
+{
+"id": "Music Building 4067",
+"roomName": "4067",
+"typesHosted": [
+"LBD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Music Building"
+}
+},
+{
+"id": "Music Building ARR",
+"roomName": "ARR",
+"typesHosted": [
+"PR"
+],
+"sectionCount": 1,
+"building": {
+"id": "Music Building"
+}
+},
+{
+"id": "National Soybean Res Ctr 149",
+"roomName": "149",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 7,
+"building": {
+"id": "National Soybean Res Ctr"
+}
+},
+{
+"id": "National Soybean Res Ctr 337",
+"roomName": "337",
+"typesHosted": [
+"LAB",
+"LCD"
+],
+"sectionCount": 4,
+"building": {
+"id": "National Soybean Res Ctr"
+}
+},
+{
+"id": "Natural History Building 1020",
+"roomName": "1020",
+"typesHosted": [
+"DIS",
+"LAB",
+"LBD",
+"LCD"
+],
+"sectionCount": 10,
+"building": {
+"id": "Natural History Building"
+}
+},
+{
+"id": "Natural History Building 1022",
+"roomName": "1022",
+"typesHosted": [
+"LAB",
+"LEC"
+],
+"sectionCount": 4,
+"building": {
+"id": "Natural History Building"
+}
+},
+{
+"id": "Natural History Building 1071",
+"roomName": "1071",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 9,
+"building": {
+"id": "Natural History Building"
+}
+},
+{
+"id": "Natural History Building 2004",
+"roomName": "2004",
+"typesHosted": [
+"DIS"
+],
+"sectionCount": 1,
+"building": {
+"id": "Natural History Building"
+}
+},
+{
+"id": "Natural History Building 2020",
+"roomName": "2020",
+"typesHosted": [
+"LEC"
+],
+"sectionCount": 3,
+"building": {
+"id": "Natural History Building"
+}
+},
+{
+"id": "Natural History Building 2020A",
+"roomName": "2020A",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 8,
+"building": {
+"id": "Natural History Building"
+}
+},
+{
+"id": "Natural History Building 2020B",
+"roomName": "2020B",
+"typesHosted": [
+"D1",
+"DIS",
+"LEC"
+],
+"sectionCount": 7,
+"building": {
+"id": "Natural History Building"
+}
+},
+{
+"id": "Natural History Building 2049",
+"roomName": "2049",
+"typesHosted": [
+"SEM"
+],
+"sectionCount": 1,
+"building": {
+"id": "Natural History Building"
+}
+},
+{
+"id": "Natural History Building 2078",
+"roomName": "2078",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 11,
+"building": {
+"id": "Natural History Building"
+}
+},
+{
+"id": "Natural History Building 2079",
+"roomName": "2079",
+"typesHosted": [
+"CNF",
+"LCD",
+"LEC"
+],
+"sectionCount": 14,
+"building": {
+"id": "Natural History Building"
+}
+},
+{
+"id": "Natural History Building 2082",
+"roomName": "2082",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 3,
+"building": {
+"id": "Natural History Building"
+}
+},
+{
+"id": "Natural History Building 2083",
+"roomName": "2083",
+"typesHosted": [
+"D1",
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 8,
+"building": {
+"id": "Natural History Building"
+}
+},
+{
+"id": "Natural History Building 2084",
+"roomName": "2084",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 2,
+"building": {
+"id": "Natural History Building"
+}
+},
+{
+"id": "Natural History Building 2090",
+"roomName": "2090",
+"typesHosted": [
+"DIS",
+"LEC"
+],
+"sectionCount": 9,
+"building": {
+"id": "Natural History Building"
+}
+},
+{
+"id": "Natural History Building 3002",
+"roomName": "3002",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 8,
+"building": {
+"id": "Natural History Building"
+}
+},
+{
+"id": "Natural History Building 3004",
+"roomName": "3004",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 10,
+"building": {
+"id": "Natural History Building"
+}
+},
+{
+"id": "Natural History Building 3011",
+"roomName": "3011",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 4,
+"building": {
+"id": "Natural History Building"
+}
+},
+{
+"id": "Natural History Building 3098",
+"roomName": "3098",
+"typesHosted": [
+"DIS"
+],
+"sectionCount": 24,
+"building": {
+"id": "Natural History Building"
+}
+},
+{
+"id": "Natural History Building 3100",
+"roomName": "3100",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 10,
+"building": {
+"id": "Natural History Building"
+}
+},
+{
+"id": "Natural History Building 4002",
+"roomName": "4002",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 6,
+"building": {
+"id": "Natural History Building"
+}
+},
+{
+"id": "Natural History Building 4004",
+"roomName": "4004",
+"typesHosted": [
+"DIS",
+"SEM"
+],
+"sectionCount": 11,
+"building": {
+"id": "Natural History Building"
+}
+},
+{
+"id": "Natural History Building 4014",
+"roomName": "4014",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 1,
+"building": {
+"id": "Natural History Building"
+}
+},
+{
+"id": "Natural History Building 4016",
+"roomName": "4016",
+"typesHosted": [
+"LAB",
+"LEC"
+],
+"sectionCount": 2,
+"building": {
+"id": "Natural History Building"
+}
+},
+{
+"id": "Natural History Building 4072",
+"roomName": "4072",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 2,
+"building": {
+"id": "Natural History Building"
+}
+},
+{
+"id": "Natural History Building 4074",
+"roomName": "4074",
+"typesHosted": [
+"LAB",
+"LEC"
+],
+"sectionCount": 2,
+"building": {
+"id": "Natural History Building"
+}
+},
+{
+"id": "Newmark Civil Engineering Bldg 1225",
+"roomName": "1225",
+"typesHosted": [
+"LAB",
+"LCD"
+],
+"sectionCount": 3,
+"building": {
+"id": "Newmark Civil Engineering Bldg"
+}
+},
+{
+"id": "Newmark Civil Engineering Bldg 1310",
+"roomName": "1310",
+"typesHosted": [
+"LCD",
+"LEC",
+"S2"
+],
+"sectionCount": 13,
+"building": {
+"id": "Newmark Civil Engineering Bldg"
+}
+},
+{
+"id": "Newmark Civil Engineering Bldg 1311",
+"roomName": "1311",
+"typesHosted": [
+"LCD",
+"S1"
+],
+"sectionCount": 8,
+"building": {
+"id": "Newmark Civil Engineering Bldg"
+}
+},
+{
+"id": "Newmark Civil Engineering Bldg 2310",
+"roomName": "2310",
+"typesHosted": [
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 7,
+"building": {
+"id": "Newmark Civil Engineering Bldg"
+}
+},
+{
+"id": "Newmark Civil Engineering Bldg 2311",
+"roomName": "2311",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 7,
+"building": {
+"id": "Newmark Civil Engineering Bldg"
+}
+},
+{
+"id": "Newmark Civil Engineering Bldg 2312",
+"roomName": "2312",
+"typesHosted": [
+"LCD",
+"S1"
+],
+"sectionCount": 8,
+"building": {
+"id": "Newmark Civil Engineering Bldg"
+}
+},
+{
+"id": "Newmark Civil Engineering Bldg 3310",
+"roomName": "3310",
+"typesHosted": [
+"LCD",
+"S5",
+"SEM"
+],
+"sectionCount": 9,
+"building": {
+"id": "Newmark Civil Engineering Bldg"
+}
+},
+{
+"id": "Newmark Civil Engineering Bldg B226",
+"roomName": "B226",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 2,
+"building": {
+"id": "Newmark Civil Engineering Bldg"
+}
+},
+{
+"id": "Noble Hall 7",
+"roomName": "7",
+"typesHosted": [
+"ST"
+],
+"sectionCount": 2,
+"building": {
+"id": "Noble Hall"
+}
+},
+{
+"id": "Noyes Laboratory 100",
+"roomName": "100",
+"typesHosted": [
+"LEC",
+"Q"
+],
+"sectionCount": 19,
+"building": {
+"id": "Noyes Laboratory"
+}
+},
+{
+"id": "Noyes Laboratory 157",
+"roomName": "157",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 23,
+"building": {
+"id": "Noyes Laboratory"
+}
+},
+{
+"id": "Noyes Laboratory 161",
+"roomName": "161",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "Noyes Laboratory"
+}
+},
+{
+"id": "Noyes Laboratory 162",
+"roomName": "162",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 18,
+"building": {
+"id": "Noyes Laboratory"
+}
+},
+{
+"id": "Noyes Laboratory 163",
+"roomName": "163",
+"typesHosted": [
+"DIS",
+"LAB",
+"LCD",
+"LEC"
+],
+"sectionCount": 12,
+"building": {
+"id": "Noyes Laboratory"
+}
+},
+{
+"id": "Noyes Laboratory 164",
+"roomName": "164",
+"typesHosted": [
+"DIS",
+"LCD",
+"Q"
+],
+"sectionCount": 21,
+"building": {
+"id": "Noyes Laboratory"
+}
+},
+{
+"id": "Noyes Laboratory 165",
+"roomName": "165",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 13,
+"building": {
+"id": "Noyes Laboratory"
+}
+},
+{
+"id": "Noyes Laboratory 203",
+"roomName": "203",
+"typesHosted": [
+"LAB",
+"Q"
+],
+"sectionCount": 24,
+"building": {
+"id": "Noyes Laboratory"
+}
+},
+{
+"id": "Noyes Laboratory 204",
+"roomName": "204",
+"typesHosted": [
+"LAB",
+"Q"
+],
+"sectionCount": 23,
+"building": {
+"id": "Noyes Laboratory"
+}
+},
+{
+"id": "Noyes Laboratory 209",
+"roomName": "209",
+"typesHosted": [
+"DIS",
+"Q"
+],
+"sectionCount": 12,
+"building": {
+"id": "Noyes Laboratory"
+}
+},
+{
+"id": "Noyes Laboratory 217",
+"roomName": "217",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 9,
+"building": {
+"id": "Noyes Laboratory"
+}
+},
+{
+"id": "Noyes Laboratory 219",
+"roomName": "219",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 4,
+"building": {
+"id": "Noyes Laboratory"
+}
+},
+{
+"id": "Noyes Laboratory 250",
+"roomName": "250",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 3,
+"building": {
+"id": "Noyes Laboratory"
+}
+},
+{
+"id": "Noyes Laboratory 255",
+"roomName": "255",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 6,
+"building": {
+"id": "Noyes Laboratory"
+}
+},
+{
+"id": "Noyes Laboratory 256",
+"roomName": "256",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 6,
+"building": {
+"id": "Noyes Laboratory"
+}
+},
+{
+"id": "Noyes Laboratory 257",
+"roomName": "257",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 6,
+"building": {
+"id": "Noyes Laboratory"
+}
+},
+{
+"id": "Noyes Laboratory 262",
+"roomName": "262",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 6,
+"building": {
+"id": "Noyes Laboratory"
+}
+},
+{
+"id": "Noyes Laboratory 263",
+"roomName": "263",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 6,
+"building": {
+"id": "Noyes Laboratory"
+}
+},
+{
+"id": "Noyes Laboratory 300",
+"roomName": "300",
+"typesHosted": [
+"DIS",
+"LAB",
+"LBD",
+"LCD",
+"Q"
+],
+"sectionCount": 27,
+"building": {
+"id": "Noyes Laboratory"
+}
+},
+{
+"id": "Noyes Laboratory 300A",
+"roomName": "300A",
+"typesHosted": [
+"DIS",
+"LAB",
+"Q"
+],
+"sectionCount": 18,
+"building": {
+"id": "Noyes Laboratory"
+}
+},
+{
+"id": "Noyes Laboratory 301",
+"roomName": "301",
+"typesHosted": [
+"DIS",
+"LAB",
+"LBD",
+"LCD",
+"Q"
+],
+"sectionCount": 38,
+"building": {
+"id": "Noyes Laboratory"
+}
+},
+{
+"id": "Noyes Laboratory 303",
+"roomName": "303",
+"typesHosted": [
+"LAB",
+"Q"
+],
+"sectionCount": 28,
+"building": {
+"id": "Noyes Laboratory"
+}
+},
+{
+"id": "Noyes Laboratory 304",
+"roomName": "304",
+"typesHosted": [
+"DIS",
+"LAB",
+"Q"
+],
+"sectionCount": 26,
+"building": {
+"id": "Noyes Laboratory"
+}
+},
+{
+"id": "Noyes Laboratory 462",
+"roomName": "462",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 2,
+"building": {
+"id": "Noyes Laboratory"
+}
+},
+{
+"id": "Noyes Laboratory 463",
+"roomName": "463",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 5,
+"building": {
+"id": "Noyes Laboratory"
+}
+},
+{
+"id": "Nuclear Radiations Laboratory 114",
+"roomName": "114",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 3,
+"building": {
+"id": "Nuclear Radiations Laboratory"
+}
+},
+{
+"id": "Outdoor Space 6THSTLAWNE",
+"roomName": "6THSTLAWNE",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 2,
+"building": {
+"id": "Outdoor Space"
+}
+},
+{
+"id": "Pennsylvania Lounge Bld - PAR 111A",
+"roomName": "111A",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 3,
+"building": {
+"id": "Pennsylvania Lounge Bld - PAR"
+}
+},
+{
+"id": "Plant Sciences Laboratory 1103",
+"roomName": "1103",
+"typesHosted": [
+"LAB",
+"LBD",
+"LEC"
+],
+"sectionCount": 4,
+"building": {
+"id": "Plant Sciences Laboratory"
+}
+},
+{
+"id": "Plant Sciences Laboratory 1125",
+"roomName": "1125",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 5,
+"building": {
+"id": "Plant Sciences Laboratory"
+}
+},
+{
+"id": "Plant Sciences Laboratory 1303",
+"roomName": "1303",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 1,
+"building": {
+"id": "Plant Sciences Laboratory"
+}
+},
+{
+"id": "Psychology Building 11",
+"roomName": "11",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 12,
+"building": {
+"id": "Psychology Building"
+}
+},
+{
+"id": "Psychology Building 142",
+"roomName": "142",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "Psychology Building"
+}
+},
+{
+"id": "Psychology Building 17",
+"roomName": "17",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 9,
+"building": {
+"id": "Psychology Building"
+}
+},
+{
+"id": "Psychology Building 207",
+"roomName": "207",
+"typesHosted": [
+"DIS",
+"LAB",
+"LCD",
+"LEC"
+],
+"sectionCount": 15,
+"building": {
+"id": "Psychology Building"
+}
+},
+{
+"id": "Psychology Building 21",
+"roomName": "21",
+"typesHosted": [
+"LAB",
+"LCD",
+"LEC"
+],
+"sectionCount": 9,
+"building": {
+"id": "Psychology Building"
+}
+},
+{
+"id": "Psychology Building 211",
+"roomName": "211",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Psychology Building"
+}
+},
+{
+"id": "Psychology Building 219A",
+"roomName": "219A",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 7,
+"building": {
+"id": "Psychology Building"
+}
+},
+{
+"id": "Psychology Building 23",
+"roomName": "23",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "Psychology Building"
+}
+},
+{
+"id": "Psychology Building 258",
+"roomName": "258",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 5,
+"building": {
+"id": "Psychology Building"
+}
+},
+{
+"id": "Psychology Building 27",
+"roomName": "27",
+"typesHosted": [
+"LAB",
+"LEC"
+],
+"sectionCount": 19,
+"building": {
+"id": "Psychology Building"
+}
+},
+{
+"id": "Psychology Building 29",
+"roomName": "29",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 14,
+"building": {
+"id": "Psychology Building"
+}
+},
+{
+"id": "Psychology Building 31",
+"roomName": "31",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 11,
+"building": {
+"id": "Psychology Building"
+}
+},
+{
+"id": "Psychology Building 32",
+"roomName": "32",
+"typesHosted": [
+"LCD",
+"LEC",
+"S18"
+],
+"sectionCount": 10,
+"building": {
+"id": "Psychology Building"
+}
+},
+{
+"id": "Psychology Building 37",
+"roomName": "37",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 1,
+"building": {
+"id": "Psychology Building"
+}
+},
+{
+"id": "Psychology Building 455",
+"roomName": "455",
+"typesHosted": [
+"LAB",
+"LCD"
+],
+"sectionCount": 7,
+"building": {
+"id": "Psychology Building"
+}
+},
+{
+"id": "Psychology Building 608",
+"roomName": "608",
+"typesHosted": [
+"DIS",
+"LEC"
+],
+"sectionCount": 2,
+"building": {
+"id": "Psychology Building"
+}
+},
+{
+"id": "Psychology Building 708",
+"roomName": "708",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 3,
+"building": {
+"id": "Psychology Building"
+}
+},
+{
+"id": "Psychology Building 815",
+"roomName": "815",
+"typesHosted": [
+"B2",
+"CNF",
+"LCD",
+"LEC",
+"S1"
+],
+"sectionCount": 7,
+"building": {
+"id": "Psychology Building"
+}
+},
+{
+"id": "Psychology Building 819",
+"roomName": "819",
+"typesHosted": [
+"LCD",
+"LEC",
+"S2",
+"S4"
+],
+"sectionCount": 13,
+"building": {
+"id": "Psychology Building"
+}
+},
+{
+"id": "Psychology Building ARR",
+"roomName": "ARR",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Psychology Building"
+}
+},
+{
+"id": "Richmond Studio 103",
+"roomName": "103",
+"typesHosted": [
+"LAB",
+"LEC"
+],
+"sectionCount": 4,
+"building": {
+"id": "Richmond Studio"
+}
+},
+{
+"id": "Richmond Studio 108",
+"roomName": "108",
+"typesHosted": [
+"LBD"
+],
+"sectionCount": 5,
+"building": {
+"id": "Richmond Studio"
+}
+},
+{
+"id": "Roger Adams Laboratory 116",
+"roomName": "116",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 13,
+"building": {
+"id": "Roger Adams Laboratory"
+}
+},
+{
+"id": "Roger Adams Laboratory ARR",
+"roomName": "ARR",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 2,
+"building": {
+"id": "Roger Adams Laboratory"
+}
+},
+{
+"id": "Sch of Info Sciences Bldg 109",
+"roomName": "109",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 7,
+"building": {
+"id": "Sch of Info Sciences Bldg"
+}
+},
+{
+"id": "Sch of Info Sciences Bldg 126",
+"roomName": "126",
+"typesHosted": [
+"LAB",
+"LCD"
+],
+"sectionCount": 4,
+"building": {
+"id": "Sch of Info Sciences Bldg"
+}
+},
+{
+"id": "Sch of Info Sciences Bldg 12A",
+"roomName": "12A",
+"typesHosted": [
+"DIS",
+"LAB",
+"LCD"
+],
+"sectionCount": 13,
+"building": {
+"id": "Sch of Info Sciences Bldg"
+}
+},
+{
+"id": "Sch of Info Sciences Bldg 13",
+"roomName": "13",
+"typesHosted": [
+"DIS",
+"LAB",
+"LCD"
+],
+"sectionCount": 9,
+"building": {
+"id": "Sch of Info Sciences Bldg"
+}
+},
+{
+"id": "Sch of Info Sciences Bldg 131",
+"roomName": "131",
+"typesHosted": [
+"DIS",
+"LAB",
+"LCD"
+],
+"sectionCount": 14,
+"building": {
+"id": "Sch of Info Sciences Bldg"
+}
+},
+{
+"id": "Sch of Info Sciences Bldg 46",
+"roomName": "46",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 14,
+"building": {
+"id": "Sch of Info Sciences Bldg"
+}
+},
+{
+"id": "Sch of Info Sciences Bldg 53",
+"roomName": "53",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD"
+],
+"sectionCount": 14,
+"building": {
+"id": "Sch of Info Sciences Bldg"
+}
+},
+{
+"id": "Sidney Lu Mech Engr Bldg 0023B",
+"roomName": "0023B",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 16,
+"building": {
+"id": "Sidney Lu Mech Engr Bldg"
+}
+},
+{
+"id": "Sidney Lu Mech Engr Bldg 100",
+"roomName": "100",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 12,
+"building": {
+"id": "Sidney Lu Mech Engr Bldg"
+}
+},
+{
+"id": "Sidney Lu Mech Engr Bldg 1043",
+"roomName": "1043",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"LEC",
+"S1",
+"S10",
+"S4"
+],
+"sectionCount": 13,
+"building": {
+"id": "Sidney Lu Mech Engr Bldg"
+}
+},
+{
+"id": "Sidney Lu Mech Engr Bldg 1047",
+"roomName": "1047",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD"
+],
+"sectionCount": 12,
+"building": {
+"id": "Sidney Lu Mech Engr Bldg"
+}
+},
+{
+"id": "Sidney Lu Mech Engr Bldg 1227",
+"roomName": "1227",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 3,
+"building": {
+"id": "Sidney Lu Mech Engr Bldg"
+}
+},
+{
+"id": "Sidney Lu Mech Engr Bldg 2045",
+"roomName": "2045",
+"typesHosted": [
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 9,
+"building": {
+"id": "Sidney Lu Mech Engr Bldg"
+}
+},
+{
+"id": "Sidney Lu Mech Engr Bldg 2051",
+"roomName": "2051",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 8,
+"building": {
+"id": "Sidney Lu Mech Engr Bldg"
+}
+},
+{
+"id": "Sidney Lu Mech Engr Bldg 2055",
+"roomName": "2055",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 7,
+"building": {
+"id": "Sidney Lu Mech Engr Bldg"
+}
+},
+{
+"id": "Sidney Lu Mech Engr Bldg 2100",
+"roomName": "2100",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 13,
+"building": {
+"id": "Sidney Lu Mech Engr Bldg"
+}
+},
+{
+"id": "Sidney Lu Mech Engr Bldg 2200",
+"roomName": "2200",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 12,
+"building": {
+"id": "Sidney Lu Mech Engr Bldg"
+}
+},
+{
+"id": "Sidney Lu Mech Engr Bldg 2208",
+"roomName": "2208",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 3,
+"building": {
+"id": "Sidney Lu Mech Engr Bldg"
+}
+},
+{
+"id": "Sidney Lu Mech Engr Bldg 23",
+"roomName": "23",
+"typesHosted": [
+"DIS"
+],
+"sectionCount": 41,
+"building": {
+"id": "Sidney Lu Mech Engr Bldg"
+}
+},
+{
+"id": "Sidney Lu Mech Engr Bldg 3100",
+"roomName": "3100",
+"typesHosted": [
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 7,
+"building": {
+"id": "Sidney Lu Mech Engr Bldg"
+}
+},
+{
+"id": "Sidney Lu Mech Engr Bldg 3101",
+"roomName": "3101",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD"
+],
+"sectionCount": 9,
+"building": {
+"id": "Sidney Lu Mech Engr Bldg"
+}
+},
+{
+"id": "Sidney Lu Mech Engr Bldg 4100",
+"roomName": "4100",
+"typesHosted": [
+"CNF",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 8,
+"building": {
+"id": "Sidney Lu Mech Engr Bldg"
+}
+},
+{
+"id": "Sidney Lu Mech Engr Bldg 53",
+"roomName": "53",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 21,
+"building": {
+"id": "Sidney Lu Mech Engr Bldg"
+}
+},
+{
+"id": "Sidney Lu Mech Engr Bldg ARR",
+"roomName": "ARR",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 2,
+"building": {
+"id": "Sidney Lu Mech Engr Bldg"
+}
+},
+{
+"id": "Siebel Center for Comp Sci 1214",
+"roomName": "1214",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC",
+"S0",
+"S11",
+"S13",
+"S4",
+"S7"
+],
+"sectionCount": 12,
+"building": {
+"id": "Siebel Center for Comp Sci"
+}
+},
+{
+"id": "Siebel Center for Comp Sci 1302",
+"roomName": "1302",
+"typesHosted": [
+"DIS",
+"LCD",
+"S1",
+"S10",
+"S13",
+"S14",
+"S3"
+],
+"sectionCount": 11,
+"building": {
+"id": "Siebel Center for Comp Sci"
+}
+},
+{
+"id": "Siebel Center for Comp Sci 1304",
+"roomName": "1304",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC",
+"S10",
+"S12",
+"S8"
+],
+"sectionCount": 11,
+"building": {
+"id": "Siebel Center for Comp Sci"
+}
+},
+{
+"id": "Siebel Center for Comp Sci 1404",
+"roomName": "1404",
+"typesHosted": [
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 14,
+"building": {
+"id": "Siebel Center for Comp Sci"
+}
+},
+{
+"id": "Siebel Center for Comp Sci 216",
+"roomName": "216",
+"typesHosted": [
+"DIS",
+"L2",
+"L3",
+"LAB",
+"LCD",
+"LEC",
+"S11",
+"S19",
+"S6"
+],
+"sectionCount": 18,
+"building": {
+"id": "Siebel Center for Comp Sci"
+}
+},
+{
+"id": "Siebel Center for Comp Sci 218",
+"roomName": "218",
+"typesHosted": [
+"DIS",
+"LAB",
+"LBD",
+"LCD"
+],
+"sectionCount": 25,
+"building": {
+"id": "Siebel Center for Comp Sci"
+}
+},
+{
+"id": "Siebel Center for Comp Sci 220",
+"roomName": "220",
+"typesHosted": [
+"LBD",
+"LCD",
+"S2",
+"S8"
+],
+"sectionCount": 12,
+"building": {
+"id": "Siebel Center for Comp Sci"
+}
+},
+{
+"id": "Siebel Center for Comp Sci 2406",
+"roomName": "2406",
+"typesHosted": [
+"LBD",
+"LCD"
+],
+"sectionCount": 12,
+"building": {
+"id": "Siebel Center for Comp Sci"
+}
+},
+{
+"id": "Siebel Center for Comp Sci ARR",
+"roomName": "ARR",
+"typesHosted": [
+"L3",
+"S10",
+"S15",
+"S20"
+],
+"sectionCount": 4,
+"building": {
+"id": "Siebel Center for Comp Sci"
+}
+},
+{
+"id": "Siebel Center for Design 1000",
+"roomName": "1000",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 2,
+"building": {
+"id": "Siebel Center for Design"
+}
+},
+{
+"id": "Siebel Center for Design 1046",
+"roomName": "1046",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 5,
+"building": {
+"id": "Siebel Center for Design"
+}
+},
+{
+"id": "Smith Memorial Hall 103",
+"roomName": "103",
+"typesHosted": [
+"LBD"
+],
+"sectionCount": 9,
+"building": {
+"id": "Smith Memorial Hall"
+}
+},
+{
+"id": "Smith Memorial Hall 104",
+"roomName": "104",
+"typesHosted": [
+"LBD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Smith Memorial Hall"
+}
+},
+{
+"id": "Smith Memorial Hall 106",
+"roomName": "106",
+"typesHosted": [
+"DIS",
+"LAB",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 7,
+"building": {
+"id": "Smith Memorial Hall"
+}
+},
+{
+"id": "Smith Memorial Hall 114",
+"roomName": "114",
+"typesHosted": [
+"LEC",
+"PR"
+],
+"sectionCount": 6,
+"building": {
+"id": "Smith Memorial Hall"
+}
+},
+{
+"id": "Smith Memorial Hall 205",
+"roomName": "205",
+"typesHosted": [
+"PR"
+],
+"sectionCount": 1,
+"building": {
+"id": "Smith Memorial Hall"
+}
+},
+{
+"id": "Smith Memorial Hall 215",
+"roomName": "215",
+"typesHosted": [
+"LBD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Smith Memorial Hall"
+}
+},
+{
+"id": "Smith Memorial Hall 220",
+"roomName": "220",
+"typesHosted": [
+"LBD",
+"LEC"
+],
+"sectionCount": 9,
+"building": {
+"id": "Smith Memorial Hall"
+}
+},
+{
+"id": "Smith Memorial Hall 25",
+"roomName": "25",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"LEC",
+"PR"
+],
+"sectionCount": 18,
+"building": {
+"id": "Smith Memorial Hall"
+}
+},
+{
+"id": "Smith Memorial Hall 6",
+"roomName": "6",
+"typesHosted": [
+"DIS",
+"LEC",
+"PR"
+],
+"sectionCount": 5,
+"building": {
+"id": "Smith Memorial Hall"
+}
+},
+{
+"id": "South Farms ARR",
+"roomName": "ARR",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 3,
+"building": {
+"id": "South Farms"
+}
+},
+{
+"id": "Speech & Hearing Science Bldg 110",
+"roomName": "110",
+"typesHosted": [
+"DIS",
+"LAB",
+"LCD",
+"LEC"
+],
+"sectionCount": 16,
+"building": {
+"id": "Speech & Hearing Science Bldg"
+}
+},
+{
+"id": "Speech & Hearing Science Bldg 111",
+"roomName": "111",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Speech & Hearing Science Bldg"
+}
+},
+{
+"id": "Speech & Hearing Science Bldg 256",
+"roomName": "256",
+"typesHosted": [
+"LCD",
+"RES"
+],
+"sectionCount": 5,
+"building": {
+"id": "Speech & Hearing Science Bldg"
+}
+},
+{
+"id": "Spurlock Museum 115",
+"roomName": "115",
+"typesHosted": [
+"LAB",
+"LCD",
+"LEC"
+],
+"sectionCount": 4,
+"building": {
+"id": "Spurlock Museum"
+}
+},
+{
+"id": "Stock Pavilion 107",
+"roomName": "107",
+"typesHosted": [
+"LAB",
+"LEC"
+],
+"sectionCount": 7,
+"building": {
+"id": "Stock Pavilion"
+}
+},
+{
+"id": "Stock Pavilion ARENA",
+"roomName": "ARENA",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 7,
+"building": {
+"id": "Stock Pavilion"
+}
+},
+{
+"id": "Storefront Studio SuiteG",
+"roomName": "SuiteG",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 6,
+"building": {
+"id": "Storefront Studio"
+}
+},
+{
+"id": "Student Dining & Res Program 2050",
+"roomName": "2050",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 3,
+"building": {
+"id": "Student Dining & Res Program"
+}
+},
+{
+"id": "Talbot Laboratory 101B",
+"roomName": "101B",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 1,
+"building": {
+"id": "Talbot Laboratory"
+}
+},
+{
+"id": "Talbot Laboratory 103",
+"roomName": "103",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 11,
+"building": {
+"id": "Talbot Laboratory"
+}
+},
+{
+"id": "Talbot Laboratory 126",
+"roomName": "126",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 29,
+"building": {
+"id": "Talbot Laboratory"
+}
+},
+{
+"id": "Talbot Laboratory 201",
+"roomName": "201",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 20,
+"building": {
+"id": "Talbot Laboratory"
+}
+},
+{
+"id": "Talbot Laboratory ARR",
+"roomName": "ARR",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 17,
+"building": {
+"id": "Talbot Laboratory"
+}
+},
+{
+"id": "Temple Hoyne Buell Hall 104",
+"roomName": "104",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Temple Hoyne Buell Hall"
+}
+},
+{
+"id": "Temple Hoyne Buell Hall 134",
+"roomName": "134",
+"typesHosted": [
+"LAB",
+"LCD",
+"LEC"
+],
+"sectionCount": 9,
+"building": {
+"id": "Temple Hoyne Buell Hall"
+}
+},
+{
+"id": "Temple Hoyne Buell Hall 18",
+"roomName": "18",
+"typesHosted": [
+"LBD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Temple Hoyne Buell Hall"
+}
+},
+{
+"id": "Temple Hoyne Buell Hall 201",
+"roomName": "201",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 1,
+"building": {
+"id": "Temple Hoyne Buell Hall"
+}
+},
+{
+"id": "Temple Hoyne Buell Hall 205",
+"roomName": "205",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 1,
+"building": {
+"id": "Temple Hoyne Buell Hall"
+}
+},
+{
+"id": "Temple Hoyne Buell Hall 207",
+"roomName": "207",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 1,
+"building": {
+"id": "Temple Hoyne Buell Hall"
+}
+},
+{
+"id": "Temple Hoyne Buell Hall 211",
+"roomName": "211",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 1,
+"building": {
+"id": "Temple Hoyne Buell Hall"
+}
+},
+{
+"id": "Temple Hoyne Buell Hall 217",
+"roomName": "217",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 1,
+"building": {
+"id": "Temple Hoyne Buell Hall"
+}
+},
+{
+"id": "Temple Hoyne Buell Hall 219",
+"roomName": "219",
+"typesHosted": [
+"LBD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Temple Hoyne Buell Hall"
+}
+},
+{
+"id": "Temple Hoyne Buell Hall 223",
+"roomName": "223",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 10,
+"building": {
+"id": "Temple Hoyne Buell Hall"
+}
+},
+{
+"id": "Temple Hoyne Buell Hall 225",
+"roomName": "225",
+"typesHosted": [
+"CNF",
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 13,
+"building": {
+"id": "Temple Hoyne Buell Hall"
+}
+},
+{
+"id": "Temple Hoyne Buell Hall 227",
+"roomName": "227",
+"typesHosted": [
+"CNF",
+"LCD",
+"SEM"
+],
+"sectionCount": 7,
+"building": {
+"id": "Temple Hoyne Buell Hall"
+}
+},
+{
+"id": "Temple Hoyne Buell Hall 301",
+"roomName": "301",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 1,
+"building": {
+"id": "Temple Hoyne Buell Hall"
+}
+},
+{
+"id": "Temple Hoyne Buell Hall 305",
+"roomName": "305",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 1,
+"building": {
+"id": "Temple Hoyne Buell Hall"
+}
+},
+{
+"id": "Temple Hoyne Buell Hall 307",
+"roomName": "307",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 1,
+"building": {
+"id": "Temple Hoyne Buell Hall"
+}
+},
+{
+"id": "Temple Hoyne Buell Hall 311",
+"roomName": "311",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 1,
+"building": {
+"id": "Temple Hoyne Buell Hall"
+}
+},
+{
+"id": "Temple Hoyne Buell Hall 317",
+"roomName": "317",
+"typesHosted": [
+"LAB",
+"LBD"
+],
+"sectionCount": 2,
+"building": {
+"id": "Temple Hoyne Buell Hall"
+}
+},
+{
+"id": "Temple Hoyne Buell Hall 319",
+"roomName": "319",
+"typesHosted": [
+"LBD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Temple Hoyne Buell Hall"
+}
+},
+{
+"id": "Temple Hoyne Buell Hall 325",
+"roomName": "325",
+"typesHosted": [
+"LBD",
+"LEC",
+"SEM"
+],
+"sectionCount": 4,
+"building": {
+"id": "Temple Hoyne Buell Hall"
+}
+},
+{
+"id": "Temple Hoyne Buell Hall 327",
+"roomName": "327",
+"typesHosted": [
+"LBD"
+],
+"sectionCount": 2,
+"building": {
+"id": "Temple Hoyne Buell Hall"
+}
+},
+{
+"id": "Transportation Building 101",
+"roomName": "101",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 10,
+"building": {
+"id": "Transportation Building"
+}
+},
+{
+"id": "Transportation Building 103",
+"roomName": "103",
+"typesHosted": [
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 6,
+"building": {
+"id": "Transportation Building"
+}
+},
+{
+"id": "Transportation Building 112",
+"roomName": "112",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 10,
+"building": {
+"id": "Transportation Building"
+}
+},
+{
+"id": "Transportation Building 114",
+"roomName": "114",
+"typesHosted": [
+"L4",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 8,
+"building": {
+"id": "Transportation Building"
+}
+},
+{
+"id": "Transportation Building 203",
+"roomName": "203",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 13,
+"building": {
+"id": "Transportation Building"
+}
+},
+{
+"id": "Transportation Building 204",
+"roomName": "204",
+"typesHosted": [
+"DIS",
+"LCD",
+"S10"
+],
+"sectionCount": 20,
+"building": {
+"id": "Transportation Building"
+}
+},
+{
+"id": "Transportation Building 206",
+"roomName": "206",
+"typesHosted": [
+"DIS",
+"LAB",
+"LCD",
+"LEC"
+],
+"sectionCount": 15,
+"building": {
+"id": "Transportation Building"
+}
+},
+{
+"id": "Transportation Building 207",
+"roomName": "207",
+"typesHosted": [
+"LBD"
+],
+"sectionCount": 16,
+"building": {
+"id": "Transportation Building"
+}
+},
+{
+"id": "Transportation Building 316",
+"roomName": "316",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 5,
+"building": {
+"id": "Transportation Building"
+}
+},
+{
+"id": "Turner Hall M205",
+"roomName": "M205",
+"typesHosted": [
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 6,
+"building": {
+"id": "Turner Hall"
+}
+},
+{
+"id": "Turner Hall M5",
+"roomName": "M5",
+"typesHosted": [
+"LAB",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 4,
+"building": {
+"id": "Turner Hall"
+}
+},
+{
+"id": "Turner Hall W109",
+"roomName": "W109",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC",
+"SEM"
+],
+"sectionCount": 10,
+"building": {
+"id": "Turner Hall"
+}
+},
+{
+"id": "Turner Hall W115",
+"roomName": "W115",
+"typesHosted": [
+"DIS",
+"LBD",
+"LCD",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "Turner Hall"
+}
+},
+{
+"id": "Turner Hall W13",
+"roomName": "W13",
+"typesHosted": [
+"LBD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Turner Hall"
+}
+},
+{
+"id": "Turner Hall W203",
+"roomName": "W203",
+"typesHosted": [
+"CNF",
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 13,
+"building": {
+"id": "Turner Hall"
+}
+},
+{
+"id": "Turner Hall W223",
+"roomName": "W223",
+"typesHosted": [
+"CNF",
+"LCD",
+"LEC"
+],
+"sectionCount": 9,
+"building": {
+"id": "Turner Hall"
+}
+},
+{
+"id": "Turner Hall W25",
+"roomName": "W25",
+"typesHosted": [
+"LAB"
+],
+"sectionCount": 5,
+"building": {
+"id": "Turner Hall"
+}
+},
+{
+"id": "Turner Hall W9",
+"roomName": "W9",
+"typesHosted": [
+"LAB",
+"LBD"
+],
+"sectionCount": 8,
+"building": {
+"id": "Turner Hall"
+}
+},
+{
+"id": "Vet Med Basic Sciences Bldg 1220",
+"roomName": "1220",
+"typesHosted": [
+"DIS"
+],
+"sectionCount": 1,
+"building": {
+"id": "Vet Med Basic Sciences Bldg"
+}
+},
+{
+"id": "Vet Med Basic Sciences Bldg 2406",
+"roomName": "2406",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Vet Med Basic Sciences Bldg"
+}
+},
+{
+"id": "Vet Med Basic Sciences Bldg 2506",
+"roomName": "2506",
+"typesHosted": [
+"IND",
+"LCD",
+"LEC"
+],
+"sectionCount": 6,
+"building": {
+"id": "Vet Med Basic Sciences Bldg"
+}
+},
+{
+"id": "Vet Med Basic Sciences Bldg 3526",
+"roomName": "3526",
+"typesHosted": [
+"SEM"
+],
+"sectionCount": 2,
+"building": {
+"id": "Vet Med Basic Sciences Bldg"
+}
+},
+{
+"id": "Veterinary Teaching Hospital 217",
+"roomName": "217",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Veterinary Teaching Hospital"
+}
+},
+{
+"id": "Veterinary Teaching Hospital 243",
+"roomName": "243",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 3,
+"building": {
+"id": "Veterinary Teaching Hospital"
+}
+},
+{
+"id": "Veterinary Teaching Hospital 250",
+"roomName": "250",
+"typesHosted": [
+"IND",
+"LCD"
+],
+"sectionCount": 2,
+"building": {
+"id": "Veterinary Teaching Hospital"
+}
+},
+{
+"id": "Veterinary Teaching Hospital E-080",
+"roomName": "E-080",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 1,
+"building": {
+"id": "Veterinary Teaching Hospital"
+}
+},
+{
+"id": "Washington DC ARR",
+"roomName": "ARR",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 2,
+"building": {
+"id": "Washington DC"
+}
+},
+{
+"id": "Weston Hall 5",
+"roomName": "5",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 7,
+"building": {
+"id": "Weston Hall"
+}
+},
+{
+"id": "Weston Hall 7",
+"roomName": "7",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 3,
+"building": {
+"id": "Weston Hall"
+}
+},
+{
+"id": "Wohlers Hall 130",
+"roomName": "130",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 10,
+"building": {
+"id": "Wohlers Hall"
+}
+},
+{
+"id": "Wohlers Hall 138",
+"roomName": "138",
+"typesHosted": [
+"DIS",
+"LAB",
+"LCD"
+],
+"sectionCount": 13,
+"building": {
+"id": "Wohlers Hall"
+}
+},
+{
+"id": "Wohlers Hall 141",
+"roomName": "141",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 10,
+"building": {
+"id": "Wohlers Hall"
+}
+},
+{
+"id": "Wohlers Hall 152",
+"roomName": "152",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 15,
+"building": {
+"id": "Wohlers Hall"
+}
+},
+{
+"id": "Wohlers Hall 166",
+"roomName": "166",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 19,
+"building": {
+"id": "Wohlers Hall"
+}
+},
+{
+"id": "Wohlers Hall 170",
+"roomName": "170",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 11,
+"building": {
+"id": "Wohlers Hall"
+}
+},
+{
+"id": "Wohlers Hall 174",
+"roomName": "174",
+"typesHosted": [
+"LCD",
+"SEM"
+],
+"sectionCount": 9,
+"building": {
+"id": "Wohlers Hall"
+}
+},
+{
+"id": "Wohlers Hall 226",
+"roomName": "226",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 9,
+"building": {
+"id": "Wohlers Hall"
+}
+},
+{
+"id": "Wohlers Hall 236",
+"roomName": "236",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 7,
+"building": {
+"id": "Wohlers Hall"
+}
+},
+{
+"id": "Wohlers Hall 240",
+"roomName": "240",
+"typesHosted": [
+"DIS",
+"LCD",
+"PR"
+],
+"sectionCount": 14,
+"building": {
+"id": "Wohlers Hall"
+}
+},
+{
+"id": "Wohlers Hall 241",
+"roomName": "241",
+"typesHosted": [
+"DIS",
+"LCD",
+"S12"
+],
+"sectionCount": 13,
+"building": {
+"id": "Wohlers Hall"
+}
+},
+{
+"id": "Wohlers Hall 243",
+"roomName": "243",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 10,
+"building": {
+"id": "Wohlers Hall"
+}
+},
+{
+"id": "Wohlers Hall 245",
+"roomName": "245",
+"typesHosted": [
+"DIS",
+"LCD",
+"S10",
+"S16"
+],
+"sectionCount": 14,
+"building": {
+"id": "Wohlers Hall"
+}
+},
+{
+"id": "Wohlers Hall 70B",
+"roomName": "70B",
+"typesHosted": [
+"LAB",
+"LBD"
+],
+"sectionCount": 12,
+"building": {
+"id": "Wohlers Hall"
+}
+},
+{
+"id": "Wohlers Hall ARR",
+"roomName": "ARR",
+"typesHosted": [
+"S5"
+],
+"sectionCount": 1,
+"building": {
+"id": "Wohlers Hall"
+}
+},
+{
+"id": "Wymer Hall 1010",
+"roomName": "1010",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 9,
+"building": {
+"id": "Wymer Hall"
+}
+},
+{
+"id": "Wymer Hall 1020",
+"roomName": "1020",
+"typesHosted": [
+"LAB",
+"LCD",
+"LEC"
+],
+"sectionCount": 13,
+"building": {
+"id": "Wymer Hall"
+}
+},
+{
+"id": "Wymer Hall 1060",
+"roomName": "1060",
+"typesHosted": [
+"DIS",
+"LCD",
+"LEC"
+],
+"sectionCount": 10,
+"building": {
+"id": "Wymer Hall"
+}
+},
+{
+"id": "Wymer Hall 1100",
+"roomName": "1100",
+"typesHosted": [
+"LCD",
+"LEC"
+],
+"sectionCount": 9,
+"building": {
+"id": "Wymer Hall"
+}
+},
+{
+"id": "Wymer Hall 2010",
+"roomName": "2010",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 13,
+"building": {
+"id": "Wymer Hall"
+}
+},
+{
+"id": "Wymer Hall 2020",
+"roomName": "2020",
+"typesHosted": [
+"DIS",
+"LCD"
+],
+"sectionCount": 13,
+"building": {
+"id": "Wymer Hall"
+}
+},
+{
+"id": "Wymer Hall 2060",
+"roomName": "2060",
+"typesHosted": [
+"LCD"
+],
+"sectionCount": 13,
+"building": {
+"id": "Wymer Hall"
+}
+}
+]

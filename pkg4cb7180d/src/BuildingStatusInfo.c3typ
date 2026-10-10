@@ -1,0 +1,97 @@
+/**
+ * One building's energy state for a single weekday + hour, returned by
+ * {@link AgentTools#buildingStatus}.
+ *
+ * This is what the Facilities map hover tooltip, the building drawer header and the agent's building
+ * cards all read from, which is how they stay in agreement. The key question it answers is the one
+ * the whole app exists for: <i>is this building burning HVAC and lighting right now, and could it
+ * be off instead?</i>
+ *
+ * {@link #sectionsNow} is occupancy under today's timetable; {@link #sectionsWithBlockIo} is
+ * occupancy after <b>approved</b> {@link MoveRecommendation}s. When the first is positive and the
+ * second is zero, the building is running today purely out of habit and {@link #status} is
+ * {@code "poweredDown"} — the headline Block I/O win.
+ *
+ * Weekday letters are {@code M T W R F} ({@code R} = Thursday); hour blocks are integers
+ * {@code 7..21}, each denoting {@code [hour:00, hour+1:00)}. Plain, non-persisted value type.
+ */
+type BuildingStatusInfo {
+
+  /**
+   * Name of the {@link Building} (a {@link Building#id}).
+   */
+  building: !string
+
+  /**
+   * The weekday this snapshot describes ({@code M T W R F}).
+   */
+  day: !string
+
+  /**
+   * The hour block {@code 7..21} this snapshot describes.
+   */
+  hour: !int
+
+  /**
+   * Classes in session in this building during {@link #hour} under today's unmodified schedule.
+   * Mirrors {@link BuildingHour#sectionsCurrent}.
+   */
+  sectionsNow: int
+
+  /**
+   * Classes still in session after approved room swaps are applied. Mirrors
+   * {@link BuildingHour#sectionsOptimized}. Zero while {@link #sectionsNow} is positive means the
+   * building can go dark this hour.
+   */
+  sectionsWithBlockIo: int
+
+  /**
+   * The building's state this hour, one of:
+   * <ul>
+   *   <li>{@code "running"} — classes meet here both today and with Block I/O; it has to be on.</li>
+   *   <li>{@code "poweredDown"} — classes meet today but all of them move away, so it can be set
+   *       back. Drawn in ice blue.</li>
+   *   <li>{@code "dark"} — no classes this hour either way; nothing to save here.</li>
+   * </ul>
+   */
+  status: !string
+
+  /**
+   * The whole status as one plain-English sentence for the map tooltip — e.g.
+   * {@code "Altgeld Hall · 2 classes now · With Block I/O: powered down Fri 3-10pm"}. Deliberately
+   * composed on the backend: the tooltip must read like a sentence, not a table of codes.
+   */
+  statusSentence: !string
+
+  /**
+   * The individual class meetings in session in this building during {@link #hour}, so the drawer
+   * can show exactly what is keeping the lights on. Slots with
+   * {@link RoomSectionSlot#movedAway} true are the ones an approved swap relocates.
+   */
+  sectionsInSession: [RoomSectionSlot]
+
+  /**
+   * This building's merged class-free windows for the week after approved swaps — the same windows
+   * the Setback Schedule page lists. Included here so the tooltip and drawer can name when the
+   * building can actually be set back, not just whether it is busy this instant.
+   */
+  setbackWindows: [SetbackWindow]
+
+  /**
+   * Total class-section meeting patterns scheduled in this building across the week, from
+   * {@link Building#sectionsPerWeek}. Gives the hour-level numbers above some context — one class
+   * now in a building that hosts 300 a week reads very differently from one in a building that hosts
+   * three.
+   */
+  sectionsPerWeek: int
+
+  /**
+   * Latitude of the building, from {@link Building#lat}.
+   */
+  lat: double
+
+  /**
+   * Longitude of the building, from {@link Building#lon}.
+   */
+  lon: double
+}

@@ -1,0 +1,99 @@
+/**
+ * Everything the Room Detail card shows for one classroom, returned by
+ * {@link AgentTools#roomDetail}.
+ *
+ * Room Detail is reachable from every surface that names a room — a student's free-room card, an
+ * {@link AgentCard} with {@code kind = "room"}, or the room list inside the Facilities building
+ * drawer — and always renders the same way: building and room number, a photo (see
+ * {@link BuildingPhoto}), the room type, today's meetings as a mini timeline, how long it stays
+ * free, the walk from the student's location, and an "Open in map" action.
+ *
+ * Weekday letters are {@code M T W R F} ({@code R} = Thursday); hour blocks are integers
+ * {@code 7..21}, each denoting {@code [hour:00, hour+1:00)}. Plain, non-persisted value type.
+ */
+type RoomDetailInfo {
+
+  /**
+   * The {@link Room#id} — the {@code "Building Room"} composite (e.g. {@code "Lincoln Hall 1090"}).
+   */
+  roomId: !string
+
+  /**
+   * The room designator within its building, from {@link Room#roomName}.
+   */
+  roomName: !string
+
+  /**
+   * Name of the containing {@link Building} (a {@link Building#id}). Also the key used to look up
+   * the building exterior photo when no per-room photo exists.
+   */
+  building: !string
+
+  /**
+   * Plain-English room type inferred from {@link Room#typesHosted} — {@code "lecture hall"},
+   * {@code "classroom"}, {@code "seminar room"}, {@code "lab"} or {@code "studio"}. Same derivation
+   * as {@link FreeRoom#roomType}.
+   */
+  roomType: string
+
+  /**
+   * The raw section-type codes the room hosts (e.g. {@code ["LEC", "DIS"]}), straight from
+   * {@link Room#typesHosted}. Kept alongside {@link #roomType} as the evidence behind it.
+   */
+  typesHosted: [string]
+
+  /**
+   * The weekday these figures were computed for ({@code M T W R F}).
+   */
+  day: string
+
+  /**
+   * The hour block {@code 7..21} these figures were computed for.
+   */
+  hour: int
+
+  /**
+   * True when no class meets in this room during {@link #day} + {@link #hour} — i.e. a student
+   * could walk in and sit down.
+   */
+  freeNow: boolean
+
+  /**
+   * How long the room stays free in words, using the next class's exact start time (e.g.
+   * {@code "free until 2:50 PM"}). Null or empty when {@link #freeNow} is false.
+   */
+  freeUntilLabel: string
+
+  /**
+   * Minutes from {@link #hour} until the next class begins; mirrors {@link FreeRoom#minutesFree}.
+   */
+  minutesFree: int
+
+  /**
+   * Walking minutes from the student's resolved location, or {@code -1} when unknown.
+   */
+  walkMinutes: int
+
+  /**
+   * Every class meeting scheduled in this room on {@link #day}, in start-time order, as the mini
+   * timeline. Slots whose {@link RoomSectionSlot#movedAway} is true are relocated by an approved
+   * swap and render struck through.
+   */
+  sectionsToday: [RoomSectionSlot]
+
+  /**
+   * How many sections are meeting anywhere in {@link #building} during {@link #hour} — the proof the
+   * building is already heated and lit, as on {@link FreeRoom#buildingSections}.
+   */
+  buildingSections: int
+
+  /**
+   * Latitude of {@link #building}, from {@link Building#lat}, for the "Open in map" action.
+   */
+  lat: double
+
+  /**
+   * Longitude of {@link #building}, from {@link Building#lon}.
+   */
+  lon: double
+}

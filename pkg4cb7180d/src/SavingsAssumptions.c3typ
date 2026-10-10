@@ -1,0 +1,60 @@
+/**
+ * The editable, singleton set of assumptions that convert freed building-hours into energy, cost,
+ * and emissions savings. A single instance exists with {@link #id} {@code "default"}; the
+ * Assumptions screen edits it in place and every KPI recomputes live from these values.
+ *
+ * Each physical assumption is expressed as a low / mid / high scenario so KPIs can be shown as a
+ * range. Savings per freed building-hour = {@code kwhPerFreedHour × electricityPrice} dollars and
+ * {@code kwhPerFreedHour × emissionFactor} kg CO2, annualized by
+ * {@code freedHoursPerWeek × weeksPerSemester × semestersPerYear}.
+ */
+entity type SavingsAssumptions schema name 'SAVINGS_ASSUMPTIONS' {
+
+  /** kWh of classroom-zone HVAC + lighting saved per freed building-hour — low scenario. */
+  kwhPerFreedHourLow: double
+
+  /** kWh saved per freed building-hour — mid (default) scenario. */
+  kwhPerFreedHourMid: double
+
+  /** kWh saved per freed building-hour — high scenario. */
+  kwhPerFreedHourHigh: double
+
+  /** Electricity/energy price in $/kWh — low scenario. */
+  electricityPriceLow: double
+
+  /** Electricity/energy price in $/kWh — mid (default) scenario. */
+  electricityPriceMid: double
+
+  /** Electricity/energy price in $/kWh — high scenario. */
+  electricityPriceHigh: double
+
+  /** Emission factor in kg CO2 per kWh (Illinois grid) — low scenario. */
+  emissionFactorLow: double
+
+  /** Emission factor in kg CO2 per kWh (Illinois grid) — mid (default) scenario. */
+  emissionFactorMid: double
+
+  /** Emission factor in kg CO2 per kWh (Illinois grid) — high scenario. */
+  emissionFactorHigh: double
+
+  /** Instructional weeks per semester used to annualize weekly savings (default 15). */
+  weeksPerSemester: int
+
+  /** Semesters per year used to annualize savings (default 2). */
+  semestersPerYear: int
+
+  /**
+   * Returns the singleton assumptions instance (id {@code "default"}), creating it with the
+   * standard low/mid/high defaults if it does not yet exist. All screens read assumptions
+   * through this accessor so the app never faces a missing-config state.
+   */
+  getOrCreate: function(): SavingsAssumptions py
+
+  /**
+   * Converts a weekly count of freed building-hours into annualized energy (MWh), cost ($) and
+   * avoided emissions (metric tons CO2) across the low/mid/high scenarios, using this instance's
+   * assumptions. Annualization multiplies weekly freed hours by
+   * {@link #weeksPerSemester} × {@link #semestersPerYear}.
+   */
+  compute: member function(freedHoursPerWeek: int): SavingsResult py
+}
