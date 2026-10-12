@@ -1,6 +1,6 @@
-# Block I/O — Illini Campus Energy Optimizer
+# Illini I/O — Illini Campus Energy Optimizer
 
-**Block I/O** turns the University of Illinois class schedule into an energy-savings engine. It relocates *movable* class sections into buildings that are already occupied, so entire buildings can go dark during low-use hours — cutting HVAC and lighting energy **without changing a single class time**.
+**Illini I/O** turns the University of Illinois class schedule into an energy-savings engine. It relocates *movable* class sections into buildings that are already occupied, so entire buildings can go dark during low-use hours — cutting HVAC and lighting energy **without changing a single class time**.
 
 Built on the **C3 AI Platform** with a React + TypeScript frontend and a signature 3D campus map.
 
