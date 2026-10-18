@@ -45,4 +45,4 @@ pkg4cb7180d/
 
 - **Yash Yardi**
 - **Shrishant Hattarki**
-- **Bobby Mandell**
+- **Bobby(Robert) Mandell**
